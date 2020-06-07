@@ -108,7 +108,7 @@ export const Home = () => {
                 </div>
             </section>
             <section className={styles.overview}>
-                <div className='container'>
+                <div className='container' >
                     <div className={styles.overviewInner}>
                         <h2>Fundraising Services</h2>
                         <p>
