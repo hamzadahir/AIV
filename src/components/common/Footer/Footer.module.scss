@@ -1,0 +1,120 @@
+@import "../../../assets/scss/variables";
+
+.footer {
+  background: $secondColor;
+  padding:    2rem 0;
+  color:      $white;
+  .topSection {
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    > div {
+      width: 50%;
+    }
+    p {
+      opacity:     .7;
+      font-size:   1rem;
+      line-height: 1.625;
+      font-family: Avenir, sans-serif;
+      font-weight: normal;
+      color:       $white;
+    }
+    .topSectionButtons {
+      text-align: right;
+      button:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+  }
+  .bottomSection {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     flex-start;
+    ul {
+      li {
+        opacity:     .7;
+        font-size:   0.875rem;
+        line-height: 2.14;
+        &.logo {
+          opacity:       1;
+          width:         9rem;
+          margin-bottom: 1rem;
+        }
+        &.bottomSectionTitle {
+          font-size:      0.875rem;
+          font-family:    Avenir, sans-serif;
+          font-weight:    500;
+          line-height:    2.14;
+          margin-bottom:  1rem;
+          text-transform: uppercase;
+          opacity:        1;
+        }
+        a {
+          color:       $white;
+          font-size:   0.875rem;
+          line-height: 2.14;
+        }
+      }
+    }
+  }
+  .copyright {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    padding:         2rem 0;
+    p, a {
+      opacity:        .7;
+      font-size:      0.875rem;
+      line-height:    1.78;
+      text-transform: uppercase;
+      color:          $white;
+    }
+    .line {
+      margin: 0 1rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .footer {
+    .topSection {
+      flex-direction: column;
+      > div {
+        width:      100%;
+        text-align: center;
+      }
+      .topSectionButtons {
+        display:         flex;
+        justify-content: space-between;
+        align-items:     center;
+        flex-direction:  column;
+        button {
+          margin: 0 0 1rem 0 !important;
+        }
+      }
+    }
+    .bottomSection {
+      flex-wrap: wrap;
+      ul {
+        width:         33%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    .bottomSection {
+      ul {
+        width: 46%;
+
+      }
+    }
+    .copyright {
+      flex-direction: column;
+      text-align:     center;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@import "./assets/scss/variables";
+
+*, *:after, *:before {
+  margin:     0;
+  padding:    0;
+  box-sizing: border-box;
+  outline:    none;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color:           $black;
+  text-decoration: none;
+  cursor:          pointer;
+  font-size:       1.125rem;
+  line-height:     1.39;
+  &:hover, &:active {
+    opacity: .7;
+  }
+}
+
+button {
+  cursor:      pointer;
+  font-size:   1rem;
+  line-height: 1.375rem;
+  font-family: Avenir, sans-serif;
+  font-weight: 500;
+  &:hover, &:active {
+    opacity: .7;
+  }
+}
+
+body, html {
+  margin:  0;
+  padding: 0;
+  height:  100%;
+}
+
+html {
+  font-size:   16px;
+  font-family: Avenir, sans-serif;
+}
+
+p {
+  font-size:      1.125rem;
+  line-height:    1.39;
+  letter-spacing: -2.05;
+  margin-bottom:  1rem;
+}
+
+h1 {
+  font-size:     3.75rem;
+  line-height:   1.116;
+  font-family:   'Roboto Slab', sans-serif;
+  font-weight:   100;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size:     3rem;
+  font-family:   'Roboto Slab', sans-serif;
+  font-weight:   300;
+  line-height:   1.3125;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: Avenir, sans-serif;
+  font-weight: normal;
+  line-height: 2.14;
+  color:       $black;
+}
+
+
+hr {
+  background: #D8D8D8;
+  height:     1px;
+  border:     0;
+  margin:     4rem 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.btn-primary {
+  background: $mainColor;
+  border:     0.0625rem solid $mainColor;
+  color:      $white;
+  padding:    1rem;
+  width:      13.3125rem;
+
+}
+
+.btn-second {
+  background: transparent;
+  border:     0.0625rem solid $yellow;
+  color:      $yellow;
+  padding:    1rem;
+  width:      13.3125rem;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  width:     100%;
+  max-width: 1230px;
+  margin:    0 auto;
+  padding:   0 1rem;
+}
+
+.green {
+  color:       $mainColor;
+  font-weight: 500;
+  display:     block;
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+}
