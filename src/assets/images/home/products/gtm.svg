@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.889" height="24" viewBox="0 0 28.889 24">
+  <g id="sliders" transform="translate(1 1)">
+    <path id="Path" d="M.611,8.556V0" transform="translate(3.056 13.444)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+    <path id="Path-2" data-name="Path" d="M.611,8.556V0" transform="translate(3.056)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-3" data-name="Path" d="M.611,11V0" transform="translate(12.833 11)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-4" data-name="Path" stroke="#30b179" d="M.611,6.111V0" fill="none" transform="translate(12.833)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+    <path id="Path-5" data-name="Path" stroke="#30b179" d="M.611,6.111V0" fill="none" transform="translate(22.611 15.889)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+    <path id="Path-6" data-name="Path" d="M.611,11V0" transform="translate(22.611)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-7" data-name="Path" stroke="#30b179" d="M0,.611H7.333" fill="none" transform="translate(0 12.833)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+    <path id="Path-8" data-name="Path" stroke="#30b179" d="M0,.611H7.333" fill="none" transform="translate(9.778 5.5)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+    <path id="Path-9" data-name="Path" stroke="#30b179" d="M0,.611H7.333" fill="none" transform="translate(19.556 15.278)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.3"/>
+  </g>
+</svg>

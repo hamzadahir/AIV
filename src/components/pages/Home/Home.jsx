@@ -4,12 +4,28 @@ import React from 'react';
 
 // assets
 import styles from './Home.module.scss';
-import banner from '../../../assets/images/home/banner.png'
-import templates from '../../../assets/images/home/templates.png'
-import network from '../../../assets/images/home/network.png'
-import work from '../../../assets/images/home/work.png'
-import month from '../../../assets/images/home/month.png'
-import deck from '../../../assets/images/home/deck.svg'
+import banner from '../../../assets/images/home/banner.svg'
+import templates from '../../../assets/images/home/templates.svg'
+import network from '../../../assets/images/home/network.svg'
+import work from '../../../assets/images/home/work.svg'
+import month from '../../../assets/images/home/month.svg'
+
+import deck from '../../../assets/images/home/products/deck.svg'
+import accounts from '../../../assets/images/home/products/accounts.svg'
+import financials from '../../../assets/images/home/products/financials.svg'
+import data from '../../../assets/images/home/products/data.svg'
+import gtm from '../../../assets/images/home/products/gtm.svg'
+import kpi from '../../../assets/images/home/products/kpi.svg'
+import notes from '../../../assets/images/home/products/notes.svg'
+import scenarios from '../../../assets/images/home/products/scenarios.svg'
+import forecast from '../../../assets/images/home/products/forecast.svg'
+import updates from '../../../assets/images/home/products/updates.svg'
+import tech from '../../../assets/images/home/products/tech.svg'
+import sales from '../../../assets/images/home/products/sales.svg'
+import crm from '../../../assets/images/home/products/crm.svg'
+import chart from '../../../assets/images/home/products/chart.svg'
+import usage from '../../../assets/images/home/products/usage.svg'
+
 import introductions from '../../../assets/images/home/introductions.svg'
 import room from '../../../assets/images/home/room.svg'
 import report from '../../../assets/images/home/report.svg'
@@ -32,20 +48,20 @@ const servicesItems = [
 
 const productsItems = [
     {id: 0, title: 'Pitch Deck', icon: deck},
-    {id: 1, title: 'Customer Accounts', icon: deck},
-    {id: 2, title: 'Historical Financials', icon: deck},
-    {id: 3, title: 'Data Room Checklist', icon: deck},
-    {id: 4, title: 'Market Size and GTM', icon: deck},
-    {id: 5, title: 'Financial KPIs', icon: deck},
-    {id: 6, title: 'Convertible Notes', icon: deck},
-    {id: 7, title: 'Cap Table Scenarios', icon: deck},
-    {id: 8, title: 'Financial Forecast', icon: deck},
-    {id: 9, title: 'Investor Updates', icon: deck},
-    {id: 10, title: 'Tech Due Diligence Q&A', icon: deck},
-    {id: 11, title: 'Sales Pipeline Forecast', icon: deck},
-    {id: 12, title: 'Investor CRM', icon: deck},
-    {id: 13, title: 'Organizational Chart', icon: deck},
-    {id: 14, title: 'Fund Usage', icon: deck},
+    {id: 1, title: 'Customer Accounts', icon: accounts},
+    {id: 2, title: 'Historical Financials', icon: financials},
+    {id: 3, title: 'Data Room Checklist', icon: data},
+    {id: 4, title: 'Market Size and GTM', icon: gtm},
+    {id: 5, title: 'Financial KPIs', icon: kpi},
+    {id: 6, title: 'Convertible Notes', icon: notes},
+    {id: 7, title: 'Cap Table Scenarios', icon: scenarios},
+    {id: 8, title: 'Financial Forecast', icon: forecast},
+    {id: 9, title: 'Investor Updates', icon: updates},
+    {id: 10, title: 'Tech Due Diligence Q&A', icon: tech},
+    {id: 11, title: 'Sales Pipeline Forecast', icon: sales},
+    {id: 12, title: 'Investor CRM', icon: crm},
+    {id: 13, title: 'Organizational Chart', icon: chart},
+    {id: 14, title: 'Fund Usage', icon: usage},
 ];
 export const Home = () => {
     return (

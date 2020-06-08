@@ -24,6 +24,11 @@
   height:      172px;
   display:     flex;
   align-items: center;
+  transition: 0.2s linear;
+  &.headerFixed {
+    height:     90px;
+    box-shadow: 0 0 0.5rem -0.25rem black;
+  }
   .logo {
     img {
       width: 9rem;

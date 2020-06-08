@@ -1,5 +1,18 @@
 @import "../../../assets/scss/variables";
 
+@media (any-hover: hover) {
+  .footer {
+    .bottomSection {
+      ul li a:hover {
+        color: $mainColor;
+      }
+    }
+    .copyright a:hover {
+      color: $mainColor;
+    }
+  }
+}
+
 .footer {
   background: $secondColor;
   padding:    2rem 0;
@@ -53,6 +66,9 @@
           color:       $white;
           font-size:   0.875rem;
           line-height: 2.14;
+          &:active {
+            color: $mainColor;
+          }
         }
       }
     }
@@ -68,6 +84,9 @@
       line-height:    1.78;
       text-transform: uppercase;
       color:          $white;
+    }
+    a:active {
+      color: $mainColor;
     }
     .line {
       margin: 0 1rem;
