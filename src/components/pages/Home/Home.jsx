@@ -74,10 +74,10 @@ export const Home = () => {
                         </p>
                         <div className={styles.overviewItemWrapper}>
                             {overviewItems.map(overview => (
-                                <div key={overview.id} className={styles.overviewItem}>
+                                <a href='/' key={overview.id} className={styles.overviewItem}>
                                     <img src={overview.image} alt='' />
                                     <p>{overview.title}</p>
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>
@@ -92,16 +92,16 @@ export const Home = () => {
                             you can utilize to build out your data room. No need to spend time creating materials from
                             scratch.
                         </p>
-                        <div className={styles.productsItemWrapper}>
+                        <a href='/' className={styles.productsItemWrapper}>
                             {productsItems.map(product => (
                                 <div key={product.id} className={styles.productsItem}>
                                     <div><img src={product.icon} alt='' /></div>
                                     <p>{product.title}</p>
                                 </div>
                             ))}
-                        </div>
-                        <a href='/'>
-                            Explore Fundraising Services
+                        </a>
+                        <a href='/' className={styles.link}>
+                            Explore Fundraising Products
                             <img src={arrow} alt='' />
                         </a>
                     </div>
@@ -117,12 +117,126 @@ export const Home = () => {
                         </p>
                         <div className={styles.overviewItemWrapper}>
                             {servicesItems.map(service => (
-                                <div key={service.id} className={styles.overviewItem}>
+                                <a href='/' key={service.id} className={styles.overviewItem}>
                                     <img src={service.image} alt='' />
                                     <p>{service.title}</p>
-                                </div>
+                                </a>
                             ))}
+                            <a href='/' className={styles.link}>
+                                Explore Fundraising Services
+                                <img src={arrow} alt='' />
+                            </a>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className={styles.pricing}>
+                <div className='container'>
+                    <div className={styles.pricingInner}>
+                        <h2>Pricing Plans</h2>
+                        <p>
+                            Choose from our flexible product pricing plans and services
+                            to get started with your fundraising journey
+                        </p>
+                        <div className={styles.pricingItemWrapper}>
+                            <div className={styles.pricingItem}>
+                                <div className={styles.price}><span>$</span>999</div>
+                                <h4>Basic</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectet
+                                    adipiscing elit sed do eiusmod.
+                                </p>
+                                <hr />
+                                <ul className={styles.checked}>
+                                    <li className={styles.done}>Pitch Deck</li>
+                                    <li className={styles.done}>Data Room Checklist</li>
+                                    <li className={styles.done}>Convertible Notes</li>
+                                    <li className={styles.done}>Investor Updates</li>
+                                    <li className={styles.done}>Investor CRM</li>
+                                    <li>Customer Accounts</li>
+                                    <li>Market Size and GTM</li>
+                                    <li>Cap Table Scenarios</li>
+                                    <li>Tech Due Diligence Q&A</li>
+                                    <li>Organizational Chart</li>
+                                    <li>Historical Financials</li>
+                                    <li>Financial KPIs</li>
+                                    <li>Financial Forecast</li>
+                                    <li>Sales Pipeline Forecast</li>
+                                    <li>Fund Usage</li>
+                                </ul>
+                                <button type='button' className='btn-primary'>Get Basic</button>
+                            </div>
+                            <a href='/' className={styles.pricingItem}>
+                                <div className={styles.price}><span>$</span>2,999</div>
+                                <h4>Plus</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectet
+                                    adipiscing elit sed do eiusmod.
+                                </p>
+                                <hr />
+                                <ul className={styles.checked}>
+                                    <li className={styles.done}>Pitch Deck</li>
+                                    <li className={styles.done}>Data Room Checklist</li>
+                                    <li className={styles.done}>Convertible Notes</li>
+                                    <li className={styles.done}>Investor Updates</li>
+                                    <li className={styles.done}>Investor CRM</li>
+                                    <li className={styles.done}>Customer Accounts</li>
+                                    <li className={styles.done}>Market Size and GTM</li>
+                                    <li className={styles.done}>Cap Table Scenarios</li>
+                                    <li className={styles.done}>Tech Due Diligence Q&A</li>
+                                    <li className={styles.done}>Organizational Chart</li>
+                                    <li>Historical Financials</li>
+                                    <li>Financial KPIs</li>
+                                    <li>Financial Forecast</li>
+                                    <li>Sales Pipeline Forecast</li>
+                                    <li>Fund Usage</li>
+                                </ul>
+                                <button type='button' className='btn-primary'>Get Plus</button>
+                            </a>
+                            <a href='/' className={styles.pricingItem}>
+                                <div className={styles.price}><span>$</span>4,999</div>
+                                <h4>Premium</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectet
+                                    adipiscing elit sed do eiusmod.
+                                </p>
+                                <hr />
+                                <ul className={styles.checked}>
+                                    <li className={styles.done}>Pitch Deck</li>
+                                    <li className={styles.done}>Data Room Checklist</li>
+                                    <li className={styles.done}>Convertible Notes</li>
+                                    <li className={styles.done}>Investor Updates</li>
+                                    <li className={styles.done}>Investor CRM</li>
+                                    <li className={styles.done}>Customer Accounts</li>
+                                    <li className={styles.done}>Market Size and GTM</li>
+                                    <li className={styles.done}>Cap Table Scenarios</li>
+                                    <li className={styles.done}>Tech Due Diligence Q&A</li>
+                                    <li className={styles.done}>Organizational Chart</li>
+                                    <li className={styles.done}>Historical Financials</li>
+                                    <li className={styles.done}>Financial KPIs</li>
+                                    <li className={styles.done}>Financial Forecast</li>
+                                    <li className={styles.done}>Sales Pipeline Forecast</li>
+                                    <li className={styles.done}>Fund Usage</li>
+                                </ul>
+                                <button type='button' className='btn-primary'>Get Premium</button>
+                            </a>
+                        </div>
+                        <div className={styles.services}>
+                            <h3>Services Pricing</h3>
+                            <div className={styles.servicesInner}>
+                                <ul className={styles.checked}>
+                                    <li className={styles.done}>Investor Introductions</li>
+                                    <li className={styles.done}>Data Room Preparation</li>
+                                    <li className={styles.done}>Technical Due Diligence Report</li>
+                                    <li className={styles.done}>Corporate Rebranding</li>
+                                </ul>
+                                <button type="button" className='btn-primary'>Contact Us</button>
+                            </div>
+                        </div>
+                        <a href='/' className={styles.link}>
+                            Explore Pricing Plans
+                            <img src={arrow} alt='' />
+                        </a>
                     </div>
                 </div>
             </section>

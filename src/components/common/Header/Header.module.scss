@@ -5,6 +5,11 @@
     .burgerMenu:hover {
       opacity: .7;
     }
+    .menuWrapper {
+      .menu ul li a:hover {
+        color: $mainColor;
+      }
+    }
   }
 }
 
@@ -37,6 +42,10 @@
           padding: 0 1rem;
           a {
             font-weight: 500;
+            &:active {
+              opacity: .7;
+              color:   $mainColor;
+            }
           }
         }
       }
