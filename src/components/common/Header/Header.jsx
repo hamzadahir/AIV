@@ -61,21 +61,19 @@ export const Header = () => {
                                     {item.subMenu &&
                                     <ul className={styles.subMenu}>
                                         <li>
-                                            <div>
-                                                <img src={introductions} alt='' />
-                                            </div>
+                                            <div className={styles.image}><img src={introductions} alt='' /></div>
                                             Investor Introductions
                                         </li>
                                         <li>
-                                            <div><img src={room} alt='' /></div>
+                                            <div className={styles.image}><img src={room} alt='' /></div>
                                             Data Room Preparation
                                         </li>
                                         <li>
-                                            <div><img src={report} alt='' /></div>
+                                            <div className={styles.image}><img src={report} alt='' /></div>
                                             Technical Due Diligence Report
                                         </li>
                                         <li>
-                                            <div><img src={rebranding} alt='' /></div>
+                                            <div className={styles.image}><img src={rebranding} alt='' /></div>
                                             Corporate Rebranding
                                         </li>
                                     </ul>}

@@ -1,8 +1,6 @@
-<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <rect id="Rectangle" width="100" height="100" fill="#30b179"/>
-  <rect id="Rectangle-2" data-name="Rectangle" width="41" height="58" opacity="0.07"/>
-  <g id="calendar" transform="translate(31 30)">
-    <rect id="Rectangle-3" data-name="Rectangle" width="36.9" height="36.9" rx="2" transform="translate(0 4.1)" stroke-width="3.5" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="40.4" height="44.5" viewBox="0 0 40.4 44.5">
+  <g id="calendar" transform="translate(1.75 1.75)">
+    <rect id="Rectangle" width="36.9" height="36.9" rx="2" stroke-width="3.5" transform="translate(0 4.1)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
     <path id="Path" d="M1.025,0V8.2" transform="translate(25.625)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3.5" opacity="0.4"/>
     <path id="Path-2" data-name="Path" stroke="#fff" d="M1.025,0V8.2" fill="none" transform="translate(9.225)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3.5" opacity="0.4"/>
     <path id="Path-3" data-name="Path" stroke="#fff" d="M0,1.025H36.9" fill="none" transform="translate(0 15.375)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3.5" opacity="0.4"/>

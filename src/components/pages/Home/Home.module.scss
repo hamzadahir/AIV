@@ -20,8 +20,8 @@
       .productsItem:hover {
         opacity:    1;
         border:     0.0625rem solid transparent;
-        box-shadow: 0 4px 10px 0 #e0e0e0;
-        &:nth-child(odd) {
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+        &:nth-child(odd), &:nth-child(even) {
           > div {
             background-color: $mainColor;
             &:before {
@@ -37,21 +37,11 @@
             }
           }
         }
-        &:nth-child(even) {
-          > div {
-            background-color: $mainColor;
-            &:before {
-              content:          '';
-              position:         absolute;
-              bottom:           0;
-              right:            0;
-              z-index:          1;
-              width:            50%;
-              height:           50%;
-              background-color: $black;
-              opacity:          .07;
-            }
-          }
+        &:nth-child(even) > div:before {
+          top:    inherit;
+          left:   inherit;
+          bottom: 0;
+          right:  0;
         }
         > div {
           background-color: $mainColor;
@@ -63,27 +53,8 @@
     }
     .pricing {
       .pricingItem:hover {
-        background-color: $secondColor;
-        color:            $white;
-        .price {
-          color: $white;
-        }
-        ul {
-          li {
-            color:   $white;
-            opacity: .5;
-            &.done {
-              color:   $white;
-              opacity: 1;
-              &:before {
-                background-color: $mainColor;
-              }
-              &:after {
-                filter: brightness(100);
-              }
-            }
-          }
-        }
+        border:     0.0625rem solid transparent;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
       }
     }
   }
@@ -153,19 +124,19 @@ ul.checked {
         width:    65%;
         position: relative;
         .cloud1 {
-          position: absolute;
-          z-index:  -1;
-          left:     27%;
-          top:      0;
-          width:    11%;
+          position:  absolute;
+          z-index:   -1;
+          left:      27%;
+          top:       0;
+          width:     11%;
           animation: cloud1Animation 12s linear 0s alternate infinite;
         }
         .cloud2 {
-          position: absolute;
-          z-index:  -1;
-          right:    15%;
-          top:      8%;
-          width:    19%;
+          position:  absolute;
+          z-index:   -1;
+          right:     15%;
+          top:       8%;
+          width:     19%;
           animation: cloud2Animation 12s linear 0s alternate infinite;
         }
       }
@@ -226,9 +197,39 @@ ul.checked {
       padding:          2.5rem 1rem 1.5rem 2.5rem;
       width:            23%;
       cursor:           pointer;
-      img {
-        width:         6.25rem;
-        margin-bottom: 2rem;
+      &:nth-child(odd), &:nth-child(even) {
+        > .image {
+          background-color: $mainColor;
+          position:         relative;
+          &:before {
+            content:          '';
+            position:         absolute;
+            left:             0;
+            top:              0;
+            z-index:          1;
+            width:            50%;
+            height:           50%;
+            background-color: $black;
+            opacity:          .07;
+          }
+        }
+      }
+      &:nth-child(even) > .image:before {
+        left:   inherit;
+        top:    inherit;
+        right:  0;
+        bottom: 0;
+      }
+      .image {
+        width:            6.25rem;
+        height:           6.25rem;
+        margin-bottom:    2rem;
+        background-color: $mainColor;
+        padding:          2rem;
+        img {
+          object-fit: contain;
+          height:     100%;
+        }
       }
       p {
         font-size:   1.25rem;
@@ -280,7 +281,7 @@ ul.checked {
     }
     .productsItem {
       background-color: $white;
-      border:           0.0625rem solid #e0e0e0;
+      border:           0.0625rem solid #d8dde2;
       width:            32%;
       margin-bottom:    1.25rem;
       cursor:           pointer;
@@ -306,6 +307,7 @@ ul.checked {
         margin-bottom: 0;
         font-weight:   500;
         padding-left:  1.875rem;
+        color:         $black;
       }
       &:active {
         border:     0.0625rem solid transparent;
@@ -344,7 +346,12 @@ ul.checked {
       border:           0.0625rem solid #e0e0e0;
       padding:          3.125rem 2.5rem;
       margin-bottom:    3.75rem;
+      transition:       .2s linear;
       &:active {
+        border:     0.0625rem solid transparent;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+      }
+      &.highLighted {
         background-color: $secondColor;
         color:            $white;
         .price {

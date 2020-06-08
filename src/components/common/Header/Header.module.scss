@@ -74,7 +74,7 @@
         box-shadow:       0 28px 45px rgba(0, 0, 0, 0.16);
         background-color: #1d343c;
         position:         absolute;
-        z-index: 1;
+        z-index:          1;
         bottom:           0;
         right:            0;
         transform:        translate(5%, 105%);
@@ -93,6 +93,13 @@
           border-top:   8px solid $secondColor;
           transform:    translate(-100%, -40%) rotate(-45deg);
         }
+        .image {
+          width:            3.75rem;
+          height:           3.75rem;
+          background-color: $mainColor;
+          margin-right:     1.25rem;
+          padding:          1.25rem;
+        }
         li {
           padding:         1.25rem;
           display:         flex;
@@ -102,14 +109,31 @@
           color:           $white;
           border-bottom:   1px solid rgba(216, 216, 216, 0.11);
           cursor:          pointer;
-          > div {
-            width:        3.75rem;
-            max-width:    3.75rem;
-            height:       3.75rem;
-            margin-right: 1.25rem;
-          }
           &:hover {
             background-color: #263C44;
+          }
+          &:nth-child(odd), &:nth-child(even) {
+            > .image {
+              background-color: $mainColor;
+              position:         relative;
+              &:before {
+                content:          '';
+                position:         absolute;
+                left:             0;
+                top:              0;
+                z-index:          1;
+                width:            50%;
+                height:           50%;
+                background-color: $black;
+                opacity:          .07;
+              }
+            }
+          }
+          &:nth-child(even) > .image:before {
+            left:   inherit;
+            top:    inherit;
+            right:  0;
+            bottom: 0;
           }
         }
       }
