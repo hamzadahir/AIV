@@ -37,16 +37,12 @@ button {
   line-height: 1.375rem;
   font-family: Avenir, sans-serif;
   font-weight: 500;
-  &:active {
-    opacity: .7;
-    top:     3px;
-  }
 }
 
 body, html {
-  margin:   0;
-  padding:  0;
-  height:   100%;
+  margin:  0;
+  padding: 0;
+  height:  100%;
 }
 
 html {
@@ -116,6 +112,22 @@ hr {
   width:      13.3125rem;
   position:   relative;
   transition: .3s linear;
+  &:active {
+    opacity: .7;
+    top:     3px;
+  }
+}
+
+.btn-primary--prev, .btn-primary--next {
+  width:            3.75rem;
+  max-width:        3.75rem;
+  height:           3.75rem;
+  background-color: #299767;
+  border:           none;
+  box-shadow:       none;
+  &:hover, &:active {
+    opacity: .7;
+  }
 }
 
 .btn-second {
@@ -126,6 +138,10 @@ hr {
   width:      13.3125rem;
   position:   relative;
   transition: .3s linear;
+  &:active {
+    opacity: .7;
+    top:     3px;
+  }
 }
 
 .no-scroll {

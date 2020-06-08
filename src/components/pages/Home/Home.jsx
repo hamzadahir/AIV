@@ -3,14 +3,17 @@ import React, { useRef, useEffect } from 'react';
 
 
 // library
-import { TimelineLite, Power3 } from 'gsap'
+import { gsap, TimelineLite, Power3 } from 'gsap'
 
 // components
-import { useScrollPosition } from "../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../hooks";
 
 // assets
 import styles from './Home.module.scss';
 import banner from '../../../assets/images/home/banner.svg'
+import cloud1 from '../../../assets/images/home/cloud1.svg'
+import cloud2 from '../../../assets/images/home/cloud2.svg'
+
 import templates from '../../../assets/images/home/templates.svg'
 import network from '../../../assets/images/home/network.svg'
 import work from '../../../assets/images/home/work.svg'
@@ -72,9 +75,11 @@ const productsItems = [
 
 const duration = 2;
 export const Home = () => {
+    const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
     // animations
+    gsap.registerPlugin();
     const t1 = new TimelineLite();
     let sectionOne = useRef(null);
     let bannerImage = useRef(null);
@@ -129,6 +134,29 @@ export const Home = () => {
         }
     }, [scroll, t1, t2, t3, t4, t5, t6]);
 
+
+    // Fundraising Products
+
+    useEffect(() => {
+        const single = productsItem.children;
+
+        if (width < 567) {
+            for (let i = 0; i < single.length; i++) {
+                if (i >= 5) {
+                    single[i].style.display = 'none';
+                }
+            }
+        } else {
+            for (let i = 0; i < single.length; i++) {
+                if (i >= 5) {
+                    single[i].style.display = 'flex';
+                }
+            }
+
+        }
+    }, [width]);
+
+
     return (
         <main className={styles.home}>
             <section className={styles.accelerate} ref={el => sectionOne = el}>
@@ -142,7 +170,11 @@ export const Home = () => {
                                 Products
                             </button>
                         </div>
-                        <img src={banner} alt='' ref={el => bannerImage = el} />
+                        <div className={styles.image} ref={el => bannerImage = el}>
+                            <img className={styles.cloud1} src={cloud1} alt='' />
+                            <img className={styles.cloud2} src={cloud2} alt='' />
+                            <img src={banner} alt='' />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -188,11 +220,15 @@ export const Home = () => {
                                 </div>
                             ))}
                         </a>
-                        <a href='/' className={styles.link}>
-                            Explore Fundraising Products
-                            <img src={arrow} alt='' />
-                        </a>
                     </div>
+                    <div className={styles.pagination}>
+                        <button className='btn-primary--prev' />
+                        <button type='button' className='btn-primary'>1/3</button>
+                        <button className='btn-primary--next' />
+                    </div>
+                    <a href='/' className={styles.link}>Explore Fundraising Products
+                        <img src={arrow} alt='' />
+                    </a>
                 </div>
             </section>
             <section className={styles.overview} ref={el => sectionFour = el}>
@@ -212,11 +248,10 @@ export const Home = () => {
                                     <p>{service.title}</p>
                                 </a>
                             ))}
-                            <a href='/' className={styles.link}>
-                                Explore Fundraising Services
-                                <img src={arrow} alt='' />
-                            </a>
                         </div>
+                        <a href='/' className={styles.link}>Explore Fundraising Services
+                            <img src={arrow} alt='' />
+                        </a>
                     </div>
                 </div>
             </section>
@@ -325,8 +360,7 @@ export const Home = () => {
                                 <button type="button" className='btn-primary'>Contact Us</button>
                             </div>
                         </div>
-                        <a href='/' className={styles.link}>
-                            Explore Pricing Plans
+                        <a href='/' className={styles.link}>Explore Pricing Plans
                             <img src={arrow} alt='' />
                         </a>
                     </div>
