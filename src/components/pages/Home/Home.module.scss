@@ -156,11 +156,13 @@ ul.checked {
     background-color: $lightGreen;
     padding:          8rem 0;
     .overviewInner {
-      > p {
-        max-width:   30rem;
-        font-size:   1rem;
-        color:       #8c94a5;
-        line-height: 1.5625;
+      .overviewTitle {
+        p {
+          max-width:   30rem;
+          font-size:   1rem;
+          color:       #8c94a5;
+          line-height: 1.5625;
+        }
       }
     }
     .overviewItemWrapper {
@@ -202,11 +204,13 @@ ul.checked {
   .products {
     padding: 9rem 0;
     .productsInner {
-      > p {
-        max-width:   29rem;
-        font-size:   1rem;
-        color:       #8c94a5;
-        line-height: 1.5625;
+      .productsTitle {
+        p {
+          max-width:   29rem;
+          font-size:   1rem;
+          color:       #8c94a5;
+          line-height: 1.5625;
+        }
       }
     }
     .productsItemWrapper {
@@ -258,11 +262,13 @@ ul.checked {
   .pricing {
     padding: 8rem 0;
     .pricingInner {
-      > p {
-        max-width:   30rem;
-        font-size:   1rem;
-        color:       #8c94a5;
-        line-height: 1.5625;
+      .pricingTitle {
+        p {
+          max-width:   30rem;
+          font-size:   1rem;
+          color:       #8c94a5;
+          line-height: 1.5625;
+        }
       }
     }
     .pricingItemWrapper {
@@ -430,4 +436,63 @@ ul.checked {
       }
     }
   }
+}
+
+// animations
+.accelerate {
+  img {
+    opacity:   0;
+    transform: translate(100%, 0);
+  }
+  .accelerateDescription {
+    opacity:   0;
+    transform: translate(0, 100%);
+  }
+}
+
+.overview {
+  .overviewTitle {
+    opacity:   0;
+    transform: translate(0, 100%);
+  }
+  .overviewItemWrapper {
+    opacity:   0;
+    transform: translate(0%, 50%);
+  }
+}
+
+.products {
+  .productsTitle {
+    opacity:   0;
+    transform: translate(0, 100%);
+  }
+  .productsItemWrapper {
+    opacity:   0;
+    transform: translate(0%, 50%);
+  }
+}
+
+.pricing {
+  overflow: hidden;
+  .pricingTitle {
+    opacity:   0;
+    transform: translate(0, 100%);
+  }
+  .pricingItem {
+    opacity: 0;
+  }
+  .pricingItem:nth-child(1) {
+    transform: translate(-100%, 0);
+  }
+  .pricingItem:nth-child(2) {
+    transform: translate(0%, 30%);
+  }
+  .pricingItem:nth-child(3) {
+    transform: translate(100%, 0);
+  }
+}
+
+.services {
+  opacity: 0;
+  transform: translate(-500px, 0);
 }
