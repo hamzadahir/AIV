@@ -36,21 +36,16 @@
 
 @font-face {
   font-family: Avenir;
-  src:         url('../fonts/Avenir/Avenir-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style:  normal;
-}
-
-@font-face {
-  font-family: Avenir;
-  src:         url('../fonts/Avenir/Avenir-Book.ttf') format('truetype');
+  src:         url('../fonts/Avenir/Avenir-Book.ttf') format('truetype'),
+               url('../fonts/Avenir/Avenir-Book.otf') format('opentype');
   font-weight: normal;
   font-style:  normal;
 }
 
 @font-face {
   font-family: Avenir;
-  src:         url('../fonts/Avenir/Avenir-Medium.ttf') format('truetype');
+  src:         url('../fonts/Avenir/Avenir-Medium.ttf') format('truetype'),
+               url('../fonts/Avenir/Avenir-Medium.otf') format('opentype');
   font-weight: 500;
   font-style:  normal;
 }
