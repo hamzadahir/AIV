@@ -18,7 +18,7 @@ import rebranding from '../../../assets/images/home/rebranding.svg'
 
 const menus = [
     {url: routes.home, label: 'Home',},
-    {url: routes.home, label: 'Products', subMenu: true},
+    {url: routes.products, label: 'Products', subMenu: true},
     {url: routes.home, label: 'Services'},
     {url: routes.home, label: 'Pricing'},
     {url: routes.home, label: 'Contact'},
