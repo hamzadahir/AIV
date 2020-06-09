@@ -107,32 +107,39 @@ export const Home = () => {
 
 
     useEffect(() => {
-        if (scroll > (sectionOne.offsetTop - 300)) {
-            t1.to(bannerImage, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
-                .to(bannerDescription, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`);
+        if (width > 767) {
+            if (scroll > (sectionOne.offsetTop - 300)) {
+                t1.to(bannerImage, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
+                    .to(bannerDescription, {
+                        opacity: 1,
+                        y: 0,
+                        ease: Power3.easeOut,
+                        duration: duration
+                    }, `-=${duration}`);
+            }
+            if (scroll > (sectionTwo.offsetTop - 300)) {
+                t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                    .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+            }
+            if (scroll > (sectionThree.offsetTop - 300)) {
+                t3.to(productsTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                    .to(productsItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+            }
+            if (scroll > (sectionFour.offsetTop - 300)) {
+                t4.to(servicesTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                    .to(servicesItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+            }
+            if (scroll > (sectionFive.offsetTop - 300)) {
+                t5.to(pricingTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                    .to(pricingItem1, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                    .to(pricingItem2, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                    .to(pricingItem3, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+            }
+            if (scroll > (services.offsetTop - 600)) {
+                t6.to(services, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
+            }
         }
-        if (scroll > (sectionTwo.offsetTop - 300)) {
-            t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-        }
-        if (scroll > (sectionThree.offsetTop - 300)) {
-            t3.to(productsTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                .to(productsItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-        }
-        if (scroll > (sectionFour.offsetTop - 300)) {
-            t4.to(servicesTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                .to(servicesItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-        }
-        if (scroll > (sectionFive.offsetTop - 300)) {
-            t5.to(pricingTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                .to(pricingItem1, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-                .to(pricingItem2, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-                .to(pricingItem3, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-        }
-        if (scroll > (services.offsetTop - 600)) {
-            t6.to(services, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
-        }
-    }, [scroll, t1, t2, t3, t4, t5, t6]);
+    }, [width, scroll, t1, t2, t3, t4, t5, t6]);
 
 
     // Fundraising Products
@@ -265,6 +272,11 @@ export const Home = () => {
                                 to get started with your fundraising journey
                             </p>
                         </div>
+                        <div className={styles.pricingButtons}>
+                            <button type='button' className='btn-primary'>Basic</button>
+                            <button type='button' className={`btn-primary ${styles.active}`}>Plus</button>
+                            <button type='button' className='btn-primary'>Premium</button>
+                        </div>
                         <div className={styles.pricingItemWrapper}>
                             <div className={styles.pricingItem} ref={el => pricingItem1 = el}>
                                 <div className={styles.price}><span>$</span>999</div>
@@ -348,17 +360,17 @@ export const Home = () => {
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Premium</button>
                             </a>
-                        </div>
-                        <div className={styles.services} ref={el => services = el}>
-                            <h3>Services Pricing</h3>
-                            <div className={styles.servicesInner}>
-                                <ul className={styles.checked}>
-                                    <li className={styles.done}>Investor Introductions</li>
-                                    <li className={styles.done}>Data Room Preparation</li>
-                                    <li className={styles.done}>Technical Due Diligence Report</li>
-                                    <li className={styles.done}>Corporate Rebranding</li>
-                                </ul>
-                                <button type="button" className='btn-primary'>Contact Us</button>
+                            <div className={styles.services} ref={el => services = el}>
+                                <h3>Services Pricing</h3>
+                                <div className={styles.servicesInner}>
+                                    <ul className={styles.checked}>
+                                        <li className={styles.done}>Investor Introductions</li>
+                                        <li className={styles.done}>Technical Due Diligence Report</li>
+                                        <li className={styles.done}>Data Room Preparation</li>
+                                        <li className={styles.done}>Corporate Rebranding</li>
+                                    </ul>
+                                    <button type="button" className='btn-primary'>Contact Us</button>
+                                </div>
                             </div>
                         </div>
                         <a href='/' className={styles.link}>Explore Pricing Plans

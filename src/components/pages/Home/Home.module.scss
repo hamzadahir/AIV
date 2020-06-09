@@ -61,9 +61,10 @@
 }
 
 ul.checked {
+  margin-bottom: 2.75rem;
   li {
     font-size:    1.125rem;
-    line-height:  2.7;
+    line-height:  2.78;
     position:     relative;
     color:        #8c94a5;
     padding-left: 2.5rem;
@@ -97,9 +98,10 @@ ul.checked {
 }
 
 .link {
-  color:      $mainColor;
-  margin-top: 2rem;
-  display:    block;
+  color:          $mainColor;
+  margin-top:     2rem;
+  display:        block;
+  letter-spacing: -1px;
   &:active {
     opacity: .7;
     img {
@@ -174,14 +176,13 @@ ul.checked {
   }
   .overview {
     background-color: $lightGreen;
-    padding:          8rem 0;
+    padding:          7.5rem 0;
     .overviewInner {
       .overviewTitle {
+        margin-bottom: 3rem;
         p {
-          max-width:   30rem;
-          font-size:   1rem;
-          color:       #8c94a5;
-          line-height: 1.5625;
+          max-width: 30rem;
+          color:     #8c94a5;
         }
       }
     }
@@ -190,7 +191,7 @@ ul.checked {
       justify-content: space-between;
       align-items:     flex-start;
       flex-wrap:       wrap;
-      margin-top:      4rem;
+      margin-bottom:   1rem;
     }
     .overviewItem {
       background-color: $white;
@@ -223,7 +224,7 @@ ul.checked {
       .image {
         width:            6.25rem;
         height:           6.25rem;
-        margin-bottom:    2rem;
+        margin-bottom:    3rem;
         background-color: $mainColor;
         padding:          2rem;
         img {
@@ -255,11 +256,10 @@ ul.checked {
     padding: 9rem 0;
     .productsInner {
       .productsTitle {
+        margin-bottom: 5rem;
         p {
-          max-width:   29rem;
-          font-size:   1rem;
-          color:       #8c94a5;
-          line-height: 1.5625;
+          max-width: 29rem;
+          color:     #8c94a5;
         }
       }
     }
@@ -277,7 +277,6 @@ ul.checked {
       justify-content: space-between;
       align-items:     flex-start;
       flex-wrap:       wrap;
-      margin-top:      5rem;
     }
     .productsItem {
       background-color: $white;
@@ -325,11 +324,10 @@ ul.checked {
     padding: 8rem 0;
     .pricingInner {
       .pricingTitle {
+        margin-bottom: 5rem;
         p {
-          max-width:   30rem;
-          font-size:   1rem;
-          color:       #8c94a5;
-          line-height: 1.5625;
+          max-width: 30rem;
+          color:     #8c94a5;
         }
       }
     }
@@ -338,7 +336,9 @@ ul.checked {
       justify-content: space-between;
       align-items:     flex-start;
       flex-wrap:       wrap;
-      margin-top:      4rem;
+    }
+    .pricingButtons {
+      display: none;
     }
     .pricingItem {
       width:            32%;
@@ -396,22 +396,26 @@ ul.checked {
     }
   }
   .services {
-    padding:          2.5rem 3.75rem;
+    padding:          0.5rem 3.75rem;
     background-color: $lightGreen;
+    margin-bottom:    3rem;
+    h3 {
+      margin-bottom: 0;
+    }
     .servicesInner {
       display:         flex;
       flex-wrap:       wrap;
       justify-content: space-between;
       align-items:     flex-start;
       ul {
-        padding-top:     1.5rem;
+        padding-top:     1rem;
         width:           60%;
         display:         flex;
         flex-wrap:       wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items:     flex-start;
         li {
-          width: 48%;
+          width: 46%;
           &.done {
             &:before {
               background-color: $mainColor;
@@ -422,24 +426,44 @@ ul.checked {
           }
         }
       }
+      button {
+        width: 16rem;
+      }
     }
   }
 }
 
 @media screen and (max-width: 992px) {
+  ul.checked {
+    li {
+      font-size:   1rem;
+      line-height: 2.75;
+      &.done {
+        &:before {
+          width:  1.44rem;
+          height: 1.44rem;
+        }
+        &:after {
+          width:  0.5rem;
+          height: 0.5rem;
+        }
+      }
+    }
+  }
   .home {
     .accelerate {
-      padding: 2rem 0 5rem 0;
+      padding: 5rem 0 2rem 0;
       .accelerateInner {
         flex-direction: column;
         .image {
-          width: 100%;
+          max-width: 29rem;
+          width:     100%;
         }
       }
       .accelerateDescription {
         width:         100%;
         padding-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 7rem;
         text-align:    center;
         button {
           margin-right: 3.375rem;
@@ -447,32 +471,84 @@ ul.checked {
       }
     }
     .overview {
-      padding: 3rem 0;
+      padding: 6rem 0 4rem 0;
+      .overviewInner {
+        .overviewTitle {
+          margin-bottom: 3.5rem;
+        }
+      }
       .overviewItem {
         width:         32%;
         margin-bottom: 1rem;
+        .image {
+          width:         5rem;
+          height:        5rem;
+          padding:       1.5rem;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-size:   1rem;
+          line-height: 1.625;
+        }
       }
       .overviewItem:not(:last-child) {
         margin-right: 0;
       }
     }
     .products {
-      padding: 3rem 0;
+      padding: 5.75rem 0;
+      .productsInner {
+        .productsTitle {
+          margin-bottom: 3.75rem;
+        }
+      }
       .productsItem {
-        width: 48%;
+        width:  48%;
+        height: 3.75rem;
+        > div {
+          width:   3.5rem;
+          padding: 1rem;
+        }
+        p {
+          font-size:   1rem;
+          line-height: 1.375;
+        }
       }
     }
     .pricing {
+      padding: 7rem 0 4.4rem 0;
+      .pricingInner {
+        .pricingTitle {
+          margin-bottom: 4rem;
+        }
+      }
       .pricingItem {
-        width: 48%;
+        width:         48%;
+        padding:       2.25rem 2rem;
+        margin-bottom: 2.75rem;
+        .price {
+          margin-bottom: 2rem;
+        }
+        p {
+          font-size:   0.875rem;
+          line-height: 1.57;
+        }
+        &:nth-child(3) {
+          margin-bottom: 0;
+        }
       }
     }
     .services {
-      padding: 1rem 2rem;
+      padding: 2.5rem 0.5rem 2.5rem 2.25rem;
+      width:   48%;
       .servicesInner {
+        padding-top: 4rem;
         ul {
           width:         100%;
           margin-bottom: 2rem;
+          li {
+            width: 100%;
+          }
         }
       }
     }
@@ -480,30 +556,93 @@ ul.checked {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
+  ul.checked {
+    margin-bottom: 1.25rem;
+  }
   .home {
+    .accelerate {
+      .accelerateDescription {
+        margin-bottom: 4rem;
+      }
+    }
     .overview {
+      padding: 4.5rem 0 2rem 0;
+      .overviewInner {
+        .overviewTitle {
+          margin-bottom: 4rem;
+        }
+      }
       .overviewItem {
         width:         100%;
         margin-bottom: 1rem;
+        padding:       2rem 1rem 1rem 2rem;
+        p {
+          max-width: 100%;
+        }
+        .image {
+          width:         3.75rem;
+          height:        3.75rem;
+          margin-bottom: 1.25rem;
+          padding:       1rem;
+        }
       }
     }
     .products {
+      padding: 4rem 0;
+      .productsInner {
+        .productsTitle {
+          margin-bottom: 2.25rem;
+        }
+      }
       .pagination {
         display: flex;
       }
       .productsItem {
         width: 100%;
+        p {
+          font-size:   0.9375rem;
+          line-height: 1.33;
+        }
       }
     }
     .pricing {
+      padding: 5rem 0 3.75rem 0;
+      .pricingButtons {
+        display:       flex;
+        width:         100%;
+        margin-bottom: 2.25rem;
+        button {
+          width:            33%;
+          background-color: $lightGreen;
+          border:           0.0625rem solid transparent;
+          color:            #1d343c;
+          &.active {
+            background-color: $mainColor;
+            color:            $white;
+          }
+        }
+      }
+      .pricingInner {
+        .pricingTitle {
+          margin-bottom: 3rem;
+          h2 {
+            max-width: 12rem;
+          }
+        }
+      }
       .pricingItem {
-        width: 100%;
+        width:   100%;
+        padding: 2.5rem 1rem 1.25rem 1rem;
       }
     }
     .services {
+      width:         100%;
+      padding:       2.5rem 0.5rem 1.5rem 1.25rem;
+      margin-bottom: 0;
       .servicesInner {
         ul {
+          margin-bottom: 0;
           li {
             width: 100%;
           }
@@ -514,62 +653,63 @@ ul.checked {
 }
 
 // animations
-.accelerate {
-  .image {
-    opacity:   0;
-    transform: translate(100%, 0);
+@media screen and (min-width: 767px) {
+  .accelerate {
+    .image {
+      opacity:   0;
+      transform: translate(100%, 0);
+    }
+    .accelerateDescription {
+      opacity:   0;
+      transform: translate(0, 100%);
+    }
   }
-  .accelerateDescription {
-    opacity:   0;
-    transform: translate(0, 100%);
-  }
-}
 
-.overview {
-  .overviewTitle {
-    opacity:   0;
-    transform: translate(0, 100%);
+  .overview {
+    .overviewTitle {
+      opacity:   0;
+      transform: translate(0, 100%);
+    }
+    .overviewItemWrapper {
+      opacity:   0;
+      transform: translate(0%, 50%);
+    }
   }
-  .overviewItemWrapper {
-    opacity:   0;
-    transform: translate(0%, 50%);
-  }
-}
 
-.products {
-  .productsTitle {
-    opacity:   0;
-    transform: translate(0, 100%);
+  .products {
+    .productsTitle {
+      opacity:   0;
+      transform: translate(0, 100%);
+    }
+    .productsItemWrapper {
+      opacity:   0;
+      transform: translate(0%, 50%);
+    }
   }
-  .productsItemWrapper {
-    opacity:   0;
-    transform: translate(0%, 50%);
-  }
-}
 
-.pricing {
-  overflow: hidden;
-  .pricingTitle {
+  .pricing {
+    overflow: hidden;
+    .pricingTitle {
+      opacity:   0;
+      transform: translate(0, 100%);
+    }
+    .pricingItem {
+      opacity: 0;
+    }
+    .pricingItem:nth-child(1) {
+      transform: translate(-100%, 0);
+    }
+    .pricingItem:nth-child(2) {
+      transform: translate(0%, 30%);
+    }
+    .pricingItem:nth-child(3) {
+      transform: translate(100%, 0);
+    }
+  }
+  .services {
     opacity:   0;
-    transform: translate(0, 100%);
+    transform: translate(-500px, 0);
   }
-  .pricingItem {
-    opacity: 0;
-  }
-  .pricingItem:nth-child(1) {
-    transform: translate(-100%, 0);
-  }
-  .pricingItem:nth-child(2) {
-    transform: translate(0%, 30%);
-  }
-  .pricingItem:nth-child(3) {
-    transform: translate(100%, 0);
-  }
-}
-
-.services {
-  opacity:   0;
-  transform: translate(-500px, 0);
 }
 
 @keyframes cloud1Animation {
