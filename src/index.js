@@ -2,7 +2,7 @@
 import React from 'react';
 
 //library
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 // components
@@ -13,10 +13,10 @@ import './index.scss';
 
 
 ReactDOM.render(
-    <Router>
+    <BrowserRouter>
         <React.StrictMode>
             <App />
         </React.StrictMode>
-    </Router>,
+    </BrowserRouter>,
     document.getElementById('root')
 );
