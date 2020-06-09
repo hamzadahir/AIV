@@ -1,5 +1,5 @@
 // core
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 
 // library
@@ -78,6 +78,9 @@ export const Home = () => {
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
+    const [price, setPrice] = useState('Basic');
+    const [products, setProducts] = useState(1);
+
     // animations
     gsap.registerPlugin();
     const t1 = new TimelineLite();
@@ -143,26 +146,41 @@ export const Home = () => {
 
 
     // Fundraising Products
-
+    const prevProduct = () => {
+        if (products > 1) {
+            setProducts(prev => prev - 1)
+        }
+    };
+    const nextProduct = () => {
+        if (products < 3) {
+            setProducts(prev => prev + 1)
+        }
+    };
     useEffect(() => {
         const single = productsItem.children;
-
         if (width < 567) {
             for (let i = 0; i < single.length; i++) {
-                if (i >= 5) {
-                    single[i].style.display = 'none';
+                single[i].style.display = 'none';
+                if (products === 1) {
+                    for (let k = 0; k <= 5; k++) {
+                        single[k].style.display = 'flex';
+                    }
+                } else if (products === 2) {
+                    for (let k = 5; k <= 10; k++) {
+                        single[k].style.display = 'flex';
+                    }
+                } else {
+                    for (let k = 10; k <= 14; k++) {
+                        single[k].style.display = 'flex';
+                    }
                 }
             }
         } else {
             for (let i = 0; i < single.length; i++) {
-                if (i >= 5) {
-                    single[i].style.display = 'flex';
-                }
+                single[i].style.display = 'flex';
             }
-
         }
-    }, [width]);
-
+    }, [width, products]);
 
     return (
         <main className={styles.home}>
@@ -229,9 +247,10 @@ export const Home = () => {
                         </a>
                     </div>
                     <div className={styles.pagination}>
-                        <button className='btn-primary--prev' />
-                        <button type='button' className='btn-primary'>1/3</button>
-                        <button className='btn-primary--next' />
+                        <button className='btn-primary--prev' onClick={() => prevProduct()} />
+                        <button type='button' className='btn-primary'>{products} / 3
+                        </button>
+                        <button className='btn-primary--next' onClick={() => nextProduct()} />
                     </div>
                     <a href='/' className={styles.link}>Explore Fundraising Products
                         <img src={arrow} alt='' />
@@ -273,12 +292,23 @@ export const Home = () => {
                             </p>
                         </div>
                         <div className={styles.pricingButtons}>
-                            <button type='button' className='btn-primary'>Basic</button>
-                            <button type='button' className={`btn-primary ${styles.active}`}>Plus</button>
-                            <button type='button' className='btn-primary'>Premium</button>
+                            <button type='button'
+                                    className={`btn-primary  ${price === 'Basic' && styles.active}`}
+                                    onClick={() => setPrice('Basic')}>Basic
+                            </button>
+                            <button type='button'
+                                    className={`btn-primary  ${price === 'Plus' && styles.active}`}
+                                    onClick={() => setPrice('Plus')}>Plus
+                            </button>
+                            <button type='button'
+                                    className={`btn-primary  ${price === 'Premium' && styles.active}`}
+                                    onClick={() => setPrice('Premium')}>Premium
+                            </button>
                         </div>
                         <div className={styles.pricingItemWrapper}>
-                            <div className={styles.pricingItem} ref={el => pricingItem1 = el}>
+                            <a href='/'
+                               className={[styles.pricingItem + ' ' + (price === 'Basic' && 'd-block')]}
+                               ref={el => pricingItem1 = el}>
                                 <div className={styles.price}><span>$</span>999</div>
                                 <h4>Basic</h4>
                                 <p>
@@ -304,8 +334,10 @@ export const Home = () => {
                                     <li>Fund Usage</li>
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Basic</button>
-                            </div>
-                            <a href='/' className={styles.pricingItem} ref={el => pricingItem2 = el}>
+                            </a>
+                            <a href='/'
+                               ref={el => pricingItem2 = el}
+                               className={[styles.pricingItem + ' ' + (price === 'Plus' && 'd-block')]}>
                                 <div className={styles.price}><span>$</span>2,999</div>
                                 <h4>Plus</h4>
                                 <p>
@@ -332,8 +364,9 @@ export const Home = () => {
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Plus</button>
                             </a>
-                            <a href='/' className={[styles.pricingItem + ' ' + styles.highLighted]}
-                               ref={el => pricingItem3 = el}>
+                            <a href='/'
+                               ref={el => pricingItem3 = el}
+                               className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Premium' && 'd-block')]}>
                                 <div className={styles.price}><span>$</span>4,999</div>
                                 <h4>Premium</h4>
                                 <p>
