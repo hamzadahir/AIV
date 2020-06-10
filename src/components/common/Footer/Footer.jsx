@@ -14,7 +14,8 @@ export const Footer = () => {
                     <div>
                         <h2>Ready? Get Started</h2>
                         <p>
-                            AIV is ready to help you accelerate your fundraising journey. Explore our products and services and come partner with us.
+                            AIV is ready to help you accelerate your fundraising journey. Explore our products and
+                            services and come partner with us.
                         </p>
                     </div>
                     <div className={styles.topSectionButtons}>
@@ -30,23 +31,31 @@ export const Footer = () => {
                         <li><a href='mailto:Info@aiv.llc'>Info@aiv.llc</a></li>
                     </ul>
                     <ul>
-                        <li className={styles.bottomSectionTitle}>OVERVIEW</li>
-                        <li><a href='/'>Data</a></li>
-                        <li><a href='/'>Taxonomy</a></li>
-                        <li><a href='/'>NLP Models</a></li>
-                        <li><a href='/'>Deployment</a></li>
-                        <li><a href='/'>Integrations</a></li>
+                        <li className={styles.bottomSectionTitle}>PRODUCTS</li>
+                        <li><a href='/'>Pitch Deck</a></li>
+                        <li><a href='/'>Data Room Checklist</a></li>
+                        <li><a href='/'>Convertible Notes</a></li>
+                        <li><a href='/'>Investor Update</a></li>
+                        <li><a href='/'>Investor CRM</a></li>
                     </ul>
                     <ul>
-                        <li className={styles.bottomSectionTitle}>PRODUCTS</li>
-                        <li><a href='/'>Financial Markets</a></li>
-                        <li><a href='/'>Banking</a></li>
-                        <li><a href='/'>Insurance</a></li>
-                        <li><a href='/'>Technology</a></li>
-                        <li><a href='/'>Government</a></li>
+                        <li className={styles.bottomSectionTitle} />
+                        <li><a href='/'>Customer Accounts</a></li>
+                        <li><a href='/'>Market Size and GTM</a></li>
+                        <li><a href='/'>Cap Table Scenarios</a></li>
+                        <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                        <li><a href='/'>Organizational Chart</a></li>
                     </ul>
                     <ul>
-                        <li className={styles.bottomSectionTitle}>PRODUCTS</li>
+                        <li className={styles.bottomSectionTitle} />
+                        <li><a href='/'>Historical Financials</a></li>
+                        <li><a href='/'>Financial KPIs</a></li>
+                        <li><a href='/'>Financial Forecast</a></li>
+                        <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                        <li><a href='/'>Fund Usage</a></li>
+                    </ul>
+                    <ul>
+                        <li className={styles.bottomSectionTitle}>SERVICES</li>
                         <li><a href='/'>Company</a></li>
                         <li><a href='/'>Customers</a></li>
                         <li><a href='/'>Careers</a></li>

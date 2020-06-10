@@ -19,9 +19,9 @@ import rebranding from '../../../assets/images/home/rebranding.svg'
 const menus = [
     {url: routes.home, label: 'Home',},
     {url: routes.products, label: 'Products', subMenu: true},
-    {url: routes.home, label: 'Services'},
-    {url: routes.home, label: 'Pricing'},
-    {url: routes.home, label: 'Contact'},
+    {url: '/', label: 'Services'},
+    {url: '/', label: 'Pricing'},
+    {url: '/', label: 'Contact'},
 ];
 
 let classname;
@@ -57,10 +57,14 @@ export const Header = () => {
                         <ul>
                             {menus.map(item =>
                                 <li key={item.label}>
-                                    <a href={item.url} className={styles.link}>{item.label}</a>
+                                    <a href={item.url}
+                                       className={`${styles.link} ${window.location.pathname === item.url ? styles.active : ''}`}>{item.label}</a>
                                     {item.subMenu &&
                                     <div className={styles.subMenuWrapper}>
                                         <ul className={styles.subMenu}>
+                                            <li className={styles.subMenuTitle}>
+                                                <h5>Fundraising Services</h5>
+                                            </li>
                                             <li>
                                                 <a href='/'>
                                                     <div className={styles.image}><img src={introductions} alt='' />

@@ -54,6 +54,9 @@
               opacity: .7;
               color:   $mainColor;
             }
+            &.active {
+              color: $mainColor;
+            }
           }
           &:nth-child(2) .link:before, &:nth-child(3) .link:before {
             content:          '';
@@ -66,10 +69,19 @@
             background-color: transparent;
             border-bottom:    1px solid $mainColor;
             border-right:     1px solid $mainColor;
+            transition:       .2s linear;
           }
         }
-        li:hover .subMenuWrapper {
-          display: flex;
+        li:hover {
+          .link:before {
+            transform: rotate(-135deg);
+          }
+          > a {
+            color: $mainColor;
+          }
+          .subMenuWrapper {
+            display: flex;
+          }
         }
       }
       .subMenuWrapper {
@@ -82,6 +94,7 @@
         padding-top:      2rem;
         background-color: transparent;
         display:          none;
+        flex-direction:   column;
         .subMenu {
           box-shadow:       0 28px 45px rgba(0, 0, 0, 0.16);
           background-color: $white;
@@ -100,6 +113,22 @@
             border-top:   8px solid $lightGreen;
             transform:    translate(-100%, -40%) rotate(-45deg);
           }
+          .subMenuTitle {
+            position: relative;
+            &:before {
+              content:          '';
+              position:         absolute;
+              height:           1px;
+              width:            calc(100% - 2rem);
+              background-color: #e4e8eb;
+              border-bottom:    0;
+              right:            0;
+              bottom:           0;
+            }
+            h5 {
+              padding: 1.25rem 0;
+            }
+          }
           .image {
             width:            3.75rem;
             height:           3.75rem;
@@ -111,7 +140,7 @@
             justify-content:  center;
           }
           li {
-            padding:         1.25rem;
+            padding:         0.5rem 2rem;
             display:         flex;
             align-items:     center;
             justify-content: flex-start;
@@ -122,11 +151,13 @@
             a {
               display:     flex;
               align-items: center;
+              padding:     0.625rem;
             }
             &:hover {
-              background-color: $lightGreen;
               a {
-                color: $mainColor;
+                background-color: $lightGreen;
+                color:            $mainColor;
+                width:            100%;
               }
               .image {
                 background-color: $mainColor;
@@ -284,9 +315,24 @@
 
 @media screen and (max-width: 767.98px) {
   .header {
-    .logo {
-      img {
-        width: 5rem;
+    .logo img {
+      width: 5rem;
+    }
+    .menuWrapper {
+      .menu ul {
+        .subMenuWrapper {
+          .subMenu {
+            a {
+              font-size:    0.875rem;
+              line-height:  1.35;
+              padding-left: 0;
+            }
+            .image {
+              width:  3.125rem;
+              height: 3.125rem;
+            }
+          }
+        }
       }
     }
     .burgerMenu {

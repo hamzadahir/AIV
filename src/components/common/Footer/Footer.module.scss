@@ -49,7 +49,7 @@
     align-items:     flex-start;
     ul {
       li {
-        opacity:     .7;
+        opacity:     .5;
         font-size:   0.875rem;
         line-height: 2.14;
         &.logo {
@@ -61,10 +61,11 @@
           font-size:      0.875rem;
           font-family:    Avenir, sans-serif;
           font-weight:    500;
-          line-height:    2.14;
+          line-height:    1.78;
           margin-bottom:  1rem;
           text-transform: uppercase;
           opacity:        1;
+          height: 1.5rem;
         }
         a {
           color:       $white;

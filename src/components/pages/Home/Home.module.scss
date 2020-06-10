@@ -218,7 +218,7 @@ ul.checked {
         img {
           object-fit: contain;
           height:     100%;
-          filter: brightness(100);
+          filter:     brightness(100);
         }
       }
       p {
@@ -256,8 +256,8 @@ ul.checked {
       display: none;
       button {
         width: 100%;
-        &:hover, &:active {
-          top: 0;
+        &:hover:before, &:active:before {
+          left: 110%;
         }
       }
     }
@@ -626,9 +626,12 @@ ul.checked {
           background-color: $lightGreen;
           border:           0.0625rem solid transparent;
           color:            #1d343c;
-          &.active {
+          &.active, &:hover, &:active {
             background-color: $mainColor;
             color:            $white;
+            &:before {
+              left:             110%;
+            }
           }
         }
       }
