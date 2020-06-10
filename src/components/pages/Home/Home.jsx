@@ -154,19 +154,19 @@ export const Home = () => {
     };
     useEffect(() => {
         const single = productsItem.children;
-        if (width < 567) {
+        if (width < 768) {
             for (let i = 0; i < single.length; i++) {
                 single[i].style.display = 'none';
                 if (products === 1) {
-                    for (let k = 0; k <= 5; k++) {
+                    for (let k = 0; k < 5; k++) {
                         single[k].style.display = 'flex';
                     }
                 } else if (products === 2) {
-                    for (let k = 5; k <= 10; k++) {
+                    for (let k = 5; k < 10; k++) {
                         single[k].style.display = 'flex';
                     }
                 } else {
-                    for (let k = 10; k <= 14; k++) {
+                    for (let k = 10; k <15; k++) {
                         single[k].style.display = 'flex';
                     }
                 }
@@ -187,9 +187,10 @@ export const Home = () => {
                             <h1>Accelerate
                                 <span className='green'>Fundraising</span>
                             </h1>
-                            <button type="button" className="btn-primary">Explore
-                                Products
-                            </button>
+                            <a className={styles.accelerateButton}>
+                                <button type="button" className="btn-primary">Explore Products</button>
+                                <button className='btn-primary--next' />
+                            </a>
                         </div>
                         <div className={styles.image} ref={el => bannerImage = el}>
                             <img className={styles.cloud1} src={cloud1} alt='' />

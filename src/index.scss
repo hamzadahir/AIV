@@ -2,9 +2,12 @@
 
 @media (any-hover: hover) {
   button {
-    &:hover, &:active {
-      top: 3px;
+    &:hover:before {
+      left: 0;
     }
+  }
+  .btn-second:hover {
+    color: $white;
   }
 }
 
@@ -94,7 +97,8 @@ p {
 
 
 hr {
-  background: #D8D8D8;
+  background: $white;
+  opacity:    .1;
   height:     1px;
   border:     0;
   margin:     2.5rem 0;
@@ -105,24 +109,68 @@ hr {
 }
 
 .btn-primary {
+  position:   relative;
+  z-index:    1;
+  overflow:   hidden;
   background: $mainColor;
-  border:     0.0625rem solid $mainColor;
+  border:     none;
   color:      $white;
   padding:    1rem;
   width:      11rem;
-  position:   relative;
-  transition: .3s linear;
-  &:active {
+  transition: 0.4s ease-out;
+  height:     3.5rem;
+  &:before {
+    content:          '';
+    position:         absolute;
+    z-index:          -1;
+    width:            100%;
+    height:           100%;
+    left:             110%;
+    top:              0;
+    background-color: $darkGreen;
+    transition:       0.4s ease-out;
+  }
+  &:active:before {
     opacity: .7;
-    top:     3px;
+    left:    0;
+  }
+}
+
+.btn-second {
+  position:   relative;
+  z-index:    1;
+  overflow:   hidden;
+  background: transparent;
+  border:     0.0625rem solid $yellow;
+  color:      $yellow;
+  padding:    1rem;
+  width:      13.3125rem;
+  transition: .3s linear;
+  &:before {
+    content:          '';
+    position:         absolute;
+    z-index:          -1;
+    width:            100%;
+    height:           100%;
+    left:             110%;
+    top:              0;
+    background-color: $yellow;
+    transition:       0.4s ease-out;
+  }
+  &:active {
+    color: $white;
+    &:before {
+      opacity: .7;
+      left:    0;
+    }
   }
 }
 
 .btn-primary--prev, .btn-primary--next {
-  width:            3.75rem;
-  max-width:        3.75rem;
-  height:           3.75rem;
-  background-color: #299767;
+  width:            3.5rem;
+  max-width:        3.5rem;
+  height:           3.5rem;
+  background-color: $darkGreen;
   border:           none;
   box-shadow:       none;
   &:hover, &:active {
@@ -141,20 +189,6 @@ hr {
 
 .btn-primary--prev:before {
   transform: rotate(-180deg);
-}
-
-.btn-second {
-  background: transparent;
-  border:     0.0625rem solid $yellow;
-  color:      $yellow;
-  padding:    1rem;
-  width:      13.3125rem;
-  position:   relative;
-  transition: .3s linear;
-  &:active {
-    opacity: .7;
-    top:     3px;
-  }
 }
 
 .no-scroll {

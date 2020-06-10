@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="41.72" height="41.146" viewBox="0 0 41.72 41.146">
   <g id="check-circle" transform="translate(1.504 0.629)">
-    <path id="Path" d="M38.1,17.307v1.752A19.048,19.048,0,1,1,26.8,1.65" transform="translate(0 0.893)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
-    <path id="Path-2" data-name="Path" stroke="#fff" d="M24.762,0,5.714,19.067,0,13.352" fill="none" transform="translate(13.333 4.714)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" opacity="0.4"/>
+    <path id="Path" d="M38.1,17.307v1.752A19.048,19.048,0,1,1,26.8,1.65" transform="translate(0 0.893)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" stroke="#30b179" d="M24.762,0,5.714,19.067,0,13.352" fill="none" transform="translate(13.333 4.714)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" opacity="0.4"/>
   </g>
 </svg>

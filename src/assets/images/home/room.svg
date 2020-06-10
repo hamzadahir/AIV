@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="38.1" height="42" viewBox="0 0 38.1 42">
   <g id="home" transform="translate(1.5 1.5)">
-    <path id="Path" d="M0,13.65,17.55,0,35.1,13.65V35.1A3.9,3.9,0,0,1,31.2,39H3.9A3.9,3.9,0,0,1,0,35.1Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
-    <path id="Path-2" data-name="Path" stroke="#fff" d="M0,15V0H10V15" fill="none" transform="translate(12.55 24)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" opacity="0.4"/>
+    <path id="Path" d="M0,13.65,17.55,0,35.1,13.65V35.1A3.9,3.9,0,0,1,31.2,39H3.9A3.9,3.9,0,0,1,0,35.1Z" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" stroke="#30b179" d="M0,15V0H10V15" fill="none" transform="translate(12.55 24)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" opacity="0.4"/>
   </g>
 </svg>

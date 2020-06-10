@@ -59,32 +59,35 @@ export const Header = () => {
                                 <li key={item.label}>
                                     <a href={item.url} className={styles.link}>{item.label}</a>
                                     {item.subMenu &&
-                                    <ul className={styles.subMenu}>
-                                        <li>
-                                            <a href='/'>
-                                                <div className={styles.image}><img src={introductions} alt='' /></div>
-                                                Investor Introductions
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='/'>
-                                                <div className={styles.image}><img src={room} alt='' /></div>
-                                                Data Room Preparation
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='/'>
-                                                <div className={styles.image}><img src={report} alt='' /></div>
-                                                Technical Due Diligence Report
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='/'>
-                                                <div className={styles.image}><img src={rebranding} alt='' /></div>
-                                                Corporate Rebranding
-                                            </a>
-                                        </li>
-                                    </ul>}
+                                    <div className={styles.subMenuWrapper}>
+                                        <ul className={styles.subMenu}>
+                                            <li>
+                                                <a href='/'>
+                                                    <div className={styles.image}><img src={introductions} alt='' />
+                                                    </div>
+                                                    Investor Introductions
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href='/'>
+                                                    <div className={styles.image}><img src={room} alt='' /></div>
+                                                    Data Room Preparation
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href='/'>
+                                                    <div className={styles.image}><img src={report} alt='' /></div>
+                                                    Technical Due Diligence Report
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href='/'>
+                                                    <div className={styles.image}><img src={rebranding} alt='' /></div>
+                                                    Corporate Rebranding
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>}
                                 </li>)}
                         </ul>
                     </menu>
