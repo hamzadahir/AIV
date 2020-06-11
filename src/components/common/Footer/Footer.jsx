@@ -1,12 +1,16 @@
 // core
-import React from 'react';
+import React  from 'react';
 
+// components
+import { useWindowSize } from "../../../hooks";
 
 // assets
 import styles from './Footer.module.scss';
 import logo from '../../../assets/images/logo-white.svg'
 
 export const Footer = () => {
+    const [width] = useWindowSize();
+
     return (
         <footer className={styles.footer}>
             <div className='container'>
@@ -32,48 +36,71 @@ export const Footer = () => {
                     </ul>
                     <ul>
                         <li className={styles.bottomSectionTitle}>PRODUCTS</li>
-                        <li><a href='/'>Pitch Deck</a></li>
-                        <li><a href='/'>Data Room Checklist</a></li>
-                        <li><a href='/'>Convertible Notes</a></li>
-                        <li><a href='/'>Investor Update</a></li>
-                        <li><a href='/'>Investor CRM</a></li>
+                        <ul className={styles.listWrapper1}>
+                            <li><a href='/'>Pitch Deck</a></li>
+                            <li><a href='/'>Data Room Checklist</a></li>
+                            <li><a href='/'>Convertible Notes</a></li>
+                            <li><a href='/'>Investor Update</a></li>
+                            <li><a href='/'>Investor CRM</a></li>
+                            {width < 991.98 &&
+                            <>
+                                <li><a href='/'>Customer Accounts</a></li>
+                                <li><a href='/'>Market Size and GTM</a></li>
+                                <li><a href='/'>Cap Table Scenarios</a></li>
+                                <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                                <li><a href='/'>Organizational Chart</a></li>
+                                <li><a href='/'>Historical Financials</a></li>
+                                <li><a href='/'>Financial KPIs</a></li>
+                                <li><a href='/'>Financial Forecast</a></li>
+                                <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                                <li><a href='/'>Fund Usage</a></li>
+                            </>
+                            }
+                        </ul>
                     </ul>
-                    <ul>
-                        <li className={styles.bottomSectionTitle} />
-                        <li><a href='/'>Customer Accounts</a></li>
-                        <li><a href='/'>Market Size and GTM</a></li>
-                        <li><a href='/'>Cap Table Scenarios</a></li>
-                        <li><a href='/'>Tech Due Diligence Q&A</a></li>
-                        <li><a href='/'>Organizational Chart</a></li>
-                    </ul>
-                    <ul>
-                        <li className={styles.bottomSectionTitle} />
-                        <li><a href='/'>Historical Financials</a></li>
-                        <li><a href='/'>Financial KPIs</a></li>
-                        <li><a href='/'>Financial Forecast</a></li>
-                        <li><a href='/'>Tech Due Diligence Q&A</a></li>
-                        <li><a href='/'>Fund Usage</a></li>
-                    </ul>
-                    <ul>
-                        <li className={styles.bottomSectionTitle}>SERVICES</li>
-                        <li><a href='/'>Company</a></li>
-                        <li><a href='/'>Customers</a></li>
-                        <li><a href='/'>Careers</a></li>
-                    </ul>
-                    <ul>
-                        <li className={styles.bottomSectionTitle}>CONTACT US</li>
-                        <li><a href='/'>Sales</a></li>
-                        <li><a href='/'>Media</a></li>
-                        <li><a href='/'>Investment</a></li>
-                        <li><a href='/'>Partnership</a></li>
-                    </ul>
+
+                    {width > 991.98 &&
+                    <>
+                        <ul>
+                            <li className={styles.bottomSectionTitle} />
+                            <li><a href='/'>Customer Accounts</a></li>
+                            <li><a href='/'>Market Size and GTM</a></li>
+                            <li><a href='/'>Cap Table Scenarios</a></li>
+                            <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                            <li><a href='/'>Organizational Chart</a></li>
+                        </ul>
+                        <ul>
+                            <li className={styles.bottomSectionTitle} />
+                            <li><a href='/'>Historical Financials</a></li>
+                            <li><a href='/'>Financial KPIs</a></li>
+                            <li><a href='/'>Financial Forecast</a></li>
+                            <li><a href='/'>Tech Due Diligence Q&A</a></li>
+                            <li><a href='/'>Fund Usage</a></li>
+                        </ul>
+                    </>
+                    }
+                    <div className={styles.listWrapper2}>
+                        <ul>
+                            <li className={styles.bottomSectionTitle}>SERVICES</li>
+                            <li><a href='/'>Company</a></li>
+                            <li><a href='/'>Customers</a></li>
+                            <li><a href='/'>Careers</a></li>
+                        </ul>
+                        <ul>
+                            <li className={styles.bottomSectionTitle}>CONTACT US</li>
+                            <li><a href='/'>Sales</a></li>
+                            <li><a href='/'>Media</a></li>
+                            <li><a href='/'>Investment</a></li>
+                            <li><a href='/'>Partnership</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div className={styles.copyright}>
                     <p>Copyright © 2014 – 2019 Applied Innovation Ventures</p>
                     <p>
-                        <span><a href='/'>TERMS & CONDITIONS</a></span>
+                        <span><a href='/'>Terms & Conditions</a></span>
                         <span className={styles.line}>/</span>
-                        <span><a href='/'>PRIVACY POLICY</a></span>
+                        <span><a href='/'>Privacy Policy</a></span>
                     </p>
                 </div>
             </div>
