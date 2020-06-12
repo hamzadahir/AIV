@@ -7,6 +7,7 @@ import { gsap, TimelineLite, Power3 } from 'gsap'
 
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
+import { Pricing } from "../../common";
 
 // assets
 import styles from './Home.module.scss';
@@ -83,10 +84,6 @@ export const Home = () => {
 
     // animations
     gsap.registerPlugin();
-    const t1 = new TimelineLite();
-    let sectionOne = useRef(null);
-    let bannerImage = useRef(null);
-    let bannerDescription = useRef(null);
     const t2 = new TimelineLite();
     let sectionTwo = useRef(null);
     let overviewTitle = useRef(null);
@@ -109,15 +106,6 @@ export const Home = () => {
 
     useEffect(() => {
         if (width > 767) {
-            if (scroll > (sectionOne.offsetTop - 300)) {
-                t1.to(bannerImage, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
-                    .to(bannerDescription, {
-                        opacity: 1,
-                        y: 0,
-                        ease: Power3.easeOut,
-                        duration: duration
-                    }, `-=${duration}`);
-            }
             if (scroll > (sectionTwo.offsetTop - 300)) {
                 t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
                     .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
@@ -138,7 +126,7 @@ export const Home = () => {
                 t6.to(services, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
             }
         }
-    }, [width, scroll, t1, t2, t3, t4, t5, t6]);
+    }, [width, scroll, t2, t3, t4, t5, t6]);
 
 
     // Fundraising Products
@@ -166,7 +154,7 @@ export const Home = () => {
                         single[k].style.display = 'flex';
                     }
                 } else {
-                    for (let k = 10; k <15; k++) {
+                    for (let k = 10; k < 15; k++) {
                         single[k].style.display = 'flex';
                     }
                 }
@@ -180,26 +168,12 @@ export const Home = () => {
 
     return (
         <main className={styles.home}>
-            <section className={styles.accelerate} ref={el => sectionOne = el}>
-                <div className='container'>
-                    <div className={styles.accelerateInner}>
-                        <div className={styles.accelerateDescription} ref={el => bannerDescription = el}>
-                            <h1>Accelerate
-                                <span className='green'>Fundraising</span>
-                            </h1>
-                            <a className={styles.accelerateButton}>
-                                <button type="button" className="btn-primary">Explore Products</button>
-                                <button className='btn-primary--next' />
-                            </a>
-                        </div>
-                        <div className={styles.image} ref={el => bannerImage = el}>
-                            <img className={styles.cloud1} src={cloud1} alt='' />
-                            <img className={styles.cloud2} src={cloud2} alt='' />
-                            <img src={banner} alt='' />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Pricing
+                banner={[banner, cloud1, cloud2]}
+                title={['Accelerate', 'Fundraising']}
+                subTitle={true}
+                description={false}
+                link={{url: '/', label: 'Explore Products'}} />
             <section className={styles.overview} ref={el => sectionTwo = el}>
                 <div className='container'>
                     <div className={styles.overviewInner}>

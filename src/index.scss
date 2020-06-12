@@ -211,8 +211,12 @@ hr {
   padding:   0 3rem;
 }
 
-.green {
+.greenTitle {
   color:       $mainColor;
+  font-weight: 500;
+  display:     block;
+}
+.normalTitle {
   font-weight: 500;
   display:     block;
 }
