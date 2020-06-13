@@ -1,5 +1,5 @@
 // core
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 
 // library
@@ -11,11 +11,89 @@ import { Pricing } from "../../common";
 
 // assets
 import styles from './Products.module.scss';
-import deck from '../../../assets/images/home/products/deck.svg'
-import powerPoint from '../../../assets/images/products/powerPoint.png'
+import { Panel } from "./components/Panel/Panel";
+import deck from "../../../assets/images/home/products/deck.svg";
+import accounts from "../../../assets/images/home/products/accounts.svg";
+import chart from "../../../assets/images/home/products/chart.svg";
+import powerPoint from "../../../assets/images/products/powerPoint.svg";
+
+const tabs = [
+    'Pitch Deck',
+    'Financials KPIs',
+    'Financials Forecast',
+    'Cap Table Scenarios',
+    'Convertible Notes',
+    'Investor Updates',
+    'Investor CRM',
+    'Tech Due Diligence Q&A',
+    'Company Org Chart',
+    'Data Room Checklist'
+];
+
+const data = [
+    {
+        header: {
+            image: deck,
+            title: 'Pitch Deck',
+            description: 'AIV provides a pre-built investor-ready pitch deck template for you to customize and start your fundraising journey.'
+        },
+        item: {
+            url: '/',
+            title: 'Title',
+            description: ['Use the title slide to gain investors attention and get a kick start into your pitch!'],
+        },
+        info: {
+            url: '/',
+            image: powerPoint,
+            title: ['Start building your Pitch Deck today!'],
+            description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'],
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: accounts,
+            title: 'Financials KPIs',
+            description: 'AIV provides pre-built investor-ready financial KPIs templates to tell your growth story to investors.'
+        },
+        item: {
+            url: '/',
+            title: 'Title',
+            description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
+        },
+        info: {
+            url: '/',
+            image: powerPoint,
+            title: 'Start building your Pitch Deck today!',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: chart,
+            title: 'Financials Forecast',
+            description: 'AIV provides pre-built investor-ready financial forecast templates to explain how you will grow your business.'
+        },
+        item: {
+            url: '/',
+            title: 'Title',
+            description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
+        },
+        info: {
+            url: '/',
+            image: powerPoint,
+            title: 'Start building your Pitch Deck today!',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            link: '/'
+        },
+    }
+
+];
 
 const duration = 2;
 export const Products = () => {
+    const [tab, seTab] = useState('Pitch Deck');
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
@@ -41,6 +119,7 @@ export const Products = () => {
         }
     }, [width, scroll, t1]);
 
+
     return (
         <main className={styles.products}>
             <Pricing
@@ -55,87 +134,14 @@ export const Products = () => {
                     <div className={styles.fundraisingInner}>
                         <div className={styles.tabs}>
                             <ul>
-                                <li className={styles.active}>Pitch Deck</li>
-                                <li>Financials KPIs</li>
-                                <li>Financial Forecast</li>
-                                <li>Customer Accounts</li>
-                                <li>Cap Table Scenarios</li>
-                                <li>Convertible Notes</li>
-                                <li>Investor Updates</li>
-                                <li>Investor CRM</li>
-                                <li>Tech Due Diligence Q&A</li>
-                                <li>Company Org Chart</li>
-                                <li>Data Room Checklist</li>
+                                {tabs.map((tab) => (
+                                    <li key={tab} className={styles.active} onClick={() => seTab(tab)}>{tab}</li>
+                                ))}
                             </ul>
                         </div>
-                        <div className={styles.panel}>
-                            <h2 className={styles.panelTitle}>
-                                <img src={deck} alt='' />
-                                Pitch Deck
-                            </h2>
-                            <p className={styles.panelDescription}>
-                                AIV provides a pre-built investor-ready pitch deck template for you to customize and
-                                start your fundraising journey.
-                            </p>
-                            <div className={styles.panelInner}>
-                                <div className={styles.panelItem}>
-                                    <div className={styles.panelItemImage} />
-                                    <div>
-                                        <h4>Title</h4>
-                                        <p>
-                                            Use the title slide to gain investors attention and get a kick start into
-                                            your pitch!
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className={styles.panelItem}>
-                                    <div className={styles.panelItemImage} />
-                                    <div>
-                                        <h4>Title</h4>
-                                        <p>
-                                            Use the title slide to gain investors attention and get a kick start into
-                                            your pitch!
-                                        </p>
-                                    </div>
-                                </div>
-                                <a href='/' className={styles.panelItem}>
-                                    <div className={styles.panelItemImage} />
-                                    <div>
-                                        <h4>Title</h4>
-                                        <p>
-                                            Use the title slide to gain investors attention and get a kick start into
-                                            your pitch!
-                                        </p>
-                                    </div>
-                                </a>
-                                <div className={styles.panelItem}>
-                                    <div className={styles.panelItemImage} />
-                                    <div>
-                                        <h4>Title</h4>
-                                        <p>
-                                            Use the title slide to gain investors attention and get a kick start into
-                                            your pitch!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.fundraisingInfo}>
-                                <p>Available in:</p>
-                                <div className={styles.fundraisingAvailable}>
-                                    <img src={powerPoint} alt='' />
-                                </div>
-                                <div className={styles.fundraisingLink}>
-                                    <div>
-                                        <h4>Start building your Pitch Deck today!</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                                    </div>
-                                    <a href='/' className={styles.link}>
-                                        <button type="button" className="btn-primary">Download Now</button>
-                                        <button className='btn-primary--next' />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        {data.map((item, index) => (
+                            <Panel key={index} data={item} tab={tab} />
+                        ))}
                     </div>
                 </div>
             </section>

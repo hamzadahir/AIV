@@ -87,19 +87,19 @@ h4 {
 
 
 h5 {
-  font-size:     1.125rem;
-  font-family:   'Roboto Slab', sans-serif;
-  font-weight:   300;
-  line-height:   1.33;
-  color: $black;
+  font-size:   1.125rem;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+  color:       $black;
 }
 
 h5 {
-  font-size:     1.125rem;
-  font-family:   'Roboto Slab', sans-serif;
-  font-weight:   300;
-  line-height:   1.33;
-  color: $black;
+  font-size:   1.125rem;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+  color:       $black;
 }
 
 
@@ -212,6 +212,10 @@ hr {
   overflow: hidden;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .container {
   width:     100%;
   max-width: 1300px;
@@ -224,6 +228,7 @@ hr {
   font-weight: 500;
   display:     block;
 }
+
 .normalTitle {
   font-weight: 500;
   display:     block;
