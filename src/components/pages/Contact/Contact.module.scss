@@ -2,58 +2,63 @@
 
 .contact {
   .help {
-    padding: 8rem 0;
+    padding: 3.5rem 0 12.75rem 0;
     .helpInner {
       display:     flex;
       align-items: center;
       .formWrapper {
-        width:         50%;
-        padding-right: 5%;
+        width:         53%;
+        padding-right: 12%;
+        h2 {
+          margin-bottom: 3rem;
+        }
         form {
           display:         flex;
           flex-wrap:       wrap;
           justify-content: space-between;
           width:           100%;
           label {
-            width: 48%;
+            width:         49%;
+            position:      relative;
+            margin-bottom: 1rem;
+            span {
+              position:         absolute;
+              top:              50%;
+              left:             1rem;
+              transform:        translateY(-50%);
+              font-family:      Avenir, sans-serif;
+              font-size:        0.875rem;
+              line-height:      1.36;
+              color:            #728387;
+              padding:          0.5rem;
+              background-color: $white;
+              transition:       .1s linear;
+            }
+            input:focus + span {
+              top:         0;
+              font-size:   0.625rem;
+              line-height: 1.4;
+            }
           }
         }
       }
       .image {
-        width: 50%;
+        width: 47%;
       }
     }
   }
   .information {
     background-color: $lightGreen;
-    padding:          8rem 0;
+    padding:          5.5rem 0;
     .informationInner {
       display:         flex;
       justify-content: space-between;
       align-items:     center;
-      > div {
-        width: 48%;
-      }
       .informationItemWrapper {
-        .informationItem {
-          display:          flex;
-          align-items:      center;
-          background-color: $white;
-          margin-bottom:    1.25rem;
-          .informationImage {
-            width:            5rem;
-            height:           5rem;
-            background-color: $mainColor;
-            padding:          1.25rem;
-            display:          flex;
-            align-items:      center;
-            justify-content:  center;
-            margin-right:     1.875rem;
-            img {
-              height: 100%;
-            }
-          }
-        }
+        width: 42%;
+      }
+      .map {
+        width: 56%;
       }
     }
   }
@@ -63,7 +68,7 @@
 @media screen and (max-width: 992px) {
   .contact {
     .help {
-      padding: 5rem 0;
+      padding: 1.4rem 0 5rem 0;
       .helpInner {
         flex-direction: column;
         .formWrapper {
@@ -71,21 +76,29 @@
           padding-right: 0;
           text-align:    center;
           margin-bottom: 5.625rem;
+          form {
+            max-width: 30.625rem;
+            margin:    0 auto;
+          }
           button {
             margin: 0 auto;
           }
         }
         .image {
           width:     100%;
-          max-width: 29rem;
+          max-width: 24rem;
         }
       }
     }
     .information {
       .informationInner {
         flex-direction: column;
-        > div {
+        .informationItemWrapper {
           width: 100%;
+        }
+        .map {
+          width:      100%;
+          margin-top: 3rem;
         }
       }
     }
@@ -95,15 +108,25 @@
 @media screen and (max-width: 567px) {
   .contact {
     .help {
+      padding: 5rem 0 3rem 0;
+      h2 {
+        font-size:   3rem;
+        line-height: 1.25;
+      }
       .helpInner {
         .formWrapper {
+          margin-bottom: 2.625rem;
           form {
             label {
-              width: 100%;
+              width:         100%;
+              margin-bottom: 1.35rem;
             }
           }
         }
       }
+    }
+    .information {
+      padding: 3.5rem 0 2.25rem 0;
     }
   }
 }

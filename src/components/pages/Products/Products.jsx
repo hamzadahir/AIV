@@ -121,6 +121,11 @@ const data = [
             },
             {
                 url: '/',
+                title: 'Traction',
+                description: 'One thing that helps you to convince investors to love your startup is to show traction!',
+            },
+            {
+                url: '/',
                 title: 'Business Model',
                 description: 'What\'s the business model that drives your startup? We show ways to show it the right way!',
             },

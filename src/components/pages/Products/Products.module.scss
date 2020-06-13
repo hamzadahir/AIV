@@ -2,73 +2,16 @@
 
 
 .products {
-  .accelerate {
-    padding: 5rem 0 13rem 0;
-    .accelerateInner {
-      display:         flex;
-      align-items:     center;
-      justify-content: space-between;
-      .image {
-        width:    65%;
-        position: relative;
-        .cloud1 {
-          position:  absolute;
-          z-index:   -1;
-          left:      27%;
-          top:       0;
-          width:     11%;
-          animation: cloud1Animation 12s linear 0s alternate infinite;
-        }
-        .cloud2 {
-          position:  absolute;
-          z-index:   -1;
-          right:     15%;
-          top:       8%;
-          width:     19%;
-          animation: cloud2Animation 12s linear 0s alternate infinite;
-        }
-      }
-    }
-    .accelerateDescription {
-      padding-right: 2%;
-      width:         35%;
-      button {
-        position: relative;
-        &:after {
-          content:    '';
-          position:   absolute;
-          z-index:    1;
-          top:        -0.062rem;
-          right:      0;
-          width:      3.375rem;
-          height:     calc(100% + 0.125rem);
-          background: $darkGreen;
-          transform:  translateX(100%);
-        }
-        &:before {
-          content:         '';
-          background:      url("../../../assets/images/arrow.svg") center center no-repeat;
-          background-size: 22%;
-          width:           3.375rem;
-          height:          100%;
-          position:        absolute;
-          z-index:         2;
-          right:           0;
-          top:             50%;
-          transform:       translate(100%, -50%);
-        }
-      }
-    }
-  }
   .fundraising {
     background-color: rgba(48, 177, 121, 0.05);
     .fundraisingInner {
-      padding: 7rem 0;
+      padding: 7.5rem 0;
       display: flex;
       .tabs {
         border-right:  0.0625rem solid rgba(48, 177, 121, 0.2);
         padding-right: 2.5rem;
-        width:         33%;
+        width:         26%;
+        min-width:     15.5rem;
         ul {
           font-size:   1.125rem;
           line-height: 3.67;
@@ -108,25 +51,6 @@
 
 @media screen and (max-width: 992px) {
   .products {
-    .accelerate {
-      padding: 5rem 0 2rem 0;
-      .accelerateInner {
-        flex-direction: column;
-        .image {
-          max-width: 29rem;
-          width:     100%;
-        }
-      }
-      .accelerateDescription {
-        width:         100%;
-        padding-right: 0;
-        margin-bottom: 7rem;
-        text-align:    center;
-        button {
-          margin-right: 3.375rem;
-        }
-      }
-    }
     .fundraising {
       .fundraisingInner {
         padding: 4rem 0;
@@ -134,33 +58,6 @@
           display: none;
         }
       }
-    }
-  }
-}
-
-
-@media screen and (max-width: 767.98px) {
-  .products {
-    .accelerate {
-      .accelerateDescription {
-        margin-bottom: 4rem;
-      }
-    }
-
-  }
-}
-
-
-// animations
-@media screen and (min-width: 767px) {
-  .accelerate {
-    .image {
-      opacity:   0;
-      transform: translate(100%, 0);
-    }
-    .accelerateDescription {
-      opacity:   0;
-      transform: translate(0, 100%);
     }
   }
 }

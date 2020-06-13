@@ -2,7 +2,7 @@
 import React from 'react';
 
 // components
-import { Item } from "..";
+import { Item } from "../../../../common";
 
 
 // assets

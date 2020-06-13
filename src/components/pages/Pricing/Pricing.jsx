@@ -22,7 +22,7 @@ export const Pricing = () => {
                     </p>
                 </div>
             </section>
-            <section>
+            <section className={styles.pricing}>
                 <div className='container'>
                     <Plan service={false} />
                 </div>

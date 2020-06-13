@@ -131,12 +131,18 @@ input, textarea {
   color:            #728387;
   box-shadow:       none;
   background-color: transparent;
-  margin-bottom:    1rem;
   &:hover, &:focus {
     border: 0.0625rem solid $mainColor;
   }
 }
 
+textarea {
+  margin: 0.25rem 0 1.5rem 0;
+}
+
+iframe {
+  width: 100%;
+}
 
 #root {
   height: 100%;
