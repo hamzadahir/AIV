@@ -8,6 +8,7 @@ import { gsap, TimelineLite, Power3 } from 'gsap'
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
 import { Banner, Plan } from "../../common";
+import { routes } from "../../App/routes";
 
 // assets
 import styles from './Home.module.scss';
@@ -106,7 +107,7 @@ export const Home = () => {
             }
             if (scroll > (sectionFive.offsetTop - 300)) {
                 t5.to(pricingTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                    // .to(pricingItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                // .to(pricingItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
             }
         }
     }, [width, scroll, t2, t3, t4, t5]);
@@ -221,8 +222,8 @@ export const Home = () => {
                                 to get started with your fundraising journey
                             </p>
                         </div>
-                        <Plan  service={true}/>
-                        <a href='/' className={styles.link}>Explore Pricing Plans
+                        <Plan service={true} />
+                        <a href={routes.pricing} className={styles.link}>Explore Pricing Plans
                             <img src={arrow} alt='' />
                         </a>
                     </div>

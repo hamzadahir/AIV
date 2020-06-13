@@ -1,5 +1,5 @@
 // core
-import React  from 'react';
+import React from 'react';
 
 // components
 import { useWindowSize } from "../../../hooks";
@@ -31,7 +31,7 @@ export const Footer = () => {
                 <div className={styles.bottomSection}>
                     <ul>
                         <li className={styles.logo}><img src={logo} alt='logo' /></li>
-                        <li>99 Wall Street, New York <br /> NY 10005</li>
+                        <li><a href='#'>99 Wall Street, New York <br /> NY 10005</a></li>
                         <li><a href='mailto:Info@aiv.llc'>Info@aiv.llc</a></li>
                     </ul>
                     <ul>
