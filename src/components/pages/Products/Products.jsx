@@ -7,7 +7,7 @@ import { gsap, TimelineLite, Power3 } from 'gsap'
 
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
-import { Pricing } from "../../common";
+import { Banner } from "../../common";
 
 // assets
 import styles from './Products.module.scss';
@@ -15,6 +15,10 @@ import { Panel } from "./components/Panel/Panel";
 import deck from "../../../assets/images/home/products/deck.svg";
 import accounts from "../../../assets/images/home/products/accounts.svg";
 import chart from "../../../assets/images/home/products/chart.svg";
+
+import work from "../../../assets/images/home/work.svg";
+
+
 import powerPoint from "../../../assets/images/products/powerPoint.svg";
 
 const tabs = [
@@ -37,11 +41,24 @@ const data = [
             title: 'Pitch Deck',
             description: 'AIV provides a pre-built investor-ready pitch deck template for you to customize and start your fundraising journey.'
         },
-        item: {
-            url: '/',
-            title: 'Title',
-            description: ['Use the title slide to gain investors attention and get a kick start into your pitch!'],
-        },
+        itemType: 0,
+        items: [
+            {
+                url: '/',
+                title: 'Title',
+                description: ['Use the title slide to gain investors attention and get a kick start into your pitch!'],
+            },
+            {
+                url: '/',
+                title: 'Title',
+                description: ['Use the title slide to gain investors attention and get a kick start into your pitch!'],
+            },
+            {
+                url: '/',
+                title: 'Title',
+                description: ['Use the title slide to gain investors attention and get a kick start into your pitch!'],
+            }
+        ],
         info: {
             url: '/',
             image: powerPoint,
@@ -56,11 +73,21 @@ const data = [
             title: 'Financials KPIs',
             description: 'AIV provides pre-built investor-ready financial KPIs templates to tell your growth story to investors.'
         },
-        item: {
-            url: '/',
-            title: 'Title',
-            description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
-        },
+        itemType: 1,
+        items: [
+            {
+                url: '/',
+                title: 'Title',
+                image: work,
+                description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
+            },
+            {
+                url: '/',
+                title: 'Title',
+                image: work,
+                description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
+            }
+        ],
         info: {
             url: '/',
             image: powerPoint,
@@ -75,11 +102,12 @@ const data = [
             title: 'Financials Forecast',
             description: 'AIV provides pre-built investor-ready financial forecast templates to explain how you will grow your business.'
         },
-        item: {
+        itemType: 0,
+        items: [{
             url: '/',
             title: 'Title',
             description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
-        },
+        }],
         info: {
             url: '/',
             image: powerPoint,
@@ -122,7 +150,7 @@ export const Products = () => {
 
     return (
         <main className={styles.products}>
-            <Pricing
+            <Banner
                 banner={false}
                 title={['Fundraising', 'Products']}
                 subTitle={false}
@@ -134,8 +162,9 @@ export const Products = () => {
                     <div className={styles.fundraisingInner}>
                         <div className={styles.tabs}>
                             <ul>
-                                {tabs.map((tab) => (
-                                    <li key={tab} className={styles.active} onClick={() => seTab(tab)}>{tab}</li>
+                                {tabs.map((tabItem) => (
+                                    <li key={tabItem} className={tab === tabItem ? styles.active : ''}
+                                        onClick={() => seTab(tabItem)}>{tabItem}</li>
                                 ))}
                             </ul>
                         </div>

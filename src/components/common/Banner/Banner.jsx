@@ -8,11 +8,11 @@ import { TimelineLite, Power3 } from 'gsap'
 import { useScrollPosition, useWindowSize } from "../../../hooks";
 
 // assets
-import styles from './Pricing.module.scss';
-import { Banner } from "../../pages/Products/components";
+import styles from './Banner.module.scss';
+import { BannerImage } from "../../pages/Products/components";
 
 const duration = 2;
-export const Pricing = ({banner, title, subTitle, link, description}) => {
+export const Banner = ({banner, title, subTitle, link, description}) => {
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
@@ -56,7 +56,7 @@ export const Pricing = ({banner, title, subTitle, link, description}) => {
                                 <img className={styles.cloud1} src={banner[1]} alt='' />
                                 <img className={styles.cloud2} src={banner[2]} alt='' />
                                 <img src={banner[0]} alt='' />
-                            </> : <Banner />
+                            </> : <BannerImage />
                         }
                     </div>
                 </div>

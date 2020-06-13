@@ -7,7 +7,7 @@ import { gsap, TimelineLite, Power3 } from 'gsap'
 
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
-import { Pricing } from "../../common";
+import { Banner } from "../../common";
 
 // assets
 import styles from './Home.module.scss';
@@ -36,10 +36,6 @@ import crm from '../../../assets/images/home/products/crm.svg'
 import chart from '../../../assets/images/home/products/chart.svg'
 import usage from '../../../assets/images/home/products/usage.svg'
 
-import introductions from '../../../assets/images/home/introductions.svg'
-import room from '../../../assets/images/home/room.svg'
-import report from '../../../assets/images/home/report.svg'
-import rebranding from '../../../assets/images/home/rebranding.svg'
 import arrow from '../../../assets/images/arrow-green.svg'
 
 const overviewItems = [
@@ -47,13 +43,6 @@ const overviewItems = [
     {id: 1, title: 'Extended Investor Network', image: network},
     {id: 2, title: 'Save Thousands of Hours of Work', image: work},
     {id: 3, title: 'Accelerate Funding By Months', image: month},
-];
-
-const servicesItems = [
-    {id: 0, title: 'Investor\n' + 'Introductions', image: introductions},
-    {id: 1, title: 'Data Room\n' + 'Preparation', image: room},
-    {id: 2, title: 'Technical Due\n' + 'Diligence Report', image: report},
-    {id: 3, title: 'Corporate\n' + 'Rebranding', image: rebranding},
 ];
 
 const productsItems = [
@@ -168,8 +157,8 @@ export const Home = () => {
 
     return (
         <main className={styles.home}>
-            <Pricing
-                banner={[banner, cloud1, cloud2]}
+            <Banner
+                image={[banner, cloud1, cloud2]}
                 title={['Accelerate', 'Fundraising']}
                 subTitle={true}
                 description={false}
@@ -187,10 +176,10 @@ export const Home = () => {
                         </div>
                         <div className={styles.overviewItemWrapper} ref={el => overviewItem = el}>
                             {overviewItems.map(overview => (
-                                <a href='/' key={overview.id} className={styles.overviewItem}>
+                                <div key={overview.id} className={styles.overviewItem}>
                                     <div className={styles.image}><img src={overview.image} alt='' /></div>
                                     <p>{overview.title}</p>
-                                </a>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -226,30 +215,6 @@ export const Home = () => {
                     <a href='/' className={styles.link}>Explore Fundraising Products
                         <img src={arrow} alt='' />
                     </a>
-                </div>
-            </section>
-            <section className={styles.overview} ref={el => sectionFour = el}>
-                <div className='container'>
-                    <div className={styles.overviewInner}>
-                        <div className={styles.overviewTitle} ref={el => servicesTitle = el}>
-                            <h2>Fundraising Services</h2>
-                            <p>
-                                AIV provides you with services you can utilize to accelerate your fundraising so you can
-                                spend more time getting back to business.
-                            </p>
-                        </div>
-                        <div className={styles.overviewItemWrapper} ref={el => servicesItem = el}>
-                            {servicesItems.map(service => (
-                                <a href='/' key={service.id} className={styles.overviewItem}>
-                                    <div className={styles.image}><img src={service.image} alt='' /></div>
-                                    <p>{service.title}</p>
-                                </a>
-                            ))}
-                        </div>
-                        <a href='/' className={styles.link}>Explore Fundraising Services
-                            <img src={arrow} alt='' />
-                        </a>
-                    </div>
                 </div>
             </section>
             <section className={styles.pricing} ref={el => sectionFive = el}>

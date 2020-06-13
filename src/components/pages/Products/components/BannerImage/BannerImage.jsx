@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap'
 
 
-export const Banner = () => {
+export const BannerImage = () => {
     const animaBars = (id, tranPoint, fromV, toV, per) => {
         gsap.fromTo(id, 1.5, {scaleY: fromV, svgOrigin: tranPoint}, {
             scaleY: toV,

@@ -81,12 +81,6 @@ export const Footer = () => {
                     }
                     <div className={styles.listWrapper2}>
                         <ul>
-                            <li className={styles.bottomSectionTitle}>SERVICES</li>
-                            <li><a href='/'>Company</a></li>
-                            <li><a href='/'>Customers</a></li>
-                            <li><a href='/'>Careers</a></li>
-                        </ul>
-                        <ul>
                             <li className={styles.bottomSectionTitle}>CONTACT US</li>
                             <li><a href='/'>Sales</a></li>
                             <li><a href='/'>Media</a></li>

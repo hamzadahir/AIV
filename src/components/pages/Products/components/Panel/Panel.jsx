@@ -8,8 +8,7 @@ import { Item } from "..";
 // assets
 import styles from "./Panel.module.scss";
 
-export const Panel = ({ data, tab}) => {
-
+export const Panel = ({data, tab}) => {
     return (
         <div className={tab === data.header.title ? [styles.panel] : [styles.panel + ' ' + 'd-none']}>
             <h2 className={styles.panelTitle}>
@@ -18,10 +17,15 @@ export const Panel = ({ data, tab}) => {
             </h2>
             <p className={styles.panelDescription}>{data.header.description}</p>
             <div className={styles.panelInner}>
-                <Item
-                    href={data.item.url}
-                    title={data.item.title}
-                    description={data.item.description} />
+                {data.items.map((item, index) => (
+                    <Item
+                        key={index}
+                        type={data.itemType}
+                        url={item.url}
+                        title={item.title}
+                        image={item.image}
+                        description={item.description} />
+                ))}
             </div>
             <div className={styles.fundraisingInfo}>
                 <p>Available in:</p>

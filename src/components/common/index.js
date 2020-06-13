@@ -1,3 +1,3 @@
 export * from './Header/Header'
 export * from './Footer/Footer'
-export * from './Pricing/Pricing'
+export * from './Banner/Banner'

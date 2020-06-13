@@ -32,6 +32,23 @@
   > div {
     max-width: 20rem;
   }
+  &.panelItemMod {
+    padding: 0;
+    .panelItemImage {
+      width:           5rem;
+      height:          5rem;
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+      &:before {
+        width:  2.8125rem;
+        height: 2.8125rem;
+      }
+      img {
+        width: 1.5rem;
+      }
+    }
+  }
 }
 
 
@@ -51,6 +68,10 @@
     }
     > div {
       max-width: 100%;
+    }
+    &.panelItemMod {
+      padding: 1.875rem;
+      align-items: flex-start;
     }
   }
 }
