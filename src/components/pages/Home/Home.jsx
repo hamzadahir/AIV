@@ -221,7 +221,7 @@ export const Home = () => {
                                 to get started with your fundraising journey
                             </p>
                         </div>
-                        <Plan />
+                        <Plan  service={true}/>
                         <a href='/' className={styles.link}>Explore Pricing Plans
                             <img src={arrow} alt='' />
                         </a>

@@ -20,7 +20,7 @@ const menus = [
     {url: routes.home, label: 'Home',},
     {url: routes.products, label: 'Products', subMenu: true},
     {url: routes.pricing, label: 'Pricing'},
-    {url: '/', label: 'Contact'},
+    {url: routes.contact, label: 'Contact'},
 ];
 
 let classname;

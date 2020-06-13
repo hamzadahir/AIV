@@ -18,8 +18,10 @@ export const Item = ({type, url, title, image, description}) => {
                     </p>
                 </div>
             </a> : <a href={url} className={[styles.panelItem + ' ' + styles.panelItemMod]}>
-                <div className={styles.panelItemImage}><img src={image} alt='' /></div>
-                <div><h4>{title}</h4></div>
+                <div className={styles.panelItemImage}>
+                    <img src={image} alt='' />
+                </div>
+                <div><h5>{title}</h5></div>
             </a>
     );
 };

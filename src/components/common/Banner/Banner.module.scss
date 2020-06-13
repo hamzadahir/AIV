@@ -26,17 +26,6 @@
         animation: cloud2Animation 12s linear 0s alternate infinite;
       }
     }
-    .accelerateButton {
-      display:         flex;
-      justify-content: flex-start;
-      align-items:     center;
-      button {
-        height: 3.75rem;
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
   }
   .accelerateDescription {
     padding-right: 2%;
@@ -55,9 +44,6 @@
       .image {
         max-width: 29rem;
         width:     100%;
-      }
-      .accelerateButton {
-        justify-content: center;
       }
     }
     .accelerateDescription {

@@ -5,24 +5,26 @@ import React from 'react';
 import { Plan } from "../../common";
 
 // assets
-// import styles from './Pricing.module.scss';
+import styles from './Pricing.module.scss';
 
 export const Pricing = () => {
     return (
         <main>
-            <section>
-                <h1>
-                    Choose a plan
-                    that’s right for you.
-                </h1>
-                <p>
-                    Choose from our flexible product pricing plans and services
-                    to get started with your fundraising journey
-                </p>
+            <section className={styles.choose}>
+                <div className='container'>
+                    <h1>
+                        Choose a plan <br />
+                        that’s right for <span className='greenTitle'>you.</span>
+                    </h1>
+                    <p>
+                        Choose from our flexible product pricing plans and services
+                        to get started with your fundraising journey
+                    </p>
+                </div>
             </section>
             <section>
                 <div className='container'>
-                    <Plan />
+                    <Plan service={false} />
                 </div>
             </section>
         </main>

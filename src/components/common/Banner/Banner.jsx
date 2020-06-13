@@ -42,12 +42,12 @@ export const Banner = ({image, title, subTitle, link, description}) => {
                 <div className={styles.accelerateInner}>
                     <div className={styles.accelerateDescription} ref={el => bannerDescription = el}>
                         <h1>{title[0]}
-                            <span className={subTitle ? 'greenTitle' : 'normalTitle'}>{title[1]}</span>
+                            <div className={subTitle ? 'greenTitle' : 'normalTitle'}>{title[1]}</div>
                         </h1>
                         {description && <p>{description}</p>}
-                        <a href={link.url} className={styles.accelerateButton}>
-                            <button type="button" className="btn-primary">{link.label}</button>
-                            <button className='btn-primary--next' />
+                        <a href={link.url} className='accelerateButton'>
+                            <span className="btn-primary">{link.label}</span>
+                            <span className='btn-primary--next' />
                         </a>
                     </div>
                     <div className={styles.image} ref={el => bannerImage = el}>

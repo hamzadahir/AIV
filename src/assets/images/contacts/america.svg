@@ -1,0 +1,13 @@
+<svg id="america" xmlns="http://www.w3.org/2000/svg" width="22.143" height="40" viewBox="0 0 22.143 40">
+  <path id="Shape" d="M6.177,23.215v-7.16H3.971v7.16H2.647v-7.16H1.324v7.16H0V14.753H.882V4.339H3.53V0H7.5V23.215Z" transform="translate(0 16.786)" fill="#fff"/>
+  <path id="Shape-2" data-name="Shape" d="M6.177,23.215v-7.16H4.853v7.16H3.529v-7.16H1.324v7.16H0V0H3.971V4.339H6.618V14.753H7.5v8.462Z" transform="translate(14.643 16.786)" fill="#fff"/>
+  <path id="Shape-3" data-name="Shape" d="M8.7,16.429v-2.81H1.3v2.81H0V12.321H1.739V9.727H3.044V4.54h1.3V0h1.3V4.54h1.3V9.727h1.3v2.594H10v4.108Z" transform="translate(6.071)" fill="#fff"/>
+  <rect id="Rectangle" width="1.429" height="1.429" transform="translate(3.571 23.571)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-2" data-name="Rectangle" width="1.429" height="1.429" transform="translate(3.571 28.571)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-3" data-name="Rectangle" width="1.429" height="1.429" transform="translate(3.571 26.071)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-4" data-name="Rectangle" width="1.429" height="1.429" transform="translate(17.143 26.071)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-5" data-name="Rectangle" width="1.429" height="1.429" transform="translate(17.143 23.571)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-6" data-name="Rectangle" width="1.429" height="1.429" transform="translate(17.143 28.571)" fill="#fff" opacity="0.4"/>
+  <rect id="Rectangle-7" data-name="Rectangle" width="1.429" height="24.286" transform="translate(8.571 15.714)" fill="#fff"/>
+  <rect id="Rectangle-8" data-name="Rectangle" width="1.429" height="24.286" transform="translate(12.143 15.714)" fill="#fff"/>
+</svg>

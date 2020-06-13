@@ -1,0 +1,109 @@
+@import "../../../assets/scss/variables";
+
+.contact {
+  .help {
+    padding: 8rem 0;
+    .helpInner {
+      display:     flex;
+      align-items: center;
+      .formWrapper {
+        width:         50%;
+        padding-right: 5%;
+        form {
+          display:         flex;
+          flex-wrap:       wrap;
+          justify-content: space-between;
+          width:           100%;
+          label {
+            width: 48%;
+          }
+        }
+      }
+      .image {
+        width: 50%;
+      }
+    }
+  }
+  .information {
+    background-color: $lightGreen;
+    padding:          8rem 0;
+    .informationInner {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     center;
+      > div {
+        width: 48%;
+      }
+      .informationItemWrapper {
+        .informationItem {
+          display:          flex;
+          align-items:      center;
+          background-color: $white;
+          margin-bottom:    1.25rem;
+          .informationImage {
+            width:            5rem;
+            height:           5rem;
+            background-color: $mainColor;
+            padding:          1.25rem;
+            display:          flex;
+            align-items:      center;
+            justify-content:  center;
+            margin-right:     1.875rem;
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .contact {
+    .help {
+      padding: 5rem 0;
+      .helpInner {
+        flex-direction: column;
+        .formWrapper {
+          width:         100%;
+          padding-right: 0;
+          text-align:    center;
+          margin-bottom: 5.625rem;
+          button {
+            margin: 0 auto;
+          }
+        }
+        .image {
+          width:     100%;
+          max-width: 29rem;
+        }
+      }
+    }
+    .information {
+      .informationInner {
+        flex-direction: column;
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .contact {
+    .help {
+      .helpInner {
+        .formWrapper {
+          form {
+            label {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

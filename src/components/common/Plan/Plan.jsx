@@ -11,7 +11,7 @@ import { useScrollPosition, useWindowSize } from "../../../hooks";
 import styles from './Plan.module.scss';
 
 const duration = 2;
-export const Plan = () => {
+export const Plan = ({service}) => {
     const [price, setPrice] = useState('Basic');
 
     const [width] = useWindowSize();
@@ -130,7 +130,7 @@ export const Plan = () => {
                     </ul>
                     <button type='button' className='btn-primary'>Get Premium</button>
                 </a>
-                <div className={styles.services} ref={el => services = el}>
+                {service && <div className={styles.services} ref={el => services = el}>
                     <h3>Services Pricing</h3>
                     <div className={styles.servicesInner}>
                         <ul className={styles.checked}>
@@ -141,7 +141,7 @@ export const Plan = () => {
                         </ul>
                         <button type="button" className='btn-primary'>Contact Us</button>
                     </div>
-                </div>
+                </div>}
             </div>
         </>
 
