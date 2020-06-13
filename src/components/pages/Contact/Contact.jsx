@@ -7,7 +7,6 @@ import { Item } from "../../common";
 // assets
 import styles from './Contact.module.scss';
 import banner from '../../../assets/images/contacts/contact-banner.svg'
-import map from '../../../assets/images/contacts/map.svg'
 import america from '../../../assets/images/contacts/america.svg'
 import mail from '../../../assets/images/contacts/mail.svg'
 import phone from '../../../assets/images/contacts/phone.svg'

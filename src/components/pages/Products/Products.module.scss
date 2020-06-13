@@ -45,6 +45,69 @@
           }
         }
       }
+      .panelSelect {
+        display:          none;
+        align-items:      center;
+        flex-direction:   column;
+        background-color: $white;
+        margin-bottom:    2rem;
+        .panelSelectItem, .panelSelectCurrent {
+          align-items: center;
+          width:       100%;
+          display:     flex;
+          padding:     1.25rem;
+          cursor:      pointer;
+          position:    relative;
+          img {
+            width:        1.5rem;
+            margin-right: 1.5625rem;
+          }
+        }
+        .panelSelectItems {
+          display:        none;
+          flex-direction: column;
+          width:          100%;
+          &.active {
+            display: flex;
+
+          }
+        }
+        .panelSelectCurrent {
+          &:before {
+            content:          '';
+            position:         absolute;
+            z-index:          1;
+            right:            0;
+            top:              0;
+            width:            5rem;
+            height:           100%;
+            background-color: $mainColor;
+          }
+          &:after {
+            content:          '';
+            position:         absolute;
+            z-index:          2;
+            right:            2rem;
+            top:              2rem;
+            transform:        rotate(45deg);
+            width:            1rem;
+            height:           1rem;
+            background-color: transparent;
+            border-bottom:    2px solid $white;
+            border-right:     2px solid $white;
+
+          }
+          &.active {
+            &:before {
+              background-color: $white;
+            }
+            &:after {
+              border-bottom: 2px solid $mainColor;
+              border-right:  2px solid $mainColor;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -53,14 +116,42 @@
   .products {
     .fundraising {
       .fundraisingInner {
-        padding: 4rem 0;
+        flex-direction: column;
+        padding:        4rem 0;
         .tabs {
           display: none;
+        }
+        .panelSelect {
+          display: flex;
         }
       }
     }
   }
 }
+
+@media screen and (max-width: 567px) {
+  .products {
+    .fundraising {
+      .fundraisingInner {
+        .panelSelect {
+          .panelSelectItem, .panelSelectCurrent {
+            padding: 1rem;
+          }
+          .panelSelectCurrent {
+            &:before {
+              width: 4rem;
+            }
+            &:after {
+              right: 1.5rem;
+              top:   1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 @keyframes cloud1Animation {
   0% {

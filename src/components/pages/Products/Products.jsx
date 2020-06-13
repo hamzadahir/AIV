@@ -682,6 +682,8 @@ const data = [
 
 const duration = 2;
 export const Products = () => {
+    const [toggleSelect, setToggleSelect] = useState(false);
+    const [currentSelect, setCurrentSelect] = useState('Pitch Deck');
     const [tab, seTab] = useState('Pitch Deck');
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
@@ -709,6 +711,11 @@ export const Products = () => {
     }, [width, scroll, t1]);
 
 
+    const handleSelect = (title) => {
+        setToggleSelect(!toggleSelect);
+        setCurrentSelect(title);
+        seTab(title);
+    };
     return (
         <main className={styles.products}>
             <Banner
@@ -728,6 +735,25 @@ export const Products = () => {
                                         onClick={() => seTab(tabItem)}>{tabItem}</li>
                                 ))}
                             </ul>
+                        </div>
+                        <div className={styles.panelSelect}>
+                            <div
+                                className={!toggleSelect ? styles.panelSelectCurrent : `${styles.panelSelectCurrent} ${styles.active}`}
+                                onClick={() => setToggleSelect(!toggleSelect)}>
+                                <img src={deck} alt='' />
+                                <h4>{currentSelect}</h4>
+                            </div>
+                            <div
+                                className={!toggleSelect ? styles.panelSelectItems : `${styles.panelSelectItems} ${styles.active}`}>
+                                {data.map((item, index) => (
+                                    <div key={index}
+                                         className={styles.panelSelectItem}
+                                         onClick={() => handleSelect(item.header.title)}>
+                                        <img src={item.header.image} alt='' />
+                                        <h4 className={currentSelect === item.header.title ? 'greenTitle' : ''}>{item.header.title}</h4>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         {data.map((item, index) => (
                             <Panel key={index} data={item} tab={tab} />
