@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.5" height="28.5" viewBox="0 0 28.5 28.5">
+  <g id="percent" transform="translate(1.25 1.25)">
+    <path id="Path" d="M23,0,0,23" transform="translate(1 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <circle id="Oval" cx="4" cy="4" r="4" fill="none" opacity="0.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" stroke="#fff"/>
+    <circle id="Oval-2" data-name="Oval" cx="4" cy="4" r="4" transform="translate(18 18)" opacity="0.4" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" fill="none"/>
+  </g>
+</svg>
