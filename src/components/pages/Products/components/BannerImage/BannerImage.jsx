@@ -18,7 +18,7 @@ export const BannerImage = () => {
 
     const blockAnimation = () => {
 
-        let idSVG = '#group5-animation' + ' ';
+        let idSVG = `#group5-animation `;
 
         gsap.from(idSVG + '#wave', 1.5, {x: -53.67, ease: 'none', repeat: -1});
         gsap.to(idSVG + '#arrow-left', 1, {x: 10, ease: 'sine.inOut', repeat: -1, yoyo: true});

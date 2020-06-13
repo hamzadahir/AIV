@@ -12,7 +12,7 @@ import styles from './Banner.module.scss';
 import { BannerImage } from "../../pages/Products/components";
 
 const duration = 2;
-export const Banner = ({banner, title, subTitle, link, description}) => {
+export const Banner = ({image, title, subTitle, link, description}) => {
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
@@ -51,11 +51,11 @@ export const Banner = ({banner, title, subTitle, link, description}) => {
                         </a>
                     </div>
                     <div className={styles.image} ref={el => bannerImage = el}>
-                        {Array.isArray(banner) ?
+                        {Array.isArray(image) ?
                             <>
-                                <img className={styles.cloud1} src={banner[1]} alt='' />
-                                <img className={styles.cloud2} src={banner[2]} alt='' />
-                                <img src={banner[0]} alt='' />
+                                <img className={styles.cloud1} src={image[1]} alt='' />
+                                <img className={styles.cloud2} src={image[2]} alt='' />
+                                <img src={image[0]} alt='' />
                             </> : <BannerImage />
                         }
                     </div>

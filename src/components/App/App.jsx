@@ -5,7 +5,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // components
-import { Home, Products } from "../pages";
+import { Home, Pricing, Products } from "../pages";
 
 import { Footer, Header } from "../common";
 import { routes } from './routes';
@@ -21,6 +21,7 @@ function App() {
                 <Redirect exact from='/' to={routes.home} />
                 <Route path={routes.home} component={Home} />
                 <Route path={routes.products} component={Products} />
+                <Route path={routes.pricing} component={Pricing} />
             </Switch>
             <Footer />
         </div>

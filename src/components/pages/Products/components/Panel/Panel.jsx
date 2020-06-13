@@ -10,7 +10,7 @@ import styles from "./Panel.module.scss";
 
 export const Panel = ({data, tab}) => {
     return (
-        <div className={tab === data.header.title ? [styles.panel] : [styles.panel + ' ' + 'd-none']}>
+        <div className={tab === data.header.title ? [styles.panel] : `${styles.panel}  d-none`}>
             <h2 className={styles.panelTitle}>
                 <img src={data.header.image} alt='' />
                 {data.header.title}

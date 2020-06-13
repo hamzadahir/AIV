@@ -58,7 +58,7 @@
               color: $mainColor;
             }
           }
-          &:nth-child(2) .link:before, &:nth-child(3) .link:before {
+          &:nth-child(2) .link:before {
             content:          '';
             position:         absolute;
             right:            0.25rem;
