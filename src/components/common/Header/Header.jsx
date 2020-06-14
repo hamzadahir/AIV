@@ -35,21 +35,21 @@ const menus = [
 ];
 
 const products = [
-    {id: 0, url: '/', title: 'Pitch Deck', icon: deck},
-    {id: 1, url: '/', title: 'Customer Accounts', icon: accounts},
-    {id: 2, url: '/', title: 'Historical Financials', icon: financials},
-    {id: 3, url: '/', title: 'Data Room Checklist', icon: data},
-    {id: 4, url: '/', title: 'Market Size and GTM', icon: gtm},
-    {id: 5, url: '/', title: 'Financial KPIs', icon: kpi},
-    {id: 6, url: '/', title: 'Convertible Notes', icon: notes},
-    {id: 7, url: '/', title: 'Cap Table Scenarios', icon: scenarios},
-    {id: 8, url: '/', title: 'Financial Forecast', icon: forecast},
-    {id: 9, url: '/', title: 'Investor Updates', icon: updates},
-    {id: 10, url: '/', title: 'Tech Due Diligence Q&A', icon: tech},
-    {id: 11, url: '/', title: 'Sales Pipeline Forecast', icon: sales},
-    {id: 12, url: '/', title: 'Investor CRM', icon: crm},
-    {id: 13, url: '/', title: 'Organizational Chart', icon: chart},
-    {id: 14, url: '/', title: 'Fund Usage', icon: usage},
+    {id: 0, url: `${routes.products}#pitch_deck`, title: 'Pitch Deck', icon: deck},
+    {id: 1, url: `${routes.products}#customer_accounts`, title: 'Customer Accounts', icon: accounts},
+    {id: 2, url: `${routes.products}#historical_financials`, title: 'Historical Financials', icon: financials},
+    {id: 3, url: `${routes.products}#data_room_checklist`, title: 'Data Room Checklist', icon: data},
+    {id: 4, url: `${routes.products}#market_size_and_gtm `, title: 'Market Size and GTM', icon: gtm},
+    {id: 5, url: `${routes.products}#financial_kpis`, title: 'Financial KPIs', icon: kpi},
+    {id: 6, url: `${routes.products}#convertible_notes`, title: 'Convertible Notes', icon: notes},
+    {id: 7, url: `${routes.products}#cap_table_scenarios`, title: 'Cap Table Scenarios', icon: scenarios},
+    {id: 8, url: `${routes.products}#financial_forecast`, title: 'Financial Forecast', icon: forecast},
+    {id: 9, url: `${routes.products}#investor_updates`, title: 'Investor Updates', icon: updates},
+    {id: 10, url: `${routes.products}#tech_due_Diligence Q&a`, title: 'Tech Due Diligence Q&A', icon: tech},
+    {id: 11, url: `${routes.products}#sales_pipeline `, title: 'Sales Pipeline Forecast', icon: sales},
+    {id: 12, url: `${routes.products}#investor_crm`, title: 'Investor CRM', icon: crm},
+    {id: 13, url: `${routes.products}#organizational_chart`, title: 'Organizational Chart', icon: chart},
+    {id: 14, url: `${routes.products}#fund_usage`, title: 'Fund Usage', icon: usage},
 ];
 
 let classname;
