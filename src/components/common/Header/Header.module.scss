@@ -6,8 +6,22 @@
       opacity: .7;
     }
     .menuWrapper {
-      .menu ul li a:hover {
-        color: $mainColor;
+      .menu ul {
+        li:hover {
+          .link:before {
+            transform: rotate(-135deg);
+          }
+          > a {
+            color: $mainColor;
+          }
+          .subMenuWrapper {
+            display: flex;
+          }
+        }
+        li a:hover {
+          color: $mainColor;
+        }
+
       }
     }
   }
@@ -41,6 +55,9 @@
     justify-content: space-between;
     align-items:     center;
     .menu {
+      > a {
+        display: none;
+      }
       ul {
         display:         flex;
         justify-content: space-between;
@@ -72,35 +89,28 @@
             transition:       .2s linear;
           }
         }
-        li:hover {
-          .link:before {
-            transform: rotate(-135deg);
-          }
-          > a {
-            color: $mainColor;
-          }
-          .subMenuWrapper {
-            display: flex;
-          }
-        }
       }
       .subMenuWrapper {
         position:         absolute;
         z-index:          1;
         bottom:           0;
-        right:            0;
-        width:            25.3125rem;
+        right:            -10rem;
+        width:            68.5625rem;
         transform:        translate(5%, 100%);
         padding-top:      2rem;
         background-color: transparent;
         display:          none;
         flex-direction:   column;
+        &.show {
+          display: none;
+        }
         .subMenu {
           box-shadow:       0 28px 45px rgba(0, 0, 0, 0.16);
           background-color: $white;
           display:          flex;
-          flex-direction:   column;
+          flex-wrap:        wrap;
           width:            100%;
+          padding:          0.5rem 2rem;
           &:before {
             content:      '';
             position:     absolute;
@@ -119,7 +129,7 @@
               content:          '';
               position:         absolute;
               height:           1px;
-              width:            calc(100% - 2rem);
+              width:            calc(100% - 0.5rem);
               background-color: #e4e8eb;
               border-bottom:    0;
               right:            0;
@@ -139,15 +149,18 @@
             align-items:      center;
             justify-content:  center;
           }
+          li:not(.subMenuTitle) {
+            width: 33%
+          }
           li {
-            padding:         0.5rem 2rem;
+            padding:         0.5rem;
             display:         flex;
             align-items:     center;
             justify-content: flex-start;
-            width:           100%;
             color:           $white;
             border-bottom:   1px solid rgba(216, 216, 216, 0.11);
             cursor:          pointer;
+            width:           100%;
             a {
               display:     flex;
               align-items: center;
@@ -247,6 +260,17 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .header {
+    .menuWrapper {
+      .menu {
+        .subMenuWrapper {
+          width: 57rem;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 992px) {
   .header {
@@ -260,17 +284,27 @@
         left:            0;
         width:           100%;
         height:          100%;
-        justify-content: flex-start;
+        flex-direction:  column;
+        justify-content: space-between;
         align-items:     flex-start;
-        padding-top:     90px;
-        padding-left:    1rem;
+        margin-top:      90px;
+        padding-bottom:  90px;
+        padding-left:    0;
+        overflow-y:      auto;
+        &.active {
+          display: flex;
+        }
+        > a {
+          display: flex;
+          padding: 2rem;
+        }
         ul {
           align-items:    flex-start;
           flex-direction: column;
           width:          100%;
           li {
             width:         100%;
-            padding:       1.5rem 0 1.5rem 0;
+            padding:       1.5rem 0 1.5rem 2rem;
             border-bottom: 1px solid #e4e8eb;
             &:nth-child(2) .link:before, &:nth-child(3) .link:before {
               right: 1.5rem;
@@ -288,10 +322,19 @@
             left:      0;
             transform: translate(0, 0);
             width:     100%;
-            display:   flex;
+            &.show {
+              display: flex;
+            }
             .subMenu {
               box-shadow:       none;
               background-color: $lightGreen;
+              padding:          0;
+              .subMenuTitle {
+                display: none;
+              }
+              li:not(.subMenuTitle) {
+                width: 100%;
+              }
               .image {
                 width:  3.4375rem;
                 height: 3.4375rem;
@@ -301,9 +344,6 @@
               }
             }
           }
-        }
-        &.active {
-          display: flex;
         }
       }
     }
