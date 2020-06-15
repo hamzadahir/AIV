@@ -299,7 +299,6 @@
 
 
 @media screen and (max-width: 767.98px) {
-
   .home {
     .overview {
       padding: 4.5rem 0 2rem 0;
@@ -343,10 +342,22 @@
     }
     .pricing {
       padding: 0 0 3.75rem 0;
-
       .pricingInner {
         .pricingTitle {
           margin-bottom: 3rem;
+
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 567px) {
+  .home {
+    .pricing {
+      .pricingInner {
+        .pricingTitle {
           h2 {
             max-width: 12rem;
           }
@@ -355,6 +366,7 @@
     }
   }
 }
+
 
 // animations
 @media screen and (min-width: 767px) {
