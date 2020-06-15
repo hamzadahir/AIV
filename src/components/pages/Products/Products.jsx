@@ -8,6 +8,7 @@ import { gsap, TimelineLite, Power3 } from 'gsap'
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
 import { Banner } from "../../common";
+import { routes } from "../../App/routes";
 
 // assets
 import styles from './Products.module.scss';
@@ -713,6 +714,7 @@ export const Products = () => {
     const handleSelect = (title) => {
         setToggleSelect(!toggleSelect);
         setCurrentSelect(title);
+        window.location = `${routes.products}#${title.toLowerCase().replace(/ /g, '_')}`
     };
     return (
         <main className={styles.products}>

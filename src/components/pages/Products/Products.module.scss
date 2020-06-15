@@ -82,6 +82,9 @@
           }
         }
         .panelSelectCurrent {
+          h4 {
+            margin-bottom: 0;
+          }
           &:before {
             content:          '';
             position:         absolute;
@@ -97,7 +100,7 @@
             position:         absolute;
             z-index:          2;
             right:            2rem;
-            top:              2rem;
+            top:              1.5rem;
             transform:        rotate(45deg);
             width:            1rem;
             height:           1rem;
@@ -144,15 +147,21 @@
       .fundraisingInner {
         .panelSelect {
           .panelSelectItem, .panelSelectCurrent {
-            padding: 1rem;
+            padding: 0.9rem;
+            h4 {
+              font-size:   0.875rem;
+              line-height: 1.35;
+            }
           }
           .panelSelectCurrent {
             &:before {
-              width: 4rem;
+              width: 3rem;
             }
             &:after {
-              right: 1.5rem;
-              top:   1.5rem;
+              right: 1.25rem;
+              top:   1.25rem;
+              width: 0.5rem;
+              height: 0.5rem;
             }
           }
         }
