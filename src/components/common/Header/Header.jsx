@@ -29,7 +29,7 @@ import usage from '../../../assets/images/home/products/usage.svg'
 
 const menus = [
     {url: routes.home, label: 'Home',},
-    {url: routes.products, label: 'Products', subMenu: true},
+    {url: `${routes.products}#pitch_deck`, label: 'Products', subMenu: true},
     {url: routes.pricing, label: 'Pricing'},
     {url: routes.contact, label: 'Contact'},
 ];
@@ -39,14 +39,14 @@ const products = [
     {id: 1, url: `${routes.products}#customer_accounts`, title: 'Customer Accounts', icon: accounts},
     {id: 2, url: `${routes.products}#historical_financials`, title: 'Historical Financials', icon: financials},
     {id: 3, url: `${routes.products}#data_room_checklist`, title: 'Data Room Checklist', icon: data},
-    {id: 4, url: `${routes.products}#market_size_and_gtm `, title: 'Market Size and GTM', icon: gtm},
+    {id: 4, url: `${routes.products}#market_size_and_gtm`, title: 'Market Size and GTM', icon: gtm},
     {id: 5, url: `${routes.products}#financial_kpis`, title: 'Financial KPIs', icon: kpi},
     {id: 6, url: `${routes.products}#convertible_notes`, title: 'Convertible Notes', icon: notes},
     {id: 7, url: `${routes.products}#cap_table_scenarios`, title: 'Cap Table Scenarios', icon: scenarios},
     {id: 8, url: `${routes.products}#financial_forecast`, title: 'Financial Forecast', icon: forecast},
     {id: 9, url: `${routes.products}#investor_updates`, title: 'Investor Updates', icon: updates},
-    {id: 10, url: `${routes.products}#tech_due_Diligence Q&a`, title: 'Tech Due Diligence Q&A', icon: tech},
-    {id: 11, url: `${routes.products}#sales_pipeline `, title: 'Sales Pipeline Forecast', icon: sales},
+    {id: 10, url: `${routes.products}#tech_due_diligence_q&a`, title: 'Tech Due Diligence Q&A', icon: tech},
+    {id: 11, url: `${routes.products}#sales_pipeline_forecast`, title: 'Sales Pipeline Forecast', icon: sales},
     {id: 12, url: `${routes.products}#investor_crm`, title: 'Investor CRM', icon: crm},
     {id: 13, url: `${routes.products}#organizational_chart`, title: 'Organizational Chart', icon: chart},
     {id: 14, url: `${routes.products}#fund_usage`, title: 'Fund Usage', icon: usage},

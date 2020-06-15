@@ -39,6 +39,16 @@
     display:          flex;
     align-items:      center;
     justify-content:  space-between;
+    position:         relative;
+    &:before {
+      content:          '';
+      position:         absolute;
+      right:            0;
+      bottom:           0;
+      width:            50%;
+      height:           50%;
+      background-color: rgba(0, 0, 0, 0.02);
+    }
     h4 {
       font-size:   1.5rem;
       line-height: 1.5;
@@ -53,9 +63,6 @@
     .link {
       display:     flex;
       margin-left: .5rem;
-      button {
-        background-color: $secondColor;
-      }
     }
   }
 }

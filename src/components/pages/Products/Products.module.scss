@@ -13,14 +13,15 @@
         width:         26%;
         min-width:     15.5rem;
         ul {
-          font-size:   1.125rem;
-          line-height: 3.67;
-          color:       #91d6b8;
           li {
             cursor:       pointer;
             position:     relative;
             padding-left: 0.5rem;
             &:hover, &:active {
+              a {
+                color:      $mainColor;
+                transition: .3s linear;
+              }
               color:      $mainColor;
               transition: .3s linear;
             }
@@ -37,10 +38,18 @@
               opacity:          0;
             }
             &.active {
-              color: $mainColor;
+              a {
+                color: $mainColor;
+
+              }
               &:before {
                 opacity: 1;
               }
+            }
+            a {
+              font-size:   1.125rem;
+              line-height: 3.67;
+              color:       #91d6b8;
             }
           }
         }

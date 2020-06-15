@@ -157,7 +157,7 @@ export const Home = () => {
                 title={['Accelerate', 'Fundraising']}
                 subTitle={true}
                 description={false}
-                link={{url: '/', label: 'Explore Products'}} />
+                link={{url: `${routes.products}#pitch_deck`, label: 'Explore Products'}} />
             <section className={styles.overview} ref={el => sectionTwo = el}>
                 <div className='container'>
                     <div className={styles.overviewInner}>
@@ -192,14 +192,15 @@ export const Home = () => {
                                 scratch.
                             </p>
                         </div>
-                        <a href='/' className={styles.productsItemWrapper} ref={el => productsItem = el}>
+                        <div className={styles.productsItemWrapper} ref={el => productsItem = el}>
                             {productsItems.map(product => (
-                                <div key={product.id} className={styles.productsItem}>
+                                <a href={`${routes.products}#${product.title.toLowerCase().replace(/ /g, '_')}`}
+                                   key={product.id} className={styles.productsItem}>
                                     <div><img src={product.icon} alt='' /></div>
                                     <p>{product.title}</p>
-                                </div>
+                                </a>
                             ))}
-                        </a>
+                        </div>
                     </div>
                     <div className={styles.pagination}>
                         <button className='btn-primary--prev' onClick={() => prevProduct()} />
@@ -207,7 +208,7 @@ export const Home = () => {
                         </button>
                         <button className='btn-primary--next' onClick={() => nextProduct()} />
                     </div>
-                    <a href='/' className={styles.link}>Explore Fundraising Products
+                    <a href={`${routes.products}#pitch_deck`} className={styles.link}>Explore Fundraising Products
                         <img src={arrow} alt='' />
                     </a>
                 </div>
@@ -222,7 +223,7 @@ export const Home = () => {
                                 to get started with your fundraising journey
                             </p>
                         </div>
-                        <Plan service={true} />
+                        <Plan />
                         <a href={routes.pricing} className={styles.link}>Explore Pricing Plans
                             <img src={arrow} alt='' />
                         </a>

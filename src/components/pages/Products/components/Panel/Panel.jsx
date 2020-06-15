@@ -8,9 +8,10 @@ import { Item } from "../../../../common";
 // assets
 import styles from "./Panel.module.scss";
 
-export const Panel = ({data, tab}) => {
+export const Panel = ({data}) => {
     return (
-        <div className={tab === data.header.title ? [styles.panel] : `${styles.panel}  d-none`}>
+        <div
+            className={window.location.hash.replace("#", "") === data.header.title.toLowerCase().replace(/ /g, '_') ? [styles.panel] : `${styles.panel}  d-none`}>
             <h2 className={styles.panelTitle}>
                 <img src={data.header.image} alt='' />
                 {data.header.title}
@@ -38,8 +39,8 @@ export const Panel = ({data, tab}) => {
                         <p>{data.info.description}</p>
                     </div>
                     <a href={data.info.url} className={styles.link}>
-                        <button type="button" className="btn-primary">Download Now</button>
-                        <button className='btn-primary--next' />
+                        <button type="button" className="btn-dark">Download Now</button>
+                        <button className='btn-primary--nextDark' />
                     </a>
                 </div>
             </div>

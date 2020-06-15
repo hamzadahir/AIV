@@ -68,8 +68,8 @@ import word from "../../../assets/images/products/word.svg";
 
 const tabs = [
     'Pitch Deck',
-    'Financials KPIs',
-    'Financials Forecast',
+    'Financial KPIs',
+    'Financial Forecast',
     'Customer Accounts',
     'Cap Table Scenarios',
     'Convertible Notes',
@@ -166,7 +166,7 @@ const data = [
     {
         header: {
             image: accounts,
-            title: 'Financials KPIs',
+            title: 'Financial KPIs',
             description: 'AIV provides pre-built investor-ready financial KPIs templates to tell your growth story to investors.'
         },
         itemType: 1,
@@ -253,7 +253,7 @@ const data = [
     {
         header: {
             image: forecast,
-            title: 'Financials Forecast',
+            title: 'Financial Forecast',
             description: 'AIV provides pre-built investor-ready financial forecast templates to explain how you will grow your business. '
         },
         itemType: 1,
@@ -684,7 +684,6 @@ const duration = 2;
 export const Products = () => {
     const [toggleSelect, setToggleSelect] = useState(false);
     const [currentSelect, setCurrentSelect] = useState('Pitch Deck');
-    const [tab, seTab] = useState('Pitch Deck');
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
@@ -714,7 +713,6 @@ export const Products = () => {
     const handleSelect = (title) => {
         setToggleSelect(!toggleSelect);
         setCurrentSelect(title);
-        seTab(title);
     };
     return (
         <main className={styles.products}>
@@ -731,8 +729,12 @@ export const Products = () => {
                         <div className={styles.tabs}>
                             <ul>
                                 {tabs.map((tabItem) => (
-                                    <li key={tabItem} className={tab === tabItem ? styles.active : ''}
-                                        onClick={() => seTab(tabItem)}>{tabItem}</li>
+                                    <li key={tabItem}
+                                        className={window.location.hash.replace("#", "") === tabItem.toLowerCase().replace(/ /g, '_') ? styles.active : ''}>
+                                        <a href={`#${tabItem.toLowerCase().replace(/ /g, '_')}`}>
+                                            {tabItem}
+                                        </a>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
@@ -756,7 +758,7 @@ export const Products = () => {
                             </div>
                         </div>
                         {data.map((item, index) => (
-                            <Panel key={index} data={item} tab={tab} />
+                            <Panel key={index} data={item} />
                         ))}
                     </div>
                 </div>

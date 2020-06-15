@@ -1,7 +1,7 @@
 @import "./assets/scss/variables";
 
 @media (any-hover: hover) {
-  button {
+  .btn-primary, .btn-dark, .btn-second {
     &:hover:before {
       left: 0;
     }
@@ -32,14 +32,6 @@ a {
   cursor:          pointer;
   font-size:       1.125rem;
   line-height:     1.39;
-}
-
-button {
-  cursor:      pointer;
-  font-size:   1rem;
-  line-height: 1.375rem;
-  font-family: Avenir, sans-serif;
-  font-weight: 500;
 }
 
 body, html {
@@ -123,7 +115,7 @@ hr {
 
 input, textarea {
   width:            100%;
-  border:           0.0625rem solid #728387;
+  border:           0.0625rem solid #E4E8EB;
   font-family:      Avenir, sans-serif;
   padding:          1rem;
   font-size:        0.875rem;
@@ -148,17 +140,33 @@ iframe {
   height: 100%;
 }
 
-.btn-primary {
-  position:   relative;
-  z-index:    1;
-  overflow:   hidden;
-  background: $mainColor;
-  border:     none;
-  color:      $white;
-  padding:    1rem;
-  width:      11rem;
-  transition: 0.4s ease-out;
-  height:     3.5rem;
+button {
+  cursor:      pointer;
+  font-size:   1rem;
+  line-height: 1.375rem;
+  font-family: Avenir, sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary, .btn-dark {
+  position:        relative;
+  z-index:         1;
+  overflow:        hidden;
+  background:      $mainColor;
+  border:          none;
+  color:           $white;
+  padding:         1rem;
+  width:           11rem;
+  transition:      0.4s ease-out;
+  height:          3.5rem;
+  cursor:          pointer;
+  font-size:       1rem;
+  line-height:     1.375rem;
+  font-family:     Avenir, sans-serif;
+  font-weight:     500;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
   &:before {
     content:          '';
     position:         absolute;
@@ -176,16 +184,31 @@ iframe {
   }
 }
 
+.btn-dark {
+  background: #1d343c;
+  &:before {
+    background-color: #1a2f36;
+  }
+}
+
 .btn-second {
-  position:   relative;
-  z-index:    1;
-  overflow:   hidden;
-  background: transparent;
-  border:     0.0625rem solid $yellow;
-  color:      $yellow;
-  padding:    1rem;
-  width:      13.3125rem;
-  transition: .3s linear;
+  position:        relative;
+  z-index:         1;
+  overflow:        hidden;
+  background:      transparent;
+  border:          0.0625rem solid $yellow;
+  color:           $yellow;
+  padding:         1rem;
+  width:           13.3125rem;
+  transition:      .3s linear;
+  cursor:          pointer;
+  font-size:       1rem;
+  line-height:     1.375rem;
+  font-family:     Avenir, sans-serif;
+  font-weight:     500;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
   &:before {
     content:          '';
     position:         absolute;
@@ -206,7 +229,7 @@ iframe {
   }
 }
 
-.btn-primary--prev, .btn-primary--next {
+.btn-primary--prev, .btn-primary--next, .btn-primary--nextDark {
   width:            3.5rem;
   max-width:        3.5rem;
   height:           3.5rem;
@@ -225,6 +248,15 @@ iframe {
     display:         block;
     margin:          0 auto;
   }
+}
+
+.btn-primary--nextDark {
+  background-color: #1a2f36;
+  &:hover, &:active {
+    color:   #1d343c;
+    opacity: 1;
+  }
+
 }
 
 .btn-primary--prev:before {
@@ -267,7 +299,6 @@ iframe {
 
 .normalTitle {
   font-weight: 500;
-  display:     block;
 }
 
 .d-block {

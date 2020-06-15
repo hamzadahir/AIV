@@ -9,6 +9,7 @@
       }
     }
     .copyright a:hover {
+      opacity: 1;
       color: $mainColor;
     }
   }
@@ -39,7 +40,7 @@
     .topSectionButtons {
       text-align:  right;
       padding-top: 3rem;
-      button:nth-child(2) {
+      a:nth-child(2) {
         margin-left: 1rem;
       }
     }
@@ -107,7 +108,7 @@
       line-height: 1.78;
       color:       $white;
     }
-    p {
+    a {
       opacity: .5;
     }
     a:active {
@@ -179,7 +180,7 @@
       }
       .topSectionButtons {
         flex-direction: column;
-        button {
+        a {
           margin: 0 0 1rem 0 !important;
           width:  100%;
         }

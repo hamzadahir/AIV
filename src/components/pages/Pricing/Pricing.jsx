@@ -13,7 +13,7 @@ export const Pricing = () => {
             <section className={styles.choose}>
                 <div className='container'>
                     <h1>
-                        Choose a plan <br />
+                        Choose a <span className='normalTitle'>plan</span> <br />
                         that’s right for <span className='greenTitle'>you.</span>
                     </h1>
                     <p>
@@ -24,7 +24,7 @@ export const Pricing = () => {
             </section>
             <section className={styles.pricing}>
                 <div className='container'>
-                    <Plan service={false} />
+                    <Plan />
                 </div>
             </section>
         </main>

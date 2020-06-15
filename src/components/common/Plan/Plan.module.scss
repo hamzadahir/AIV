@@ -123,44 +123,6 @@ ul.checked {
   }
 }
 
-.services {
-  padding:          0.5rem 2.5rem;
-  background-color: $lightGreen;
-  margin-bottom:    3rem;
-  h3 {
-    margin-bottom: 0;
-  }
-  .servicesInner {
-    display:         flex;
-    flex-wrap:       wrap;
-    justify-content: space-between;
-    align-items:     flex-start;
-    ul {
-      padding-top:     0;
-      width:           65%;
-      display:         flex;
-      flex-wrap:       wrap;
-      justify-content: flex-start;
-      align-items:     flex-start;
-      li {
-        width: 46%;
-        &.done {
-          &:before {
-            background-color: $mainColor;
-          }
-          &:after {
-            filter: brightness(100);
-          }
-        }
-      }
-    }
-    button {
-      width: 16rem;
-    }
-  }
-}
-
-
 @media screen and (max-width: 992px) {
   ul.checked {
     li {
@@ -202,22 +164,6 @@ ul.checked {
       margin-bottom: 0;
     }
   }
-
-  .services {
-    padding: 2.5rem 0.5rem 2.5rem 2.25rem;
-    width:   48%;
-    .servicesInner {
-      padding-top: 4rem;
-      ul {
-        width:         100%;
-        margin-bottom: 2rem;
-        li {
-          width: 100%;
-        }
-      }
-    }
-  }
-
 }
 
 @media screen and (max-width: 767.98px) {
@@ -252,23 +198,6 @@ ul.checked {
       margin-right: -1rem;
     }
   }
-
-  .services {
-    width:         100%;
-    padding:       2.5rem 1.25rem 1.5rem 1.25rem;
-    margin-bottom: 0;
-    .servicesInner {
-      ul {
-        margin-bottom: 0;
-        li {
-          width: 100%;
-        }
-      }
-      button {
-        width: 100%;
-      }
-    }
-  }
 }
 
 
@@ -277,10 +206,5 @@ ul.checked {
   .pricingItemWrapper {
     //opacity:   0;
     //transform: translate(0, 100%);
-  }
-
-  .services {
-    //opacity:   0;
-    //transform: translate(-500px, 0);
   }
 }
