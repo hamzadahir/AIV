@@ -17,8 +17,7 @@ export const Pricing = () => {
                         that’s right for <span className='greenTitle'>you.</span>
                     </h1>
                     <p>
-                        Choose from our flexible product pricing plans and services
-                        to get started with your fundraising journey
+                        Choose from our flexible product pricing plans to get started with your fundraising journey.
                     </p>
                 </div>
             </section>

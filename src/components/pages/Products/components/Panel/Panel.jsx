@@ -36,10 +36,13 @@ export const Panel = ({data}) => {
                 <div className={styles.fundraisingLink}>
                     <div>
                         <h4>{data.info.title}</h4>
-                        <p>{data.info.description}</p>
+                        <p>
+                            Select a pricing plan to get started with and we'll send you a downloadable link directly to
+                            your email.
+                        </p>
                     </div>
                     <a href={data.info.url} className={styles.link}>
-                        <button type="button" className="btn-dark">Download Now</button>
+                        <button type="button" className="btn-dark">Purchase Now</button>
                         <button className='btn-primary--nextDark' />
                     </a>
                 </div>

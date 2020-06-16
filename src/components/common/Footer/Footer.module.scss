@@ -10,7 +10,7 @@
     }
     .copyright a:hover {
       opacity: 1;
-      color: $mainColor;
+      color:   $mainColor;
     }
   }
 }
@@ -40,6 +40,9 @@
     .topSectionButtons {
       text-align:  right;
       padding-top: 3rem;
+      a:nth-child(1) {
+        width: 12rem;
+      }
       a:nth-child(2) {
         margin-left: 1rem;
       }

@@ -23,6 +23,10 @@ import crm from "../../../assets/images/home/products/crm.svg";
 import tech from "../../../assets/images/home/products/tech.svg";
 import chart from "../../../assets/images/home/products/chart.svg";
 import dataRoom from "../../../assets/images/home/products/data.svg";
+import gtm from "../../../assets/images/home/products/gtm.svg";
+import financials from "../../../assets/images/home/products/financials.svg";
+import sales from "../../../assets/images/home/products/sales.svg";
+import usage from "../../../assets/images/home/products/usage.svg";
 
 import work from "../../../assets/images/home/work.svg";
 import box from "../../../assets/images/products/box.svg";
@@ -46,21 +50,22 @@ import users from '../../../assets/images/products/users.svg'
 import calendar from '../../../assets/images/products/calendar.svg'
 import calendarFill from '../../../assets/images/products/calendar-fill.svg'
 import fileFill from '../../../assets/images/products/file-text.svg'
-
 import investment from '../../../assets/images/products/investment.svg'
 import checkSquare from '../../../assets/images/products/check-square.svg'
-
 import checkCircle from '../../../assets/images/products/check-circle.svg'
 import minimize from '../../../assets/images/products/minimize.svg'
-
 import crosshair from '../../../assets/images/products/crosshair.svg'
 import development from '../../../assets/images/products/development.svg'
 import key from '../../../assets/images/products/key.svg'
-
 import watch from '../../../assets/images/products/watch.svg'
-
 import pieChart from '../../../assets/images/products/pie-chart.svg'
 import barChart from '../../../assets/images/products/bar-chart.svg'
+import law from '../../../assets/images/products/law.svg'
+import cornerRightUp from '../../../assets/images/products/corner-right-up.svg'
+import lock from '../../../assets/images/products/lock.svg'
+import shoppingCart from '../../../assets/images/products/shopping-cart.svg'
+import server from '../../../assets/images/products/server.svg'
+import moreHorizontal from '../../../assets/images/products/more-horizontal.svg'
 
 
 import powerPoint from "../../../assets/images/products/powerPoint.svg";
@@ -69,16 +74,20 @@ import word from "../../../assets/images/products/word.svg";
 
 const tabs = [
     'Pitch Deck',
-    'Financial KPIs',
-    'Financial Forecast',
-    'Customer Accounts',
-    'Cap Table Scenarios',
+    'Data Room Checklist',
     'Convertible Notes',
     'Investor Updates',
     'Investor CRM',
+    'Customer Accounts',
+    'Market Size and GTM',
+    'Cap Table Scenarios',
     'Tech Due Diligence Q&A',
-    'Company Org Chart',
-    'Data Room Checklist'
+    'Organizational Chart',
+    'Historical Financials',
+    'Financial KPIs',
+    'Financial Forecast',
+    'Sales Pipeline Forecast',
+    'Fund Usage'
 ];
 
 const data = [
@@ -86,7 +95,7 @@ const data = [
         header: {
             image: deck,
             title: 'Pitch Deck',
-            description: 'AIV provides a pre-built investor-ready pitch deck template for you to customize and start your fundraising journey.'
+            description: 'QuickRaise provides a pre-built investor-ready pitch deck template for you to customize and start your fundraising journey.'
         },
         itemType: 0,
         items: [
@@ -160,7 +169,6 @@ const data = [
             url: '/',
             image: powerPoint,
             title: 'Start building your Pitch Deck today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
@@ -168,7 +176,7 @@ const data = [
         header: {
             image: accounts,
             title: 'Financial KPIs',
-            description: 'AIV provides pre-built investor-ready financial KPIs templates to tell your growth story to investors.'
+            description: 'QuickRaise provides pre-built investor-ready financial KPIs templates to tell your growth story to investors.'
         },
         itemType: 1,
         items: [
@@ -247,7 +255,6 @@ const data = [
             url: '/',
             image: exel,
             title: 'Start building your Financials KPIs today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
@@ -255,7 +262,7 @@ const data = [
         header: {
             image: forecast,
             title: 'Financial Forecast',
-            description: 'AIV provides pre-built investor-ready financial forecast templates to explain how you will grow your business. '
+            description: 'QuickRaise provides pre-built investor-ready financial forecast templates to explain how you will grow your business. '
         },
         itemType: 1,
         items: [
@@ -299,7 +306,52 @@ const data = [
             url: '/',
             image: exel,
             title: 'Start building your Financials Forecast today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: sales,
+            title: 'Sales Pipeline Forecast',
+            description: 'QuickRaise provides pre-built investor-ready sales pipeline forecast for investors to understand how your revenues will grow in the upcoming months.'
+        },
+        itemType: 1,
+        items: [
+            {
+                url: '/',
+                title: 'Sales Pipeline Summary',
+                image: rate
+            },
+            {
+                url: '/',
+                title: 'Revenue Type',
+                image: dollar
+            },
+            {
+                url: '/',
+                title: 'Stage',
+                image: cornerRightUp
+            },
+            {
+                url: '/',
+                title: 'Closing Confidence',
+                image: lock
+            },
+            {
+                url: '/',
+                title: 'Timeline',
+                image: watch
+            },
+            {
+                url: '/',
+                title: 'Forecasted Sales and Bookings',
+                image: calendarFill
+            },
+        ],
+        info: {
+            url: '/',
+            image: exel,
+            title: 'Start building your Sales Pipeline Forecast today!',
             link: '/'
         },
     },
@@ -307,7 +359,7 @@ const data = [
         header: {
             image: accountsGreen,
             title: 'Customer Accounts',
-            description: 'AIV provides pre-built investor-ready customer accounts templates to explain your existing customer accounts and growth.'
+            description: 'QuickRaise provides pre-built investor-ready customer accounts templates to explain your existing customer accounts and growth.'
         },
         itemType: 1,
         items: [
@@ -361,7 +413,21 @@ const data = [
             url: '/',
             image: exel,
             title: 'Start building your Customer Accounts today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: gtm,
+            title: 'Market Size and GTM',
+            description: 'QuickRaise provides pre-built investor-ready customer accounts templates to explain your existing customer accounts and growth.'
+        },
+        itemType: 0,
+        items: [],
+        info: {
+            url: '/',
+            image: exel,
+            title: 'Start building your Market Size and GTM today!',
             link: '/'
         },
     },
@@ -369,7 +435,7 @@ const data = [
         header: {
             image: scenarios,
             title: 'Cap Table Scenarios',
-            description: 'AIV provides pre-built investor-ready cap table and scenarios built-in to forecast dilution for you and your shareholders.'
+            description: 'QuickRaise provides pre-built investor-ready cap table and scenarios built-in to forecast dilution for you and your shareholders.'
         },
         itemType: 1,
         items: [
@@ -418,7 +484,6 @@ const data = [
             url: '/',
             image: exel,
             title: 'Start building your Cap Table Scenarios today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
@@ -426,7 +491,7 @@ const data = [
         header: {
             image: notes,
             title: 'Convertible Notes',
-            description: 'AIV provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.'
+            description: 'QuickRaise provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.'
         },
         itemType: 1,
         items: [
@@ -460,7 +525,7 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Convertible Notes today!',
-            description: 'AIV provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.',
+            description: 'QuickRaise provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.',
             link: '/'
         },
     },
@@ -468,7 +533,7 @@ const data = [
         header: {
             image: updates,
             title: 'Investor Updates',
-            description: 'AIV provides pre-built investor-ready e-mail and report updates for you to keep your investors in the loop of your progress.'
+            description: 'QuickRaise provides pre-built investor-ready e-mail and report updates for you to keep your investors in the loop of your progress.'
         },
         itemType: 1,
         items: [
@@ -522,7 +587,6 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Investor Updates today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
@@ -530,7 +594,7 @@ const data = [
         header: {
             image: crm,
             title: 'Investor CRM',
-            description: 'AIV provides pre-built investor-ready CRM for you to keep track of your fundraising progress.'
+            description: 'QuickRaise provides pre-built investor-ready CRM for you to keep track of your fundraising progress.'
         },
         itemType: 1,
         items: [
@@ -574,7 +638,6 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Investor CRM today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
@@ -582,7 +645,7 @@ const data = [
         header: {
             image: tech,
             title: 'Tech Due Diligence Q&A',
-            description: 'AIV provides pre-built investor-ready tech due diligence Q&A for you to assess your technology stack and show investors how you compare to others.'
+            description: 'QuickRaise provides pre-built investor-ready tech due diligence Q&A for you to assess your technology stack and show investors how you compare to others.'
         },
         itemType: 1,
         items: [
@@ -606,15 +669,14 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Tech Due Diligence Q&A today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
             link: '/'
         },
     },
     {
         header: {
             image: chart,
-            title: 'Company Org Chart',
-            description: 'AIV provides pre-built investor-ready tech due diligence Q&A for you to assess your technology stack and show investors how you compare to others.'
+            title: 'Organizational Chart',
+            description: 'QuickRaise provides pre-built investor-ready tech due diligence Q&A for you to assess your technology stack and show investors how you compare to others.'
         },
         itemType: 1,
         items: [
@@ -637,8 +699,33 @@ const data = [
         info: {
             url: '/',
             image: exel,
-            title: 'Start building your Company Org Chart today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            title: 'Start building your Organizational Chart today!',
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: financials,
+            title: 'Historical Financials',
+            description: 'QuickRaise provides pre-built investor-ready historical financial templates to tell your growth story to investors.'
+        },
+        itemType: 1,
+        items: [
+            {
+                url: '/',
+                title: '3-Year Profit and Loss Statements',
+                image: trending
+            },
+            {
+                url: '/',
+                title: '3-Year Balance Sheet',
+                image: law
+            },
+        ],
+        info: {
+            url: '/',
+            image: exel,
+            title: 'Start building your Historical Financials today!',
             link: '/'
         },
     },
@@ -646,7 +733,7 @@ const data = [
         header: {
             image: dataRoom,
             title: 'Data Room Checklist',
-            description: 'AIV provides an extensive data room checklist on what you will need to fully complete your fundraising.'
+            description: 'QuickRaise provides an extensive data room checklist on what you will need to fully complete your fundraising.'
         },
         itemType: 1,
         items: [
@@ -675,7 +762,52 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Data Room Checklist today!',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+            link: '/'
+        },
+    },
+    {
+        header: {
+            image: usage,
+            title: 'Fund Usage',
+            description: 'QuickRaise provides pre-built investor-ready fund usage templates to help investors understand how you will spend the capital.'
+        },
+        itemType: 1,
+        items: [
+            {
+                url: '/',
+                title: 'Payroll',
+                image: cost
+            },
+            {
+                url: '/',
+                title: 'New Hires',
+                image: users
+            },
+            {
+                url: '/',
+                title: 'Vendors',
+                image: shoppingCart
+            },
+            {
+                url: '/',
+                title: 'Infrastructure',
+                image: server
+            },
+            {
+                url: '/',
+                title: 'Others',
+                image: moreHorizontal
+            },
+            {
+                url: '/',
+                title: 'Annual Budget',
+                image: dollar
+            },
+        ],
+        info: {
+            url: '/',
+            image: exel,
+            title: 'Start building your Fund Usage today!',
             link: '/'
         },
     },
@@ -722,7 +854,7 @@ export const Products = () => {
                 banner={false}
                 title={['Fundraising', 'Products']}
                 subTitle={false}
-                description='AIV provides you with pre-built investor-ready templates which you can utilize to build out your  data room. No need to spend time creating materials from scratch.'
+                description='QuickRaise provides you with pre-built investor-ready templates which you can utilize to build out your  data room. No need to spend time creating materials from scratch.'
                 link={{url: '/', label: 'Purchase Now'}} />
 
             <section className={styles.fundraising}>

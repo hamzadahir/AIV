@@ -19,12 +19,12 @@ export const Footer = () => {
                     <div>
                         <h2>Ready? Get Started</h2>
                         <p>
-                            AIV is ready to help you accelerate your fundraising journey. Explore our products and
-                            services and come partner with us.
+                            QuickRaise is ready to help you accelerate your fundraising journey. Explore our products
+                            and come partner with us.
                         </p>
                     </div>
                     <div className={styles.topSectionButtons}>
-                        <a href={`${routes.products}#pitch_deck`} className='btn-primary'>Explore Products</a>
+                        <a href={routes.pricing} className='btn-primary'>Explore Pricing Plans</a>
                         <a href={routes.contact} className='btn-second'>Need help?</a>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ export const Footer = () => {
                     <ul>
                         <li className={styles.logo}><img src={logo} alt='logo' /></li>
                         <li><a href='/'>99 Wall Street, New York <br /> NY 10005</a></li>
-                        <li><a href="mailto:Info@aiv.llc">Info@aiv.llc</a></li>
+                        <li><a href="mailto:info@quickraise.com">Info@quickraise.com</a></li>
                     </ul>
                     <ul>
                         <li className={styles.bottomSectionTitle}>PRODUCTS</li>
@@ -93,7 +93,7 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.copyright}>
-                    <p>Copyright © 2014 – 2019 Applied Innovation Ventures</p>
+                    <p>Copyright © 2014 – 2019 QuickRaise, Inc.</p>
                     <p>
                         <span><a href='/'>Terms & Conditions</a></span>
                         <span className={styles.line}>/</span>

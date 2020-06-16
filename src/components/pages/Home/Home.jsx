@@ -164,9 +164,8 @@ export const Home = () => {
                         <div className={styles.overviewTitle} ref={el => overviewTitle = el}>
                             <h2>Overview</h2>
                             <p>
-                                Applied Innovation help accelerate venture financing for startups
-                                by providing them with the necessary financing templates and
-                                services to get ahead start.
+                                QuickRaise help accelerate venture financing for startups by providing them with the
+                                necessary financing templates to get ahead start in the fundraising process.
                             </p>
                         </div>
                         <div className={styles.overviewItemWrapper} ref={el => overviewItem = el}>
@@ -186,7 +185,7 @@ export const Home = () => {
                         <div className={styles.productsTitle} ref={el => productsTitle = el}>
                             <h2>Fundraising Products</h2>
                             <p>
-                                AIV provides you with pre-built investor-ready templates which
+                                QuickRaise provides you with pre-built investor-ready templates which
                                 you can utilize to build out your data room. No need to spend time creating materials
                                 from
                                 scratch.

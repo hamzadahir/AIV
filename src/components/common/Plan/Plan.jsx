@@ -51,8 +51,7 @@ export const Plan = () => {
                     <div className={styles.price}><span>$</span>999</div>
                     <h4>Basic</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectet
-                        adipiscing elit sed do eiusmod.
+                        Our basic plan is best suited for startups just starting the fundraising process.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
@@ -79,8 +78,7 @@ export const Plan = () => {
                     <div className={styles.price}><span>$</span>2,999</div>
                     <h4>Plus</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectet
-                        adipiscing elit sed do eiusmod.
+                        Our plus plan is best suited for startups engaging in preliminary due diligence with investors.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
@@ -107,8 +105,8 @@ export const Plan = () => {
                     <div className={styles.price}><span>$</span>4,999</div>
                     <h4>Premium</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectet
-                        adipiscing elit sed do eiusmod.
+                        Our premium plan is best suited for startups in deep dive due diligence discussions with
+                        investors.
                     </p>
                     <hr />
                     <ul className={styles.checked}>

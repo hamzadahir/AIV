@@ -9,7 +9,6 @@ import styles from './Contact.module.scss';
 import banner from '../../../assets/images/contacts/contact-banner.svg'
 import america from '../../../assets/images/contacts/america.svg'
 import mail from '../../../assets/images/contacts/mail.svg'
-import phone from '../../../assets/images/contacts/phone.svg'
 
 const data = [
     {
@@ -21,14 +20,9 @@ const data = [
                 image: america
             },
             {
-                url: '/',
-                title: 'Info@aiv.llc',
+                url: 'mailto:info@quickraise.com',
+                title: 'Info@quickraise.com',
                 image: mail
-            },
-            {
-                url: '/',
-                title: '+1 (000) 000-0000',
-                image: phone
             },
         ],
     }
