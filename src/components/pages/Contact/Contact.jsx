@@ -33,7 +33,27 @@ const data = [
         ],
     }
 ];
-export const Contact = () => {
+export const Contact = ({sendMessage}) => {
+    const [fullName, setFullName] = React.useState('');
+    const [companyName, setCompanyName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [phone, setPhone] = React.useState('');
+    const [message, setMessage] = React.useState('');
+    const [send, setSend] = React.useState(false);
+    const handleSendMessage = () => {
+        sendMessage({
+            name: fullName,
+            company: companyName,
+            email: email,
+            phone: phone,
+            message: message
+        });
+    }
+
+    React.useEffect(() => {
+        setSend(fullName && companyName && email && phone)
+    }, [fullName, companyName, email, phone]);
+
     return (
         <main className={styles.contact}>
             <section className={styles.help}>
@@ -44,27 +64,27 @@ export const Contact = () => {
                                 Get in touch</h2>
                             <form>
                                 <label>
-                                    <input type='text' />
+                                    <input required type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} />
                                     <span>Full Name</span>
                                 </label>
                                 <label>
-                                    <input type='text' />
+                                    <input required type='text' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
                                     <span>Company Name</span>
                                 </label>
                                 <label>
-                                    <input type='email' />
+                                    <input required type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <span>Email address</span>
                                 </label>
                                 <label>
-                                    <input type='phone' />
+                                    <input required type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
                                     <span>Phone Number</span>
                                 </label>
-                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' />
-                                <button type="submit" className='accelerateButton'>
+                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={(e) => setMessage(e.target.value)} />
+                            </form>
+                            <button disabled={!send} onClick={() => handleSendMessage()} className='accelerateButton'>
                                     <span className="btn-primary">Submit message</span>
                                     <span className='btn-primary--next' />
-                                </button>
-                            </form>
+                            </button>
                         </div>
                         <div className={styles.image}>
                             <img src={banner} alt='' />

@@ -1,0 +1,2 @@
+export const SEND_MAIL_EROOR = "SEND_MAIL_EROOR";
+export const SEND_MAIL_SUCCESS = "SEND_MAIL_SUCCESS";
