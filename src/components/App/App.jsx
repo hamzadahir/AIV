@@ -3,29 +3,36 @@ import React from 'react';
 
 // library
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 // components
-import { Contact, Home, Pricing, Products } from "../pages";
+import { Home, Pricing, Products } from "../pages";
+import ContactForm from "../containers/Contact";
 
 import { Footer, Header } from "../common";
 import { routes } from './routes';
+import configureStore from "../../redux/store/configureStore";
 
 // assets
 import styles from './App.module.scss';
 
+const store = configureStore();
+
 function App() {
     return (
-        <div className={styles.app}>
-            <Header />
-            <Switch>
-                <Redirect exact from='/' to={routes.home} />
-                <Route path={routes.home} component={Home} />
-                <Route path={routes.products} component={Products} />
-                <Route path={routes.pricing} component={Pricing} />
-                <Route path={routes.contact} component={Contact} />
-            </Switch>
-            <Footer />
-        </div>
+        <Provider store={store}>
+            <div className={styles.app}>
+                <Header />
+                <Switch>
+                    <Redirect exact from='/' to={routes.home} />
+                    <Route path={routes.home} component={Home} />
+                    <Route path={routes.products} component={Products} />
+                    <Route path={routes.pricing} component={Pricing} />
+                    <Route path={routes.contact} component={ContactForm} />
+                </Switch>
+                <Footer />
+            </div>
+        </Provider>
     );
 }
 

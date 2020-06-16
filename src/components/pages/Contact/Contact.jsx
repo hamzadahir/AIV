@@ -28,10 +28,48 @@ const data = [
         ],
     }
 ];
-export const Contact = () => {
+export const Contact = ({closePopup, isSending, isError, responseMessage, sendMessage}) => {
+    const [fullName, setFullName] = React.useState('');
+    const [companyName, setCompanyName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [phone, setPhone] = React.useState('');
+    const [message, setMessage] = React.useState('');
+    const [send, setSend] = React.useState(false);
+    const [validation, setValidation] = React.useState(true);
+
+    const handleSendMessage = () => {
+        sendMessage({
+            name: fullName,
+            company: companyName,
+            email: email,
+            phone: phone,
+            message: message
+        });
+    }
+
+    React.useEffect(() => {
+        setSend(fullName && companyName && email && phone && validation)
+    }, [fullName, companyName, email, phone, validation]);
+
+    React.useEffect(() => {
+        let num = phone;
+        num = Number(num);
+        isNaN(num) ? setValidation(false) : setValidation(true);
+    }, [phone]);
+
     return (
         <main className={styles.contact}>
             <section className={styles.help}>
+                {(isSending || isError) &&
+                    <div className='popupContainer'>
+                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
+                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
+                            <button onClick={() => closePopup()} className='closePopupButton'>
+                                    <span>✘</span>
+                            </button>
+                        </div>
+                    </div>
+                }
                 <div className='container'>
                     <div className={styles.helpInner}>
                         <div className={styles.formWrapper}>
@@ -39,27 +77,24 @@ export const Contact = () => {
                                 Get in touch</h2>
                             <form>
                                 <label>
-                                    <input type='text' />
-                                    <span>Full Name</span>
+                                    <input placeholder="Full Name" required type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} />
                                 </label>
                                 <label>
-                                    <input type='text' />
-                                    <span>Company Name</span>
+                                    <input placeholder="Company Name" required type='text' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
                                 </label>
                                 <label>
-                                    <input type='email' />
-                                    <span>Email address</span>
+                                    <input placeholder="Email address" required type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </label>
                                 <label>
-                                    <input type='phone' />
-                                    <span>Phone Number</span>
+                                    {!validation && <label className="errorLabel">Incorrect Input, please use numbers</label>}
+                                    <input className={!validation ? 'incorrectInput' : ''} placeholder="Phone Number" maxLength='18' required type='tel' value={phone} onChange={(e) => setPhone(e.target.value)} />
                                 </label>
-                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' />
-                                <button type="submit" className='accelerateButton'>
+                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={(e) => setMessage(e.target.value)} />
+                            </form>
+                            <button disabled={!send} onClick={() => handleSendMessage()} className='accelerateButton'>
                                     <span className="btn-primary">Submit message</span>
                                     <span className='btn-primary--next' />
-                                </button>
-                            </form>
+                            </button>
                         </div>
                         <div className={styles.image}>
                             <img src={banner} alt='' />
