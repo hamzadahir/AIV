@@ -82,9 +82,9 @@ export const Contact = () => {
                         </div>
                         <div className={styles.map}>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.5998238741063!2d-74.00946988416092!3d40.704810245991446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a161aaa68c5%3A0x7326c6b80e0fc527!2zOTkgV2FsbCBTdCwgTmV3IFlvcmssIE5ZIDEwMDA1LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1592077344457!5m2!1sru!2sua"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.600008555743!2d-74.00946988395926!3d40.70480617933278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a161aaa68c5%3A0x7326c6b80e0fc527!2s99%20Wall%20St%2C%20New%20York%2C%20NY%2010005%2C%20USA!5e0!3m2!1sen!2sua!4v1592271638221!5m2!1sen!2sua"
                                 width="600" height="280" style={{border: 0}} allowFullScreen=""
-                                aria-hidden="false" tabIndex="0" />
+                                aria-hidden="false" tabIndex="0"/>
                         </div>
                     </div>
                 </div>

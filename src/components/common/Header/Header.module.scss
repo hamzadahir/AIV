@@ -115,18 +115,6 @@
           flex-wrap:        wrap;
           width:            100%;
           padding:          0.5rem 2rem;
-          &:before {
-            content:      '';
-            position:     absolute;
-            top:          3rem;
-            right:        0;
-            width:        16px;
-            height:       16px;
-            border:       8px solid transparent;
-            border-right: 8px solid $lightGreen;
-            border-top:   8px solid $lightGreen;
-            transform:    translate(-100%, -40%) rotate(-45deg);
-          }
           .subMenuTitle {
             position: relative;
             &:before {
@@ -343,11 +331,12 @@
               box-shadow:       none;
               background-color: $lightGreen;
               padding:          1.875rem 0 0 0;
+              flex-direction:   row;
               .subMenuTitle {
                 display: none;
               }
               li:not(.subMenuTitle) {
-                width:   100%;
+                width:   49%;
                 padding: 0;
               }
               .image {
@@ -378,6 +367,10 @@
       .menu ul {
         .subMenuWrapper {
           .subMenu {
+            li:not(.subMenuTitle) {
+              width:   100%;
+              padding: 0;
+            }
             a {
               font-size:    0.875rem;
               line-height:  1.35;

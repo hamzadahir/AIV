@@ -22,7 +22,6 @@ export const Panel = ({data}) => {
                     <Item
                         key={index}
                         type={data.itemType}
-                        url={item.url}
                         title={item.title}
                         image={item.image}
                         description={item.description} />

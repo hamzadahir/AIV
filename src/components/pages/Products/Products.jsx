@@ -100,52 +100,42 @@ const data = [
         itemType: 0,
         items: [
             {
-                url: '/',
                 title: 'Title',
                 description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
             },
             {
-                url: '/',
                 title: 'Problem',
                 description: 'What is the problem your are trying to solve and is it really a problem worth solving?',
             },
             {
-                url: '/',
                 title: 'Solution',
                 description: 'Show off how you solve the big problem you just described with your business.',
             },
             {
-                url: '/',
                 title: 'Product',
                 description: 'You\'ve got something to show? The product slide is the right slide to do it!',
             },
             {
-                url: '/',
                 title: 'Market',
                 description: 'Is the market big enough for huge growth? An important question you should answer!',
             },
             {
-                url: '/',
                 title: 'Competition',
                 description: 'There is no business without competition. Learn how to show it the right way.',
             },
             {
-                url: '/',
                 title: 'Traction',
                 description: 'One thing that helps you to convince investors to love your startup is to show traction!',
             },
             {
-                url: '/',
                 title: 'Business Model',
                 description: 'What\'s the business model that drives your startup? We show ways to show it the right way!',
             },
             {
-                url: '/',
                 title: 'Team',
                 description: 'Investors invest in people. Impress them with your kick-ass team full of experience.',
             },
             {
-                url: '/',
                 title: 'Milestones',
                 description: 'Learn how to display all information regarding your next steps and developments.',
             },
@@ -155,12 +145,10 @@ const data = [
                 description: 'Learn how to design a compelling Financials Slide that leaves no questions open.',
             },
             {
-                url: '/',
                 title: 'Ask',
                 description: 'How much money do you need for the next growth step and what are you going to do with it?',
             },
             {
-                url: '/',
                 title: 'Contact',
                 description: 'The contact slide is the last thing the investor will see. Don\'t forget the CTA!',
             }
@@ -181,52 +169,42 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Bookings',
                 image: work,
             },
             {
-                url: '/',
                 title: 'Annual Recurring Revenue (ARR)',
                 image: box,
             },
             {
-                url: '/',
                 title: 'Monthly Recurring Revenue (MRR)',
                 image: box1,
             },
             {
-                url: '/',
                 title: 'Annual Revenue Per Account (ARPA)',
                 image: user,
             },
             {
-                url: '/',
                 title: 'Gross Margins',
                 image: gross,
             },
             {
-                url: '/',
                 title: 'Total and Annual Contract Value (TCV/ACV)',
                 image: file,
             },
             {
-                url: '/',
                 title: 'Lifetime Value (LTV)',
                 image: trending,
             },
             {
-                url: '/',
                 title: 'Customer Acquisition Cost (CAC)',
                 image: cost,
             },
             {
-                url: '/',
                 title: 'Customer Concentration Risk (CCR)',
                 image: risk,
             },
             {
-                url: '/',
                 title: 'Month-on-Month Growth (MoM)',
                 image: growth,
             },
@@ -236,17 +214,14 @@ const data = [
                 image: rate,
             },
             {
-                url: '/',
                 title: 'Gross and Net Churn Rate',
                 image: dollar,
             },
             {
-                url: '/',
                 title: 'Gross and Net Burn',
                 image: burn,
             },
             {
-                url: '/',
                 title: 'Annual Run Rate',
                 image: percent,
             },
@@ -267,37 +242,30 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: '5 Year Financial Forecast',
                 image: five
             },
             {
-                url: '/',
                 title: 'Customer Growth Assumption',
                 image: user
             },
             {
-                url: '/',
                 title: 'Sales Growth Assumption',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Cost Per Customer Assumption',
                 image: cost
             },
             {
-                url: '/',
                 title: 'Operating Expense Assumption',
                 image: operating
             },
             {
-                url: '/',
                 title: 'Employees Growth Assumption',
                 image: rate
             },
             {
-                url: '/',
                 title: 'Team Breakdown Analysis',
                 image: users
             },
@@ -318,32 +286,26 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Sales Pipeline Summary',
                 image: rate
             },
             {
-                url: '/',
                 title: 'Revenue Type',
                 image: dollar
             },
             {
-                url: '/',
                 title: 'Stage',
                 image: cornerRightUp
             },
             {
-                url: '/',
                 title: 'Closing Confidence',
                 image: lock
             },
             {
-                url: '/',
                 title: 'Timeline',
                 image: watch
             },
             {
-                url: '/',
                 title: 'Forecasted Sales and Bookings',
                 image: calendarFill
             },
@@ -364,47 +326,38 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Financial Growth Analysis Summary',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Gross and Net Bookings Per Account',
                 image: calendar
             },
             {
-                url: '/',
                 title: 'ARR Per Account',
                 image: user
             },
             {
-                url: '/',
                 title: 'Recognized Revenues Per Account',
                 image: cost
             },
             {
-                url: '/',
                 title: 'Contract Terms',
                 image: fileFill
             },
             {
-                url: '/',
                 title: 'Contract Status',
                 image: file
             },
             {
-                url: '/',
                 title: 'Account Segmented by Calendar Year',
                 image: calendarFill
             },
             {
-                url: '/',
                 title: 'Account Segmented by Calendar YeaChurn Customers',
                 image: dollar
             },
             {
-                url: '/',
                 title: 'Up-Sell and Cross-Sell Customers',
                 image: rate
             },
@@ -440,42 +393,34 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Investment Terms and New Cash Allocation',
                 image: investment
             },
             {
-                url: '/',
                 title: 'Model for Dilution Per Funding Series',
                 image: box
             },
             {
-                url: '/',
                 title: 'Valuation Analysis Per Funding Series',
                 image: checkSquare
             },
             {
-                url: '/',
                 title: 'Stock Options Segmented by Advisors and Employees',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Shares Purchased Segmented by Investor Series',
                 image: rate
             },
             {
-                url: '/',
                 title: 'Pro-Forma Series Pricing Analysis',
                 image: cost
             },
             {
-                url: '/',
                 title: 'Major Shareholder Voting Power Analysis',
                 image: user
             },
             {
-                url: '/',
                 title: 'Accounting for Convertible Notes and SAFEs',
                 image: operating
             },
@@ -496,27 +441,22 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Valuation Cap',
                 image: checkCircle
             },
             {
-                url: '/',
                 title: 'Discounts',
                 image: percent
             },
             {
-                url: '/',
                 title: 'Interest',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Maturity Date',
                 image: calendar
             },
             {
-                url: '/',
                 title: 'Conversion',
                 image: minimize
             },
@@ -538,47 +478,38 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'CEO Updates',
                 image: user
             },
             {
-                url: '/',
                 title: 'Financial Performance',
                 image: investment
             },
             {
-                url: '/',
                 title: 'Sales Growth Assumption',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Top Active Deals',
                 image: crosshair
             },
             {
-                url: '/',
                 title: 'Corporate Marketing',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Hiring',
                 image: users
             },
             {
-                url: '/',
                 title: 'Business Development',
                 image: development
             },
             {
-                url: '/',
                 title: 'Product',
                 image: box
             },
             {
-                url: '/',
                 title: 'Key Issues and Ask',
                 image: key
             },
@@ -599,43 +530,35 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Goals and Targets',
                 image: crosshair
             },
             {
-                url: '/',
                 title: 'Timeline and Commitment Forecast',
                 image: watch
             },
             {
-                url: '/',
                 title: 'Stage Tracker',
                 image: trending
             },
             {
-                url: '/',
                 title: 'Stage Confidence Analysis',
                 image: gross
             },
             {
-                url: '/',
                 title: 'Pipeline for Convertible Note Financing',
                 image: minimize
             },
             {
-                url: '/',
                 title: 'Pipeline for Equity Financing',
                 image: dollar
             },
             {
-                url: '/',
                 title: 'Pipeline Post Lead Investor',
                 image: user
             },
         ],
         info: {
-            url: '/',
             image: word,
             title: 'Start building your Investor CRM today!',
             link: '/'
@@ -650,17 +573,14 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Tech Stack Analysis',
                 image: development
             },
             {
-                url: '/',
                 title: 'AI/ML Analysis',
                 image: gross
             },
             {
-                url: '/',
                 title: 'Product Roadmap',
                 image: box
             },
@@ -681,17 +601,14 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Org Chart for Seed',
                 image: pieChart
             },
             {
-                url: '/',
                 title: 'Org Chart for Series A',
                 image: rate
             },
             {
-                url: '/',
                 title: 'Org Chart for Series B and Beyond',
                 image: barChart
             },
@@ -712,12 +629,10 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: '3-Year Profit and Loss Statements',
                 image: trending
             },
             {
-                url: '/',
                 title: '3-Year Balance Sheet',
                 image: law
             },
@@ -738,22 +653,18 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Convertible Notes Financing',
                 image: minimize
             },
             {
-                url: '/',
                 title: 'Equity Seed Financing',
                 image: dollar
             },
             {
-                url: '/',
                 title: 'Equity Series A Financing',
                 image: rate
             },
             {
-                url: '/',
                 title: 'Equity Series B and Beyond Financing',
                 image: barChart
             },
@@ -774,32 +685,26 @@ const data = [
         itemType: 1,
         items: [
             {
-                url: '/',
                 title: 'Payroll',
                 image: cost
             },
             {
-                url: '/',
                 title: 'New Hires',
                 image: users
             },
             {
-                url: '/',
                 title: 'Vendors',
                 image: shoppingCart
             },
             {
-                url: '/',
                 title: 'Infrastructure',
                 image: server
             },
             {
-                url: '/',
                 title: 'Others',
                 image: moreHorizontal
             },
             {
-                url: '/',
                 title: 'Annual Budget',
                 image: dollar
             },
