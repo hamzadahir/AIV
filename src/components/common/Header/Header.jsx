@@ -92,41 +92,43 @@ export const Header = () => {
                     <div className={styles.logo}>
                         <a href='/'> <img src={logo} alt='logo' /></a>
                     </div>
-                    <menu className={activeMobile ? [styles.menu + ' ' + styles.active] : styles.menu}>
-                        <ul>
-                            {menus.map(item =>
-                                <li key={item.label}>
-                                    <a href={item.url}
-                                       onClick={(e) => showProducts(e, item.label)}
-                                       className={`${styles.link} ${window.location.pathname === item.url ? styles.active : ''}`}>
-                                        {item.label}
-                                    </a>
-                                    {item.subMenu &&
-                                    <div
-                                        className={!toggleProducts ? styles.subMenuWrapper : `${styles.subMenuWrapper} ${styles.show}`}>
-                                        <ul className={styles.subMenu}>
-                                            <li className={styles.subMenuTitle}>
-                                                <h5>Fundraising Services</h5>
-                                            </li>
-                                            {products.map(product => (
-                                                <li key={product.id}>
-                                                    <a href={product.url}>
-                                                        <div className={styles.image}>
-                                                            <img src={product.icon} alt='' />
-                                                        </div>
-                                                        {product.title}
-                                                    </a>
+                    <div className={activeMobile ? [styles.menuInner + ' ' + styles.active] : styles.menuInner}>
+                        <menu className={styles.menu}>
+                            <ul>
+                                {menus.map(item =>
+                                    <li key={item.label}>
+                                        <a href={item.url}
+                                           onClick={(e) => showProducts(e, item.label)}
+                                           className={`${styles.link} ${window.location.pathname === item.url ? styles.active : ''}`}>
+                                            {item.label}
+                                        </a>
+                                        {item.subMenu &&
+                                        <div
+                                            className={!toggleProducts ? styles.subMenuWrapper : `${styles.subMenuWrapper} ${styles.show}`}>
+                                            <ul className={styles.subMenu}>
+                                                <li className={styles.subMenuTitle}>
+                                                    <h5>Fundraising Services</h5>
                                                 </li>
-                                            ))}
-                                        </ul>
-                                    </div>}
-                                </li>)}
-                        </ul>
+                                                {products.map(product => (
+                                                    <li key={product.id}>
+                                                        <a href={product.url}>
+                                                            <div className={styles.image}>
+                                                                <img src={product.icon} alt='' />
+                                                            </div>
+                                                            {product.title}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>}
+                                    </li>)}
+                            </ul>
+                        </menu>
                         <a href='/' className='accelerateButton'>
                             <span className="btn-primary">Explore Products</span>
                             <span className='btn-primary--next' />
                         </a>
-                    </menu>
+                    </div>
                     <button type='button'
                             className={activeMobile ? [styles.burgerMenu + ' ' + styles.active] : styles.burgerMenu}
                             onClick={() => addClass()}>

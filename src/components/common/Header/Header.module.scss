@@ -21,7 +21,6 @@
         li a:hover {
           color: $mainColor;
         }
-
       }
     }
   }
@@ -57,10 +56,15 @@
     display:         flex;
     justify-content: space-between;
     align-items:     center;
-    .menu {
+    .menuInner {
       > a {
         display: none;
       }
+      &.active {
+        color: $mainColor;
+      }
+    }
+    .menu {
       ul {
         display:         flex;
         justify-content: space-between;
@@ -73,9 +77,6 @@
             &:active {
               opacity: .7;
               color:   $mainColor;
-            }
-            &.active {
-              color: $mainColor;
             }
           }
           &:nth-child(2) .link:before {
@@ -280,28 +281,33 @@
   .header {
     height: 90px;
     .menuWrapper {
-      .menu {
-        display:         none;
-        position:        fixed;
-        background:      white;
-        top:             0;
-        left:            0;
-        width:           100%;
-        height:          100%;
-        flex-direction:  column;
-        justify-content: space-between;
-        align-items:     flex-start;
-        margin-top:      90px;
-        padding-bottom:  90px;
-        padding-left:    0;
-        overflow-y:      auto;
+      .menuInner {
+        display:        none;
+        position:       fixed;
+        margin-top:     90px;
+        top:            0;
+        left:           0;
+        width:          100%;
+        height:         calc(100% - 90px);
+        background:     white;
+        flex-direction: column;
         &.active {
           display: flex;
         }
         > a {
           display: flex;
           padding: 2rem;
+          margin:  0 auto;
         }
+      }
+      .menu {
+        width:           100%;
+        height:          100%;
+        flex-direction:  column;
+        justify-content: space-between;
+        align-items:     flex-start;
+        padding-left:    0;
+        overflow-y:      auto;
         ul {
           align-items:    flex-start;
           flex-direction: column;
@@ -310,6 +316,9 @@
             width:         100%;
             padding:       1.5rem 0 1.5rem 2rem;
             border-bottom: 1px solid #e4e8eb;
+            &:hover {
+
+            }
             &:nth-child(2) .link:before, &:nth-child(3) .link:before {
               right: 1.5rem;
               top:   2rem;
@@ -333,16 +342,18 @@
             .subMenu {
               box-shadow:       none;
               background-color: $lightGreen;
-              padding:          0;
+              padding:          1.875rem 0 0 0;
               .subMenuTitle {
                 display: none;
               }
               li:not(.subMenuTitle) {
-                width: 100%;
+                width:   100%;
+                padding: 0;
               }
               .image {
-                width:  3.4375rem;
-                height: 3.4375rem;
+                width:   3.4375rem;
+                height:  3.4375rem;
+                padding: 1.0625rem;
               }
               a {
                 font-size: 1rem;
