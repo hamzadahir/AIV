@@ -1,5 +1,5 @@
 // core
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // components
 import { Item } from "../../common";
@@ -45,7 +45,7 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
             phone: phone,
             message: message
         });
-    }
+    };
 
     React.useEffect(() => {
         setSend(fullName && companyName && email && phone && validation)
@@ -57,43 +57,71 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
         isNaN(num) ? setValidation(false) : setValidation(true);
     }, [phone]);
 
+
+    const form = useRef(null);
+    const fixedPlaceholder = (input, index) => {
+        const childrenElements = form.current.children;
+        if (input === '') {
+            childrenElements[index].children[1].style.top = '';
+        } else {
+            childrenElements[index].children[1].style.top = '0';
+        }
+    };
+
+    useEffect(() => {
+        fixedPlaceholder(fullName, 0);
+        fixedPlaceholder(companyName, 1);
+        fixedPlaceholder(email, 2);
+        fixedPlaceholder(phone, 3);
+    }, [fullName, companyName, email, phone]);
+
     return (
         <main className={styles.contact}>
             <section className={styles.help}>
                 {(isSending || isError) &&
-                    <div className='popupContainer'>
-                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
-                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
-                            <button onClick={() => closePopup()} className='closePopupButton'>
-                                    <span>✘</span>
-                            </button>
-                        </div>
+                <div className='popupContainer'>
+                    <div className={isSending ? 'successPopup' : 'errorPopup'}>
+                        {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
+                        <button onClick={() => closePopup()} className='closePopupButton'>
+                            <span>✘</span>
+                        </button>
                     </div>
+                </div>
                 }
                 <div className='container'>
                     <div className={styles.helpInner}>
                         <div className={styles.formWrapper}>
                             <h2>Need help? <br />
                                 Get in touch</h2>
-                            <form>
+                            <form ref={form}>
                                 <label>
-                                    <input placeholder="Full Name" required type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                                    <input required type='text' value={fullName}
+                                           onChange={(e) => setFullName(e.target.value)} />
+                                    <span>Full Name</span>
                                 </label>
                                 <label>
-                                    <input placeholder="Company Name" required type='text' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                                    <input required type='text' value={companyName}
+                                           onChange={(e) => setCompanyName(e.target.value)} />
+                                    <span>Company Name</span>
                                 </label>
                                 <label>
-                                    <input placeholder="Email address" required type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <input required type='email' value={email}
+                                           onChange={(e) => setEmail(e.target.value)} />
+                                    <span>Email address</span>
                                 </label>
                                 <label>
-                                    {!validation && <label className="errorLabel">Incorrect Input, please use numbers</label>}
-                                    <input className={!validation ? 'incorrectInput' : ''} placeholder="Phone Number" maxLength='18' required type='tel' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    <input className={!validation ? 'incorrectInput' : ''} maxLength='18' required
+                                           type='tel' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    <span>Phone Number</span>
+                                    {!validation &&
+                                    <label className="errorLabel">Incorrect Input, please use numbers</label>}
                                 </label>
-                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={(e) => setMessage(e.target.value)} />
+                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message}
+                                          onChange={(e) => setMessage(e.target.value)} />
                             </form>
                             <button disabled={!send} onClick={() => handleSendMessage()} className='accelerateButton'>
-                                    <span className="btn-primary">Submit message</span>
-                                    <span className='btn-primary--next' />
+                                <span className="btn-primary">Submit message</span>
+                                <span className='btn-primary--next' />
                             </button>
                         </div>
                         <div className={styles.image}>

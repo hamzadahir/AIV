@@ -559,7 +559,7 @@ const data = [
             },
         ],
         info: {
-            image: word,
+            image: exel,
             title: 'Start building your Investor CRM today!',
             link: '/'
         },

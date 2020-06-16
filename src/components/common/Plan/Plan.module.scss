@@ -64,7 +64,8 @@ ul.checked {
   margin-bottom:    3.75rem;
   transition:       .2s linear;
   > p {
-    color: #728387;
+    color:      #728387;
+    min-height: 4.5rem;
   }
   &:active {
     border:     0.0625rem solid transparent;
@@ -123,6 +124,14 @@ ul.checked {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .pricingItem {
+    > p {
+      min-height: 6rem;
+    }
+  }
+}
+
 @media screen and (max-width: 992px) {
   ul.checked {
     li {
@@ -150,6 +159,9 @@ ul.checked {
     width:         48%;
     padding:       2.25rem 2rem;
     margin-bottom: 2.75rem;
+    > p {
+      min-height: auto;
+    }
     hr {
       margin-right: -2rem;
     }
