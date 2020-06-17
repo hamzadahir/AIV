@@ -33,14 +33,30 @@ const data = [
         ],
     }
 ];
-export const Contact = ({closePopup, isSending, isError, responseMessage, sendMessage}) => {
-    const [fullName, setFullName] = React.useState('');
-    const [companyName, setCompanyName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [phone, setPhone] = React.useState('');
-    const [message, setMessage] = React.useState('');
-    const [send, setSend] = React.useState(false);
-    const [validation, setValidation] = React.useState(true);
+export const Contact = ({ closePopup, isSending, isError, responseMessage, sendMessage }) => {
+    const { useState } = React;
+    const initialState = {
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        message: '',
+        send: false,
+        validation: true,
+    };
+
+    const [
+        {
+            fullName,
+            email,
+            phone,
+            message,
+            companyName,
+            send,
+            validation
+        },
+        setState
+    ] = useState(initialState);
 
     const handleSendMessage = () => {
         sendMessage({
@@ -50,16 +66,31 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
             phone: phone,
             message: message
         });
+        clearState();
     }
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setState(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const clearState = () => {
+        setState({ ...initialState });
+    };
+
     React.useEffect(() => {
-        setSend(fullName && companyName && email && phone && validation)
+        setState(prevState => (
+            { ...prevState, send: fullName && companyName && email && phone && validation }
+        ))
     }, [fullName, companyName, email, phone, validation]);
 
     React.useEffect(() => {
         let num = phone;
         num = Number(num);
-        isNaN(num) ? setValidation(false) : setValidation(true);
+
+        isNaN(num) ?
+            setState(prevState => ({ ...prevState, validation: false })) :
+            setState(prevState => ({ ...prevState, validation: true }));
     }, [phone]);
 
     return (
@@ -70,7 +101,7 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                         <div className={isSending ? 'successPopup' : 'errorPopup'}>
                             {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
                             <button onClick={() => closePopup()} className='closePopupButton'>
-                                    <span>✘</span>
+                                <span>✘</span>
                             </button>
                         </div>
                     </div>
@@ -82,23 +113,25 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                                 Get in touch</h2>
                             <form>
                                 <label>
-                                    <input placeholder="Full Name" required type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                                    <input name='fullName' placeholder="Full Name" required type='text' value={fullName} onChange={handleChange} />
                                 </label>
                                 <label>
-                                    <input placeholder="Company Name" required type='text' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                                    <input name='companyName' placeholder="Company Name" required type='text' value={companyName} onChange={handleChange} />
                                 </label>
                                 <label>
-                                    <input placeholder="Email address" required type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <input name='email' placeholder="Email address" required type='email' value={email} onChange={handleChange} />
                                 </label>
                                 <label>
                                     {!validation && <label className="errorLabel">Incorrect Input, please use numbers</label>}
-                                    <input className={!validation ? 'incorrectInput' : ''} placeholder="Phone Number" maxLength='18' required type='tel' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    <input name='phone' className={!validation ? 'incorrectInput' : ''}
+                                        placeholder="Phone Number" maxLength='18' required type='tel' value={phone} onChange={handleChange}
+                                    />
                                 </label>
-                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={(e) => setMessage(e.target.value)} />
+                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={handleChange} />
                             </form>
-                            <button disabled={!send} onClick={() => handleSendMessage()} className='accelerateButton'>
-                                    <span className="btn-primary">Submit message</span>
-                                    <span className='btn-primary--next' />
+                            <button disabled={!send} onClick={handleSendMessage} className='accelerateButton'>
+                                <span className="btn-primary">Submit message</span>
+                                <span className='btn-primary--next' />
                             </button>
                         </div>
                         <div className={styles.image}>
@@ -124,7 +157,7 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                         <div className={styles.map}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.5998238741063!2d-74.00946988416092!3d40.704810245991446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a161aaa68c5%3A0x7326c6b80e0fc527!2zOTkgV2FsbCBTdCwgTmV3IFlvcmssIE5ZIDEwMDA1LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1592077344457!5m2!1sru!2sua"
-                                width="600" height="280" style={{border: 0}} allowFullScreen=""
+                                width="600" height="280" style={{ border: 0 }} allowFullScreen=""
                                 aria-hidden="false" tabIndex="0" />
                         </div>
                     </div>
