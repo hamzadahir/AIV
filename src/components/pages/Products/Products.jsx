@@ -29,8 +29,8 @@ import sales from "../../../assets/images/home/products/sales.svg";
 import usage from "../../../assets/images/home/products/usage.svg";
 
 import work from "../../../assets/images/home/work.svg";
-import box from "../../../assets/images/products/box.svg";
-import box1 from "../../../assets/images/products/box-1.svg";
+import box from "../../../assets/images/products/box-1.svg";
+import box1 from "../../../assets/images/products/box.svg";
 import user from "../../../assets/images/products/user.svg";
 import gross from "../../../assets/images/products/gross.svg";
 import file from "../../../assets/images/products/file-text.svg";
@@ -375,8 +375,41 @@ const data = [
             title: 'Market Size and GTM',
             description: 'QuickRaise provides pre-built investor-ready customer accounts templates to explain your existing customer accounts and growth.'
         },
-        itemType: 0,
-        items: [],
+        itemType: 1,
+        items: [
+            {
+                title: 'Market Size by Industry',
+                image: trending
+            },
+            {
+                title: 'Market Need',
+                image: box
+            },
+            {
+                title: 'Market Segment',
+                image: checkSquare
+            },
+            {
+                title: 'User Personas',
+                image: users
+            },
+            {
+                title: 'End User Applications',
+                image: user
+            },
+            {
+                title: 'Competitors',
+                image: investment
+            },
+            {
+                title: 'Market Size',
+                image: development
+            },
+            {
+                title: 'Overall Size Analysis',
+                image: trending
+            },
+        ],
         info: {
             url: '/',
             image: exel,
