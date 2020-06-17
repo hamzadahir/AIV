@@ -28,14 +28,30 @@ const data = [
         ],
     }
 ];
-export const Contact = ({closePopup, isSending, isError, responseMessage, sendMessage}) => {
-    const [fullName, setFullName] = React.useState('');
-    const [companyName, setCompanyName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [phone, setPhone] = React.useState('');
-    const [message, setMessage] = React.useState('');
-    const [send, setSend] = React.useState(false);
-    const [validation, setValidation] = React.useState(true);
+export const Contact = ({ closePopup, isSending, isError, responseMessage, sendMessage }) => {
+    const { useState } = React;
+    const initialState = {
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        message: '',
+        send: false,
+        validation: true,
+    };
+
+    const [
+        {
+            fullName,
+            email,
+            phone,
+            message,
+            companyName,
+            send,
+            validation
+        },
+        setState
+    ] = useState(initialState);
 
     const handleSendMessage = () => {
         sendMessage({
@@ -45,16 +61,31 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
             phone: phone,
             message: message
         });
+        clearState();
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setState(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const clearState = () => {
+        setState({ ...initialState });
     };
 
     React.useEffect(() => {
-        setSend(fullName && companyName && email && phone && validation)
+        setState(prevState => (
+            { ...prevState, send: fullName && companyName && email && phone && validation }
+        ))
     }, [fullName, companyName, email, phone, validation]);
 
     React.useEffect(() => {
         let num = phone;
         num = Number(num);
-        isNaN(num) ? setValidation(false) : setValidation(true);
+
+        isNaN(num) ?
+            setState(prevState => ({ ...prevState, validation: false })) :
+            setState(prevState => ({ ...prevState, validation: true }));
     }, [phone]);
 
 
@@ -79,14 +110,14 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
         <main className={styles.contact}>
             <section className={styles.help}>
                 {(isSending || isError) &&
-                <div className='popupContainer'>
-                    <div className={isSending ? 'successPopup' : 'errorPopup'}>
-                        {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
-                        <button onClick={() => closePopup()} className='closePopupButton'>
-                            <span>✘</span>
-                        </button>
+                    <div className='popupContainer'>
+                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
+                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
+                            <button onClick={() => closePopup()} className='closePopupButton'>
+                                <span>✘</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
                 }
                 <div className='container'>
                     <div className={styles.helpInner}>
@@ -95,31 +126,27 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                                 Get in touch</h2>
                             <form ref={form}>
                                 <label>
-                                    <input required type='text' value={fullName}
-                                           onChange={(e) => setFullName(e.target.value)} />
+                                    <input name='fullName' required type='text' value={fullName} onChange={handleChange} />
                                     <span>Full Name</span>
                                 </label>
                                 <label>
-                                    <input required type='text' value={companyName}
-                                           onChange={(e) => setCompanyName(e.target.value)} />
+                                    <input rnput name='companyName' required type='text' value={companyName} onChange={handleChange} />
                                     <span>Company Name</span>
                                 </label>
                                 <label>
-                                    <input required type='email' value={email}
-                                           onChange={(e) => setEmail(e.target.value)} />
+                                    <input name='email' required type='email' value={email} onChange={handleChange} />
                                     <span>Email address</span>
                                 </label>
                                 <label>
-                                    <input className={!validation ? 'incorrectInput' : ''} maxLength='18' required
-                                           type='tel' value={phone} onChange={(e) => setPhone(e.target.value)} />
-                                    <span>Phone Number</span>
                                     {!validation &&
-                                    <label className="errorLabel">Incorrect Input, please use numbers</label>}
+                                        <label className="errorLabel">Incorrect Input, please use numbers</label>}
+                                    <input name='phone' className={!validation ? 'incorrectInput' : ''}
+                                        maxLength='18' required type='tel' value={phone} onChange={handleChange} />
+                                    <span>Phone Number</span>
                                 </label>
-                                <textarea name='' id='' cols='30' rows='2' placeholder='Your message…' value={message}
-                                          onChange={(e) => setMessage(e.target.value)} />
+                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={handleChange} />
                             </form>
-                            <button disabled={!send} onClick={() => handleSendMessage()} className='accelerateButton'>
+                            <button disabled={!send} onClick={handleSendMessage} className='accelerateButton'>
                                 <span className="btn-primary">Submit message</span>
                                 <span className='btn-primary--next' />
                             </button>
