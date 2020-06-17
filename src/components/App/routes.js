@@ -3,4 +3,6 @@ export const routes = Object.freeze({
     products: '/products',
     pricing: '/pricing',
     contact: '/contact',
+    success: '/success',
+    canceled: '/canceled',
 });
