@@ -130,7 +130,7 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
                                     <span>Full Name</span>
                                 </label>
                                 <label>
-                                    <input rnput name='companyName' required type='text' value={companyName} onChange={handleChange} />
+                                    <input name='companyName' required type='text' value={companyName} onChange={handleChange} />
                                     <span>Company Name</span>
                                 </label>
                                 <label>
