@@ -3,11 +3,10 @@ import React, { useEffect, useRef } from 'react';
 
 // components
 import { Item } from "../../common";
-import { SimpleMap } from "./components/SimpleMap/SimpleMap";
+import { BannerImage, SimpleMap } from "./components";
 
 // assets
 import styles from './Contact.module.scss';
-import banner from '../../../assets/images/contacts/contact-banner.svg'
 import america from '../../../assets/images/contacts/america.svg'
 import mail from '../../../assets/images/contacts/mail.svg'
 
@@ -28,8 +27,8 @@ const data = [
         ],
     }
 ];
-export const Contact = ({ closePopup, isSending, isError, responseMessage, sendMessage }) => {
-    const { useState } = React;
+export const Contact = ({closePopup, isSending, isError, responseMessage, sendMessage}) => {
+    const {useState} = React;
     const initialState = {
         fullName: "",
         companyName: "",
@@ -62,20 +61,20 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
             message: message
         });
         clearState();
-    }
+    };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setState(prevState => ({ ...prevState, [name]: value }));
+        const {name, value} = e.target;
+        setState(prevState => ({...prevState, [name]: value}));
     };
 
     const clearState = () => {
-        setState({ ...initialState });
+        setState({...initialState});
     };
 
     React.useEffect(() => {
         setState(prevState => (
-            { ...prevState, send: fullName && companyName && email && phone && validation }
+            {...prevState, send: fullName && companyName && email && phone && validation}
         ))
     }, [fullName, companyName, email, phone, validation]);
 
@@ -84,8 +83,8 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
         num = Number(num);
 
         isNaN(num) ?
-            setState(prevState => ({ ...prevState, validation: false })) :
-            setState(prevState => ({ ...prevState, validation: true }));
+            setState(prevState => ({...prevState, validation: false})) :
+            setState(prevState => ({...prevState, validation: true}));
     }, [phone]);
 
 
@@ -110,14 +109,14 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
         <main className={styles.contact}>
             <section className={styles.help}>
                 {(isSending || isError) &&
-                    <div className='popupContainer'>
-                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
-                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
-                            <button onClick={() => closePopup()} className='closePopupButton'>
-                                <span>✘</span>
-                            </button>
-                        </div>
+                <div className='popupContainer'>
+                    <div className={isSending ? 'successPopup' : 'errorPopup'}>
+                        {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
+                        <button onClick={() => closePopup()} className='closePopupButton'>
+                            <span>✘</span>
+                        </button>
                     </div>
+                </div>
                 }
                 <div className='container'>
                     <div className={styles.helpInner}>
@@ -126,11 +125,13 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
                                 Get in touch</h2>
                             <form ref={form}>
                                 <label>
-                                    <input name='fullName' required type='text' value={fullName} onChange={handleChange} />
+                                    <input name='fullName' required type='text' value={fullName}
+                                           onChange={handleChange} />
                                     <span>Full Name</span>
                                 </label>
                                 <label>
-                                    <input name='companyName' required type='text' value={companyName} onChange={handleChange} />
+                                    <input name='companyName' required type='text' value={companyName}
+                                           onChange={handleChange} />
                                     <span>Company Name</span>
                                 </label>
                                 <label>
@@ -139,12 +140,13 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
                                 </label>
                                 <label>
                                     {!validation &&
-                                        <label className="errorLabel">Incorrect Input, please use numbers</label>}
+                                    <label className="errorLabel">Incorrect Input, please use numbers</label>}
                                     <input name='phone' className={!validation ? 'incorrectInput' : ''}
-                                        maxLength='18' required type='tel' value={phone} onChange={handleChange} />
+                                           maxLength='18' required type='tel' value={phone} onChange={handleChange} />
                                     <span>Phone Number</span>
                                 </label>
-                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your message…' value={message} onChange={handleChange} />
+                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your message…'
+                                          value={message} onChange={handleChange} />
                             </form>
                             <button disabled={!send} onClick={handleSendMessage} className='accelerateButton'>
                                 <span className="btn-primary">Submit message</span>
@@ -152,7 +154,7 @@ export const Contact = ({ closePopup, isSending, isError, responseMessage, sendM
                             </button>
                         </div>
                         <div className={styles.image}>
-                            <img src={banner} alt='' />
+                            <BannerImage />
                         </div>
                     </div>
                 </div>
