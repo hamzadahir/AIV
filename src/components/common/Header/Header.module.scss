@@ -7,17 +7,6 @@
     }
     .menuWrapper {
       .menu ul {
-        li:hover {
-          .link:before {
-            transform: rotate(-135deg);
-          }
-          > a {
-            color: $mainColor;
-          }
-          .subMenuWrapper {
-            display: flex;
-          }
-        }
         li a:hover {
           color: $mainColor;
         }
@@ -72,6 +61,19 @@
         li {
           padding:  0 1.25rem;
           position: relative;
+          @media (min-width: 767.98px) {
+            &:hover {
+              .link:before {
+                transform: rotate(-135deg);
+              }
+              > a {
+                color: $mainColor;
+              }
+              .subMenuWrapper {
+                display: flex;
+              }
+            }
+          }
           a {
             font-weight: 500;
             &:active {
@@ -105,9 +107,6 @@
         background-color: transparent;
         display:          none;
         flex-direction:   column;
-        &.show {
-          display: none;
-        }
         .subMenu {
           box-shadow:       0 28px 45px rgba(0, 0, 0, 0.16);
           background-color: $white;
@@ -235,7 +234,6 @@
     &.active {
       .burgerMenuLines {
         background-color: transparent;
-        width:            100%;
         &::before {
           top:       0;
           transform: rotate(-45deg);
@@ -317,6 +315,17 @@
             a {
               display: block;
             }
+            &.show {
+              > a {
+                color: $mainColor;
+                &:before {
+                  transform:  rotate(-135deg) !important;
+                }
+              }
+              .subMenuWrapper {
+                display: flex;
+              }
+            }
           }
           .subMenuWrapper {
             position:  relative;
@@ -324,9 +333,6 @@
             left:      0;
             transform: translate(0, 0);
             width:     100%;
-            &.show {
-              display: flex;
-            }
             .subMenu {
               box-shadow:       none;
               background-color: $lightGreen;
@@ -385,8 +391,6 @@
       }
     }
     .burgerMenu {
-      width:  1.25rem;
-      height: 0.1rem;
       .burgerMenuLines, .burgerMenuLines:after, .burgerMenuLines:before {
         width:  1.25rem;
         height: 0.1rem;

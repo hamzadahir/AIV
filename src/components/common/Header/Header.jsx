@@ -96,7 +96,8 @@ export const Header = () => {
                         <menu className={styles.menu}>
                             <ul>
                                 {menus.map(item =>
-                                    <li key={item.label}>
+                                    <li key={item.label}
+                                        className={(!toggleProducts && item.label === 'Products') ? styles.show : ''}>
                                         <a href={item.url}
                                            onClick={(e) => showProducts(e, item.label)}
                                            className={`${styles.link} ${window.location.pathname === item.url ? styles.active : ''}`}>
@@ -104,7 +105,7 @@ export const Header = () => {
                                         </a>
                                         {item.subMenu &&
                                         <div
-                                            className={!toggleProducts ? styles.subMenuWrapper : `${styles.subMenuWrapper} ${styles.show}`}>
+                                            className={styles.subMenuWrapper}>
                                             <ul className={styles.subMenu}>
                                                 <li className={styles.subMenuTitle}>
                                                     <h5>Fundraising Services</h5>
