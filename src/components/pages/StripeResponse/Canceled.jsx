@@ -2,7 +2,7 @@
 import React from 'react';
 
 // assets
-import styles from './Strip.module.scss';
+import styles from './Stripe.module.scss';
 
 export const Canceled = () => {
   return (
