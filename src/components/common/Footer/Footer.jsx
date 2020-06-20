@@ -30,7 +30,7 @@ export const Footer = () => {
                 </div>
                 <hr />
                 <div className={styles.bottomSection}>
-                    <ul>
+                    <ul className={styles.contactInfo}>
                         <li className={styles.logo}><img src={logo} alt='logo' /></li>
                         <li><a href='/'>99 Wall Street, New York <br /> NY 10005</a></li>
                         <li><a href="mailto:info@quickraise.com">Info@quickraise.com</a></li>

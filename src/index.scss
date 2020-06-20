@@ -9,6 +9,17 @@
   .btn-second:hover {
     color: $white;
   }
+
+  .accelerateButton {
+    &:hover .btn-primary::before {
+      left: 0;
+    }
+  }
+  .darkButton {
+    &:hover .btn-dark:before {
+      left: 0;
+    }
+  }
 }
 
 *, *:after, *:before {
@@ -259,21 +270,39 @@ button {
 
 }
 
+.btn-primary--next {
+  &:hover, &:active {
+    opacity: 1;
+  }
+
+}
+
 .btn-primary--prev:before {
   transform: rotate(-180deg);
 }
 
 .accelerateButton {
-  display:         flex;
+  display:         inline-flex;
   justify-content: flex-start;
   align-items:     center;
   box-shadow:      none;
   border:          none;
   button {
     height: 3.75rem;
-    &:hover {
-      opacity: 1;
-    }
+  }
+  &:active .btn-primary:before {
+    opacity: .7;
+    left:    0;
+  }
+}
+
+.darkButton {
+  cursor:   pointer;
+  position: relative;
+  z-index:  2;
+  &:active .btn-dark:before {
+    opacity: .7;
+    left:    0;
   }
 }
 

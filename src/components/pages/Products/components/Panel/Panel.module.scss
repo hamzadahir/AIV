@@ -43,6 +43,7 @@
     &:before {
       content:          '';
       position:         absolute;
+      z-index:          0;
       right:            0;
       bottom:           0;
       width:            50%;
@@ -53,7 +54,7 @@
       font-size:   1.5rem;
       line-height: 1.5;
       color:       $white;
-      max-width:   14rem;
+      max-width:   20rem;
     }
     p {
       color:     #ffffff;
@@ -82,27 +83,27 @@
         font-size:   1rem;
         line-height: 1.5625;
       }
-  }
-}
-
-@media screen and (max-width: 567px) {
-  .panel {
-    .fundraisingLink {
-      flex-direction: column;
-      text-align:     center;
-      padding:        2.625rem 1rem;
-      h4 {
-        max-width: 100%;
-      }
-      p {
-        max-width:   100%;
-        font-size:   0.875rem;
-        line-height: 1.42;
-      }
-      .link {
-        margin-left: 0;
-      }
     }
+  }
+
+  @media screen and (max-width: 520px) {
+    .panel {
+      .fundraisingLink {
+        flex-direction: column;
+        text-align:     center;
+        padding:        2.625rem 1rem;
+        h4 {
+          max-width: 100%;
+        }
+        p {
+          max-width:   100%;
+          font-size:   0.875rem;
+          line-height: 1.42;
+        }
+        .link {
+          margin-left: 0;
+        }
+      }
     }
   }
 }

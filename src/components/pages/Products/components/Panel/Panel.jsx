@@ -40,7 +40,7 @@ export const Panel = ({data}) => {
                             your email.
                         </p>
                     </div>
-                    <a href={data.info.url} className={styles.link}>
+                    <a href={data.info.url} className={`${styles.link} darkButton`}>
                         <button type="button" className="btn-dark">Purchase Now</button>
                         <button className='btn-primary--nextDark' />
                     </a>

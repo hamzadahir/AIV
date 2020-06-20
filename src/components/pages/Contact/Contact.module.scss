@@ -54,7 +54,6 @@
     .informationInner {
       display:         flex;
       justify-content: space-between;
-      align-items:     center;
       .informationItemWrapper {
         width: 42%;
       }
@@ -106,7 +105,7 @@
   }
 }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 520px) {
   .contact {
     .help {
       padding: 5rem 0 3rem 0;
