@@ -16,7 +16,8 @@ export const BannerImage = () => {
     };
 
 
-    useEffect(function blockAnimation() {
+    const blockAnimation = () => {
+
         let idSVG = `#group5-animation `;
 
         gsap.from(idSVG + '#wave', 1.5, {x: -53.67, ease: 'none', repeat: -1});
@@ -65,7 +66,12 @@ export const BannerImage = () => {
             stagger: {each: 0.5, repeat: -1, yoyo: true},
             delay: -4
         });
-    });
+
+    };
+
+    useEffect(() => {
+        blockAnimation();
+    }, []);
 
     return (
         <svg id="group5-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 648 481">
