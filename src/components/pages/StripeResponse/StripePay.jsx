@@ -21,7 +21,7 @@ export const StripePay = () => {
     const [show, setShow] = useState(true);
 
     return (
-        <main>
+        <>
             {show && <section className={styles.stripe}>
                 <div className={styles.stripePayInner}>
                     <button className={styles.close} onClick={() => setShow(!show)}>
@@ -82,6 +82,6 @@ export const StripePay = () => {
                     </div>
                 </div>
             </section>}
-        </main>
+        </>
     );
 };
