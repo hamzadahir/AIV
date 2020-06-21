@@ -10,7 +10,7 @@ export const Success = () => {
     const [show, setShow] = useState(true);
 
     return (
-        <>
+        <main>
             {show && <section className={`${styles.stripe} ${styles.payment}`}>
                 <div className={styles.paymentInner}>
                     <button className={styles.close} onClick={() => setShow(!show)}>
@@ -31,6 +31,6 @@ export const Success = () => {
                     </div>
                 </div>
             </section>}
-        </>
+        </main>
     );
 };

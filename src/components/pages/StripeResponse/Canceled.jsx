@@ -10,7 +10,7 @@ export const Canceled = () => {
     const [show, setShow] = useState(true);
 
     return (
-        <>
+        <main>
             {show && <section className={`${styles.stripe} ${styles.payment} ${styles.paymentCanceled}`}>
                 <div className={styles.paymentInner}>
                     <button className={styles.close} onClick={() => setShow(!show)}>
@@ -31,7 +31,7 @@ export const Canceled = () => {
                     </div>
                 </div>
             </section>}
-        </>
+        </main>
     );
 };
 
