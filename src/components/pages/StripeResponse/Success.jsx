@@ -11,12 +11,12 @@ export const Success = () => {
 
     return (
         <>
-            {show && <section className={`${styles.stripe} ${styles.success}`}>
-                <div className={styles.successInner}>
+            {show && <section className={`${styles.stripe} ${styles.payment}`}>
+                <div className={styles.paymentInner}>
                     <button className={styles.close} onClick={() => setShow(!show)}>
                         <img src={close} alt='' />
                     </button>
-                    <div className={styles.successContent}>
+                    <div className={styles.paymentContent}>
                         <div className={styles.icon}>
                             <img src={checked} alt='' />
                         </div>
