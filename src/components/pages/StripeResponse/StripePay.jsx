@@ -27,7 +27,7 @@ import securePayments from '../../../assets/images/stripe/secure-payments.png';
 import { Canceled } from './Canceled';
 import { Success } from './Success';
 
-export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
+export const StripePay = ({ closePopup, isSending, isError, send, createPaymentIntent, secretKey, plan, close }) => {
     const [error, setError] = useState(null);
     const [errorPopup, setErrorPopup] = useState(false);
     const [successPopup, setSuccessPopup] = useState(false);
@@ -35,6 +35,28 @@ export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
     const [clientSecret, setClientSecret] = useState('');
     const stripe = useStripe();
     const elements = useElements();
+    const [id, setId] = useState('');
+    const initialState = {
+        name: "",
+        email: "",
+        region: "",
+        validate: true,
+    };
+    const [
+        {
+            name,
+            email,
+            region,
+            validate,
+        },
+        setState
+    ] = useState(initialState);
+
+    useEffect(() => {
+        setState(prevState => (
+            { ...prevState, validate: !(name && email) }
+        ))
+    }, [name, region, email]);
 
     useEffect(() => {
         setClientSecret(secretKey);
@@ -51,34 +73,68 @@ export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement),
-                billing_details: {
-                    name: ev.target.name.value
-                }
             }
         });
+        
         if (payload.error) {
+            setId(payload.error.payment_intent.id);
             setError(`Payment failed ${payload.error.message}`);
             setErrorPopup(true);
+            send({
+                name: name,
+                region: region,
+                email: email,
+                message: `Payment failed. ID purchase: ${payload.error.payment_intent.id}`
+            });
+            clearState();
         } else {
+            setId(payload.paymentIntent.id);
             setSuccessPopup(true);
             setError(null);
+            send({
+                name: name,
+                region: region,
+                email: email,
+                message: `Payment success. ID purchase: ${payload.paymentIntent.id}`
+            });
+            clearState();
         }
+    };
+
+    const handleChangeInput = (e) => {
+        const { name, value } = e.target;
+        setState(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const clearState = () => {
+        setState({ ...initialState });
     };
 
     const setPrice = () => {
         switch (plan) {
             case 'Plus':
-                return 2999
+                return '2999'
             case 'Premium':
-                return 4999
+                return '4999'
             default:
-                return 999
+                return '999'
         }
     };
+
     return (
         <>
             <section className={styles.stripe}>
-                {successPopup && <Success close={close} />}
+                {(isSending || isError) &&
+                    <div className='popupContainer'>
+                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
+                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
+                            <button onClick={() => closePopup()} className='closePopupButton'>
+                                <span>✘</span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                {successPopup && <Success close={close} id={id} />}
                 {errorPopup && <Canceled close={close} />}
                 <div className={styles.stripePayInner}>
                     <button className={styles.close} onClick={() => close()}>
@@ -121,10 +177,10 @@ export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
                                 </div>
                             </label>
                             <label>
-                                <input type='text' placeholder='Email address' />
+                                <input value={email} name='email' type='email' placeholder='Email address' onChange={handleChangeInput} />
                             </label>
                             <label>
-                                <input className={styles.cards} type='text' placeholder='Card Number' onChange={handleChange} />
+                                <input className={styles.cards} type='text' placeholder='Card Number' />
                                 <span className={styles.cardsIcons}>
                                     <img src={visa} alt='' />
                                     <img src={mastercard} alt='' />
@@ -140,12 +196,12 @@ export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
                                 <img className={styles.questionIcon} src={question} alt='' />
                             </label>
                             <label>
-                                <input type='text' placeholder='Name on Card' />
+                                <input value={name} name='name' type='text' placeholder='Name on Card' onChange={handleChangeInput} />
                             </label>
                             <label>
-                                <input type='text' placeholder='Country or Region' />
+                                <input value={region} name='region' type='text' placeholder='Country or Region' onChange={handleChangeInput} />
                             </label>
-                            <button disabled={disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
+                            <button disabled={validate || disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
                         </form>
                     </div>
                 </div>

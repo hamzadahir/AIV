@@ -6,7 +6,7 @@ import styles from './Stripe.module.scss';
 import closeImg from "../../../assets/images/stripe/close.svg";
 import checked from "../../../assets/images/stripe/checked.svg";
 
-export const Success = ({ close }) => {
+export const Success = ({ close, id }) => {
     const [show, setShow] = useState(true);
 
     const handleCloseModal = () => {
@@ -28,7 +28,7 @@ export const Success = ({ close }) => {
                         <h3>Payment Successful!</h3>
                         <p className={styles.description}>Congrats, your payment was successfully released,
                         We just emailed you your templates, your order
-                            number is <span className='colorBlack'>#18712768</span>
+                        number is <span className='colorBlack'>{id}</span>
                         </p>
                         <button type='button' className='btn-primary'>Download Templates</button>
                         <p className={styles.notice}>If you didn’t receive any email, please contact us on:</p>
