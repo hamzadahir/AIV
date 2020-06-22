@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Contact } from '../pages/Contact/Contact'
-import { sendMessage, closePopup } from '../../redux/actions/Contact';
+import { sendMessage, closePopup } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
   return {

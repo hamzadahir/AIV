@@ -1,0 +1,8 @@
+<svg id="mastercard" xmlns="http://www.w3.org/2000/svg" width="22.857" height="16" viewBox="0 0 22.857 16">
+  <rect id="mastercard-bg" width="22.857" height="16" rx="1.895" fill="#353a48"/>
+  <g id="mastercard-logo" transform="translate(4.09 3.582)">
+    <path id="Combined_Shape" data-name="Combined Shape" d="M7.338,7.781A4.458,4.458,0,0,1,0,4.418,4.458,4.458,0,0,1,7.338,1.056a4.458,4.458,0,0,1,7.338,3.363A4.458,4.458,0,0,1,7.338,7.781Z" transform="translate(0.12 0.081)" fill="#ff5e00"/>
+    <path id="Combined_Shape-2" data-name="Combined Shape" d="M4.451,8.836A4.418,4.418,0,1,1,4.451,0,4.471,4.471,0,0,1,7.338,1.056a4.4,4.4,0,0,0,0,6.725A4.47,4.47,0,0,1,4.451,8.836Z" transform="translate(0.12 0.081)" fill="#ed0006"/>
+    <path id="Combined_Shape-3" data-name="Combined Shape" d="M2.887,8.836A4.472,4.472,0,0,1,0,7.781,4.4,4.4,0,0,0,1.564,4.418,4.4,4.4,0,0,0,0,1.056,4.458,4.458,0,0,1,7.339,4.418,4.44,4.44,0,0,1,2.887,8.836Z" transform="translate(7.459 0.081)" fill="#f9a000"/>
+  </g>
+</svg>

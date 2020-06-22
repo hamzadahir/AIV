@@ -88,15 +88,6 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-
-h5 {
-  font-size:   1.125rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 300;
-  line-height: 1.33;
-  color:       $black;
-}
-
 h5 {
   font-size:   1.125rem;
   font-family: 'Roboto Slab', sans-serif;
@@ -330,6 +321,11 @@ button {
   font-weight: 500;
 }
 
+.colorBlack {
+  color: $black;
+  font-weight: 500;
+}
+
 .d-block {
   display: block !important;
 }
@@ -399,6 +395,22 @@ button {
   outline:    none;
   cursor:     pointer;
   border:     0;
+}
+
+.card-error {
+  color: rgb(105, 115, 134);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.875rem;
+  text-align: center;
+}
+
+.card-element {
+  padding: 0 0.875rem;
+  max-height: 3rem;
+  width: 100%;
+  background: white;
+  padding-top: 1rem;
 }
 
 @media screen and (max-width: 992px) {
