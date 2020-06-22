@@ -3,18 +3,23 @@ import React, { useState } from 'react';
 
 // assets
 import styles from './Stripe.module.scss';
-import close from "../../../assets/images/stripe/close.svg";
+import closeImg from "../../../assets/images/stripe/close.svg";
 import checked from "../../../assets/images/stripe/checked.svg";
 
-export const Success = () => {
+export const Success = ({ close }) => {
     const [show, setShow] = useState(true);
+
+    const handleCloseModal = () => {
+        setShow(!show);
+        close();
+    }
 
     return (
         <main>
             {show && <section className={`${styles.stripe} ${styles.payment}`}>
                 <div className={styles.paymentInner}>
-                    <button className={styles.close} onClick={() => setShow(!show)}>
-                        <img src={close} alt='' />
+                    <button className={styles.close} onClick={() => handleCloseModal()}>
+                        <img src={closeImg} alt='' />
                     </button>
                     <div className={styles.paymentContent}>
                         <div className={styles.icon}>
@@ -22,7 +27,7 @@ export const Success = () => {
                         </div>
                         <h3>Payment Successful!</h3>
                         <p className={styles.description}>Congrats, your payment was successfully released,
-                            We just emailed you your templates, your order
+                        We just emailed you your templates, your order
                             number is <span className='colorBlack'>#18712768</span>
                         </p>
                         <button type='button' className='btn-primary'>Download Templates</button>

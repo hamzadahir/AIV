@@ -146,6 +146,13 @@
         transform: translateY(-50%);
         width:     0.875rem;
       }
+      div {
+        min-height: 53px;
+        border: 0.0625rem solid #E4E8EB;
+        &:hover, &:active {
+          border: 0.0625rem solid #30b179;
+        }
+      }
     }
     button {
       width: 100%;

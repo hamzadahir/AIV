@@ -397,6 +397,22 @@ button {
   border:     0;
 }
 
+.card-error {
+  color: rgb(105, 115, 134);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.875rem;
+  text-align: center;
+}
+
+.card-element {
+  padding: 0 0.875rem;
+  max-height: 3rem;
+  width: 100%;
+  background: white;
+  padding-top: 1rem;
+}
+
 @media screen and (max-width: 992px) {
   h3 {
     font-size:   1.5rem;

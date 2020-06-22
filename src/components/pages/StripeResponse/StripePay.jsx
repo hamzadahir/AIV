@@ -1,10 +1,17 @@
 // core
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+//library
+import {
+    CardElement,
+    useStripe,
+    useElements
+} from "@stripe/react-stripe-js";
 
 // assets
 import styles from './Stripe.module.scss';
 import logo from '../../../assets/images/logo-white.svg';
-import close from '../../../assets/images/stripe/close.svg';
+import closeImg from '../../../assets/images/stripe/close.svg';
 import question from '../../../assets/images/stripe/help-circle.svg';
 
 import visa from '../../../assets/images/stripe/visa.svg';
@@ -16,22 +23,72 @@ import norton from '../../../assets/images/stripe/norton.png';
 import mcafee from '../../../assets/images/stripe/mcafee.png';
 import securePayments from '../../../assets/images/stripe/secure-payments.png';
 
+//component
+import { Canceled } from './Canceled';
+import { Success } from './Success';
 
-export const StripePay = () => {
-    const [show, setShow] = useState(true);
+export const StripePay = ({ createPaymentIntent, secretKey, plan, close }) => {
+    const [error, setError] = useState(null);
+    const [errorPopup, setErrorPopup] = useState(false);
+    const [successPopup, setSuccessPopup] = useState(false);
+    const [disabled, setDisabled] = useState(true);
+    const [clientSecret, setClientSecret] = useState('');
+    const stripe = useStripe();
+    const elements = useElements();
 
+    useEffect(() => {
+        setClientSecret(secretKey);
+        !secretKey && createPaymentIntent({ planForBuy: plan, currency: process.env.REACT_APP_CURRENCY });
+    }, [secretKey])
+
+    const handleChange = async (event) => {
+        setDisabled(event.empty);
+        setError(event.error ? event.error.message : "");
+    };
+
+    const handleSubmit = async ev => {
+        ev.preventDefault();
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement),
+                billing_details: {
+                    name: ev.target.name.value
+                }
+            }
+        });
+        if (payload.error) {
+            setError(`Payment failed ${payload.error.message}`);
+            setErrorPopup(true);
+        } else {
+            setSuccessPopup(true);
+            setError(null);
+        }
+    };
+
+    const setPrice = () => {
+        switch (plan) {
+            case 'Plus':
+                return 2999
+            case 'Premium':
+                return 4999
+            default:
+                return 999
+        }
+    };
     return (
         <>
-            {show && <section className={styles.stripe}>
+            <section className={styles.stripe}>
+                {successPopup && <Success close={close} />}
+                {errorPopup && <Canceled close={close} />}
                 <div className={styles.stripePayInner}>
-                    <button className={styles.close} onClick={() => setShow(!show)}>
-                        <img src={close} alt='' />
+                    <button className={styles.close} onClick={() => close()}>
+                        <img src={closeImg} alt='' />
                     </button>
                     <div className={styles.stripeLeft}>
                         <div className={styles.logo}>
                             <img src={logo} alt='' />
                         </div>
-                        <h2 className={styles.price}><span>$ </span> 999</h2>
+                        <h2 className={styles.price}><span>$ </span> {setPrice()} </h2>
                         <h3 className={styles.title}>Basic Plan</h3>
                         <p>
                             Our basic plan is best suited for startups
@@ -51,12 +108,23 @@ export const StripePay = () => {
                     </div>
                     <div className={styles.stripeRight}>
                         <h3>Pay with Card</h3>
-                        <form action=''>
+
+                        <form id="payment-form" onSubmit={handleSubmit} >
+                            <label>
+                                <div>
+                                    <CardElement className="card-element" onChange={handleChange} />
+                                    {error && (
+                                        <div className="card-error" role="alert">
+                                            {error}
+                                        </div>
+                                    )}
+                                </div>
+                            </label>
                             <label>
                                 <input type='text' placeholder='Email address' />
                             </label>
                             <label>
-                                <input className={styles.cards} type='text' placeholder='Card Number' />
+                                <input className={styles.cards} type='text' placeholder='Card Number' onChange={handleChange} />
                                 <span className={styles.cardsIcons}>
                                     <img src={visa} alt='' />
                                     <img src={mastercard} alt='' />
@@ -77,11 +145,11 @@ export const StripePay = () => {
                             <label>
                                 <input type='text' placeholder='Country or Region' />
                             </label>
-                            <button type='button' className='btn-primary'>Pay 999,00 $US</button>
+                            <button disabled={disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
                         </form>
                     </div>
                 </div>
-            </section>}
+            </section>
         </>
     );
 };

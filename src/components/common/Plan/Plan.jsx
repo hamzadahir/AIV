@@ -3,16 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // library
 import { TimelineLite, Power3 } from 'gsap'
-import { loadStripe } from '@stripe/stripe-js';
 
 // components
 import { useScrollPosition, useWindowSize } from "../../../hooks";
-import { StripePay } from "../../pages";
+import StripeForm from "../../containers/StripePay";
 
 // assets
 import styles from './Plan.module.scss';
-
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const duration = 2;
 export const Plan = () => {
@@ -22,17 +19,7 @@ export const Plan = () => {
     const t6 = new TimelineLite();
     let services = useRef(null);
     const [isError, setError] = useState(false);
-
-    const setPriceID = (plan) => {
-        switch (plan) {
-            case 'Plus':
-                return process.env.REACT_APP_PRICE_ID_PLUS;
-            case 'Premium':
-                return process.env.REACT_APP_PRICE_ID_PREMIUM;
-            default:
-                return process.env.REACT_APP_PRICE_ID_BASE;
-        }
-    };
+    const [isShow, setIsShow] = useState(false);
 
     useEffect(() => {
         if (width > 767) {
@@ -44,17 +31,8 @@ export const Plan = () => {
     }, [width, scroll, t6]);
 
     const handleClick = async (plan) => {
-        const stripe = await stripePromise;
-
-        const {error} = await stripe.redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{price: setPriceID(plan), quantity: 1}],
-            successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancelUrl: `${window.location.origin}/canceled`,
-        });
-        if (error) {
-            setError(true);
-        }
+        setIsShow(true);
+        setPrice(plan);
     };
 
     const closePopup = () => {
@@ -62,7 +40,7 @@ export const Plan = () => {
     };
 
     return (<>
-            <StripePay />
+            {isShow && <StripeForm plan={price} close={() => setIsShow(false)}/>}
             {(isError) &&
             <div className='popupContainer'>
                 <div className={'errorPopup'}>

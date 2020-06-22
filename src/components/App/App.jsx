@@ -6,7 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 // components
-import { Home, Pricing, Products, Success, Canceled } from "../pages";
+import { Home, Pricing, Products } from "../pages";
 import ContactForm from "../containers/Contact";
 
 import { Footer, Header } from "../common";
@@ -29,8 +29,6 @@ function App() {
                     <Route path={routes.products} component={Products} />
                     <Route path={routes.pricing} component={Pricing} />
                     <Route path={routes.contact} component={ContactForm} />
-                    <Route path={routes.success} component={Success} />
-                    <Route path={routes.canceled} component={Canceled} />
                 </Switch>
                 <Footer />
             </div>
