@@ -27,7 +27,7 @@ import securePayments from '../../../assets/images/stripe/secure-payments.png';
 import { Canceled } from './Canceled';
 import { Success } from './Success';
 
-export const StripePay = ({ closePopup, isSending, isError, send, createPaymentIntent, secretKey, plan, close }) => {
+export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close }) => {
     const [error, setError] = useState(null);
     const [errorPopup, setErrorPopup] = useState(false);
     const [successPopup, setSuccessPopup] = useState(false);
@@ -75,7 +75,7 @@ export const StripePay = ({ closePopup, isSending, isError, send, createPaymentI
                 card: elements.getElement(CardElement),
             }
         });
-        
+
         if (payload.error) {
             setId(payload.error.payment_intent.id);
             setError(`Payment failed ${payload.error.message}`);
@@ -124,16 +124,6 @@ export const StripePay = ({ closePopup, isSending, isError, send, createPaymentI
     return (
         <>
             <section className={styles.stripe}>
-                {(isSending || isError) &&
-                    <div className='popupContainer'>
-                        <div className={isSending ? 'successPopup' : 'errorPopup'}>
-                            {isSending ? 'Message sent!' : 'Sorry, we were unable to send the message, please try again later.'}
-                            <button onClick={() => closePopup()} className='closePopupButton'>
-                                <span>✘</span>
-                            </button>
-                        </div>
-                    </div>
-                }
                 {successPopup && <Success close={close} id={id} />}
                 {errorPopup && <Canceled close={close} />}
                 <div className={styles.stripePayInner}>
