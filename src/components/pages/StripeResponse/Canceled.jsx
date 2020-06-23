@@ -11,8 +11,8 @@ export const Canceled = ({ close }) => {
 
     const handleCloseModal = () => {
         setShow(!show);
-        close();
-    }
+        close(false);
+    };
 
     return (
         <main>

@@ -26,6 +26,7 @@ import { Canceled } from './Canceled';
 import { Success } from './Success';
 
 export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) => {
+    const [show, setShow] = useState(true);
     const [error, setError] = useState(null);
     const [errorPopup, setErrorPopup] = useState(false);
     const [successPopup, setSuccessPopup] = useState(false);
@@ -85,6 +86,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                 status: `Payment failed.`
             });
             clearState();
+            setShow(!show);
         } else {
             setId(payload.paymentIntent.id);
             setSuccessPopup(true);
@@ -96,6 +98,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                 status: `Payment success.`
             });
             clearState();
+            setShow(!show);
         }
     };
 
@@ -154,13 +157,18 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
         }
     };
 
+    const handleCloseModal = () => {
+        setShow(!show);
+        close();
+    };
+
     return (
         <>
-            <section className={styles.stripe}>
-                {successPopup && <Success close={close} id={id} />}
-                {errorPopup && <Canceled close={close} />}
+            {successPopup && <Success close={close} id={id} />}
+            {errorPopup && <Canceled close={close} />}
+            {show && <section className={styles.stripe}>
                 <div className={styles.stripePayInner}>
-                    <button className={styles.close} onClick={() => close()}>
+                    <button className={styles.close} onClick={() => handleCloseModal()}>
                         <img src={closeImg} alt='' />
                     </button>
                     <div className={styles.stripeLeft}>
@@ -223,7 +231,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>}
         </>
     );
 };

@@ -12,7 +12,7 @@ export const Success = ({ close, id }) => {
     const handleCloseModal = () => {
         setShow(!show);
         close();
-    }
+    };
 
     return (
         <main>
