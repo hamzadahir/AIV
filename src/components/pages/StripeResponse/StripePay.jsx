@@ -79,7 +79,8 @@ console.log(process.env)
             send({
                 region: region,
                 email: email,
-                message: `Payment failed. ID purchase: ${payload.error.payment_intent.id}`
+                id: payload.error.payment_intent.id,
+                status: `Payment failed.`
             });
             clearState();
         } else {
@@ -89,7 +90,8 @@ console.log(process.env)
             send({
                 region: region,
                 email: email,
-                message: `Payment success. ID purchase: ${payload.paymentIntent.id}`
+                id: payload.paymentIntent.id,
+                status: `Payment success.`
             });
             clearState();
         }
