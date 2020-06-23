@@ -12,16 +12,14 @@ import {
 import styles from './Stripe.module.scss';
 import logo from '../../../assets/images/logo-white.svg';
 import closeImg from '../../../assets/images/stripe/close.svg';
-import question from '../../../assets/images/stripe/help-circle.svg';
-
-import visa from '../../../assets/images/stripe/visa.svg';
-import mastercard from '../../../assets/images/stripe/mastercard.svg';
-import amex from '../../../assets/images/stripe/amex.svg';
-import discover from '../../../assets/images/stripe/discover.svg';
+import selectIcon from '../../../assets/images/stripe/select-icon.svg';
 
 import norton from '../../../assets/images/stripe/norton.png';
+import guaranteed from '../../../assets/images/stripe/guaranteed.svg';
 import mcafee from '../../../assets/images/stripe/mcafee.png';
 import securePayments from '../../../assets/images/stripe/secure-payments.png';
+
+import { country } from '../../../utils/constans';
 
 //component
 import { Canceled } from './Canceled';
@@ -113,11 +111,22 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
     const setPrice = () => {
         switch (plan) {
             case 'Plus':
-                return '2999'
+                return '799'
             case 'Premium':
-                return '4999'
-            default:
                 return '999'
+            default:
+                return '499'
+        }
+    };
+
+    const setDescription = () => {
+        switch (plan) {
+            case 'Plus':
+                return 'Our plus plan is best suited for startups engaging in preliminary due diligence with investors.'
+            case 'Premium':
+                return 'Our premium plan is best suited for startups in deep dive due diligence discussions with investors'
+            default:
+                return 'Our basic plan is best suited for startups just starting the fundraising process.'
         }
     };
 
@@ -134,19 +143,15 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
                         <div className={styles.logo}>
                             <img src={logo} alt='' />
                         </div>
+                        <div className={styles.divPlan}>
                         <h2 className={styles.price}><span>$ </span> {setPrice()} </h2>
-                        <h3 className={styles.title}>Basic Plan</h3>
+                        <h3 className={styles.title}>{plan} Plan</h3>
                         <p>
-                            Our basic plan is best suited for startups
-                            just starting the fundraising process.
+                        {setDescription()}
                         </p>
-                        <div className={styles.secure}>
-                            <img src={norton} alt='' />
-                            <img src={mcafee} alt='' />
-                            <img src={securePayments} alt='' />
                         </div>
                         <div className={styles.copyright}>
-                            <p>Powered by Stripe</p>
+                            <p>Powered by <span>stripe</span></p>
                             |
                             <a href=''>Terms</a>
                             <a href=''> Privacy</a>
@@ -170,13 +175,22 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
                                 <input value={email} required name='email' type='email' placeholder='Email address' onChange={handleChangeInput} />
                             </label>
                             <label>
-                                <input value={name} required name='name' type='text' placeholder='Name on Card' onChange={handleChangeInput} />
-                            </label>
-                            <label>
-                                <input value={region} required name='region' type='text' placeholder='Country or Region' onChange={handleChangeInput} />
+                                <select name='region' value={region} onChange={handleChangeInput}>
+                                    {country.map((val) => 
+                                        <option value={val.value}>{val.label}</option>
+                                    )}
+                                </select>
+                                    <img src={selectIcon} alt=""/>
+                                    <span className={region && styles.spanTop}>Country or Region</span>
                             </label>
                             <button disabled={validate || disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
                         </form>
+                        <div className={styles.secure}>
+                            <img src={norton} alt='' />
+                            <img src={mcafee} alt='' />
+                            <img src={securePayments} alt='' />
+                            <img className={styles.guaranteed} src={guaranteed} alt='' />
+                        </div>
                     </div>
                 </div>
             </section>
