@@ -35,14 +35,12 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
     const elements = useElements();
     const [id, setId] = useState('');
     const initialState = {
-        name: "",
         email: "",
         region: "",
         validate: true,
     };
     const [
         {
-            name,
             email,
             region,
             validate,
@@ -52,14 +50,14 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
 
     useEffect(() => {
         setState(prevState => (
-            { ...prevState, validate: !(name && email) }
+            { ...prevState, validate: !(region && email) }
         ))
-    }, [name, region, email]);
-
+    }, [region, email]);
+console.log(process.env)
     useEffect(() => {
         setClientSecret(secretKey);
         !secretKey && createPaymentIntent({ planForBuy: plan, currency: process.env.REACT_APP_CURRENCY });
-    }, [secretKey])
+    }, [secretKey, plan])
 
     const handleChange = async (event) => {
         setDisabled(event.empty);
@@ -79,7 +77,6 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
             setError(`Payment failed ${payload.error.message}`);
             setErrorPopup(true);
             send({
-                name: name,
                 region: region,
                 email: email,
                 message: `Payment failed. ID purchase: ${payload.error.payment_intent.id}`
@@ -90,7 +87,6 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
             setSuccessPopup(true);
             setError(null);
             send({
-                name: name,
                 region: region,
                 email: email,
                 message: `Payment success. ID purchase: ${payload.paymentIntent.id}`
