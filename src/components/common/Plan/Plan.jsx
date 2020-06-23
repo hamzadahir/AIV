@@ -69,7 +69,7 @@ export const Plan = () => {
             <div className={styles.pricingItemWrapper}>
                 <div
                     className={[styles.pricingItem + ' ' + (price === 'Basic' && 'd-block')]}>
-                    <div className={styles.price}><span>$</span>999</div>
+                    <div className={styles.price}><span>$</span>499</div>
                     <h4>Basic</h4>
                     <p>
                         Our basic plan is best suited for startups just starting the fundraising process.
@@ -97,7 +97,7 @@ export const Plan = () => {
                 </div>
                 <div
                     className={[styles.pricingItem + ' ' + (price === 'Plus' && 'd-block')]}>
-                    <div className={styles.price}><span>$</span>2,999</div>
+                    <div className={styles.price}><span>$</span>799</div>
                     <h4>Plus</h4>
                     <p>
                         Our plus plan is best suited for startups engaging in preliminary due diligence with investors.
@@ -124,7 +124,7 @@ export const Plan = () => {
                 </div>
                 <div
                     className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Premium' && 'd-block')]}>
-                    <div className={styles.price}><span>$</span>4,999</div>
+                    <div className={styles.price}><span>$</span>999</div>
                     <h4>Premium</h4>
                     <p>
                         Our premium plan is best suited for startups in deep dive due diligence discussions with
