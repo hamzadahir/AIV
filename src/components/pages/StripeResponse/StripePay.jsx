@@ -25,7 +25,7 @@ import { country } from '../../../utils/constans';
 import { Canceled } from './Canceled';
 import { Success } from './Success';
 
-export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close }) => {
+export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) => {
     const [error, setError] = useState(null);
     const [errorPopup, setErrorPopup] = useState(false);
     const [successPopup, setSuccessPopup] = useState(false);
@@ -34,6 +34,8 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
     const stripe = useStripe();
     const elements = useElements();
     const [id, setId] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+
     const initialState = {
         email: "",
         region: "",
@@ -50,14 +52,14 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
 
     useEffect(() => {
         setState(prevState => (
-            { ...prevState, validate: !(region && email) }
+            {...prevState, validate: !(region && email)}
         ))
     }, [region, email]);
-console.log(process.env)
+    console.log(process.env);
     useEffect(() => {
         setClientSecret(secretKey);
-        !secretKey && createPaymentIntent({ planForBuy: plan, currency: process.env.REACT_APP_CURRENCY });
-    }, [secretKey, plan])
+        !secretKey && createPaymentIntent({planForBuy: plan, currency: process.env.REACT_APP_CURRENCY});
+    }, [secretKey, plan]);
 
     const handleChange = async (event) => {
         setDisabled(event.empty);
@@ -98,20 +100,44 @@ console.log(process.env)
     };
 
     const handleChangeInput = (e) => {
-        const { name, value } = e.target;
-        setState(prevState => ({ ...prevState, [name]: value }));
+        const {name, value} = e.target;
+        setState(prevState => ({...prevState, [name]: value}));
+    };
+
+
+    const autoCompleteRegion = (e) => {
+        const {name, value} = e.target;
+        setState(prevState => ({...prevState, [name]: value}));
+
+        let suggestions = [];
+        const arrayCountry = [];
+
+        if (value.length > 0) {
+            country.map(item => {
+                const regex = new RegExp(`^${value}`, 'i');
+                arrayCountry.push(item.label);
+                suggestions = arrayCountry.sort().filter(v => regex.test(v));
+            });
+            setSuggestions(suggestions);
+        }
+        setSuggestions(suggestions);
+    };
+
+    const handleSelectedRegion = (item) => {
+        setState(prevState => ({...prevState, region: item}));
+        setSuggestions([]);
     };
 
     const clearState = () => {
-        setState({ ...initialState });
+        setState({...initialState});
     };
 
     const setPrice = () => {
         switch (plan) {
             case 'Plus':
-                return '799'
+                return '799';
             case 'Premium':
-                return '999'
+                return '999';
             default:
                 return '499'
         }
@@ -120,9 +146,9 @@ console.log(process.env)
     const setDescription = () => {
         switch (plan) {
             case 'Plus':
-                return 'Our plus plan is best suited for startups engaging in preliminary due diligence with investors.'
+                return 'Our plus plan is best suited for startups engaging in preliminary due diligence with investors.';
             case 'Premium':
-                return 'Our premium plan is best suited for startups in deep dive due diligence discussions with investors'
+                return 'Our premium plan is best suited for startups in deep dive due diligence discussions with investors';
             default:
                 return 'Our basic plan is best suited for startups just starting the fundraising process.'
         }
@@ -142,11 +168,11 @@ console.log(process.env)
                             <img src={logo} alt='' />
                         </div>
                         <div className={styles.divPlan}>
-                        <h2 className={styles.price}><span>$ </span> {setPrice()} </h2>
-                        <h3 className={styles.title}>{plan} Plan</h3>
-                        <p>
-                        {setDescription()}
-                        </p>
+                            <h2 className={styles.price}><span>$ </span> {setPrice()} </h2>
+                            <h3 className={styles.title}>{plan} Plan</h3>
+                            <p>
+                                {setDescription()}
+                            </p>
                         </div>
                         <div className={styles.copyright}>
                             <p>Powered by <span>stripe</span></p>
@@ -158,7 +184,7 @@ console.log(process.env)
                     <div className={styles.stripeRight}>
                         <h3>Pay with Card</h3>
 
-                        <form id="payment-form" onSubmit={handleSubmit} >
+                        <form id="payment-form" onSubmit={handleSubmit}>
                             <label>
                                 <div>
                                     <CardElement className="card-element" onChange={handleChange} />
@@ -170,18 +196,24 @@ console.log(process.env)
                                 </div>
                             </label>
                             <label>
-                                <input value={email} required name='email' type='email' placeholder='Email address' onChange={handleChangeInput} />
+                                <input value={email} required name='email' type='email' placeholder='Email address'
+                                       onChange={handleChangeInput} />
                             </label>
-                            <label>
-                                <select name='region' value={region} onChange={handleChangeInput}>
-                                    {country.map((val) => 
-                                        <option value={val.value}>{val.label}</option>
-                                    )}
-                                </select>
-                                    <img src={selectIcon} alt=""/>
-                                    <span className={region && styles.spanTop}>Country or Region</span>
+                            <label className={styles.autocompleteWrapper}>
+                                <input name='region' type='text' value={region} onChange={autoCompleteRegion} />
+                                <img src={selectIcon} alt="" />
+                                {suggestions.length === 0 ? null :
+                                    <ul className={styles.autocomplete}>
+                                        {suggestions.map((suggestion, index) =>
+                                            <li key={index}
+                                                onClick={() => handleSelectedRegion(suggestion)}>{suggestion}</li>
+                                        )}
+                                    </ul>
+                                }
                             </label>
-                            <button disabled={validate || disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
+                            <button disabled={validate || disabled} id="submit" type='submit'
+                                    className='btn-primary'>Pay {setPrice()}.00 $US
+                            </button>
                         </form>
                         <div className={styles.secure}>
                             <img className={styles.norton} src={norton} alt='' />
