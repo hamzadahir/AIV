@@ -167,29 +167,13 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
                                 </div>
                             </label>
                             <label>
-                                <input value={email} name='email' type='email' placeholder='Email address' onChange={handleChangeInput} />
+                                <input value={email} required name='email' type='email' placeholder='Email address' onChange={handleChangeInput} />
                             </label>
                             <label>
-                                <input className={styles.cards} type='text' placeholder='Card Number' />
-                                <span className={styles.cardsIcons}>
-                                    <img src={visa} alt='' />
-                                    <img src={mastercard} alt='' />
-                                    <img src={amex} alt='' />
-                                    <img src={discover} alt='' />
-                                </span>
-                            </label>
-                            <label className={styles.width50}>
-                                <input type='text' placeholder='Expiration Date' />
-                            </label>
-                            <label className={styles.width50}>
-                                <input className={styles.question} type='text' placeholder='CVC' />
-                                <img className={styles.questionIcon} src={question} alt='' />
+                                <input value={name} required name='name' type='text' placeholder='Name on Card' onChange={handleChangeInput} />
                             </label>
                             <label>
-                                <input value={name} name='name' type='text' placeholder='Name on Card' onChange={handleChangeInput} />
-                            </label>
-                            <label>
-                                <input value={region} name='region' type='text' placeholder='Country or Region' onChange={handleChangeInput} />
+                                <input value={region} required name='region' type='text' placeholder='Country or Region' onChange={handleChangeInput} />
                             </label>
                             <button disabled={validate || disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
                         </form>
