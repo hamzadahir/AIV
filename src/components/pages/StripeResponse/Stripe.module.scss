@@ -236,11 +236,23 @@
       padding-top: 1.5rem;
       align-items: flex-end;
       img {
-        width:      30%;
         object-fit: contain;
       }
+      .norton {
+        width: 103px;
+        height: 43px;
+      }
+      .mcafee {
+        width: 92px;
+        height: 32px;
+      }
+      .securePayments{
+        width: 117px;
+        height: 38px;
+      }
       .guaranteed {
-        height: 40px;
+        width: 25px;
+        height: 37px;
       }
 
     }

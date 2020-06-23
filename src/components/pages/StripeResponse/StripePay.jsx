@@ -186,9 +186,9 @@ export const StripePay = ({ send, createPaymentIntent, secretKey, plan, close })
                             <button disabled={validate || disabled} id="submit" type='submit' className='btn-primary'>Pay {setPrice()},00 $US</button>
                         </form>
                         <div className={styles.secure}>
-                            <img src={norton} alt='' />
-                            <img src={mcafee} alt='' />
-                            <img src={securePayments} alt='' />
+                            <img className={styles.norton} src={norton} alt='' />
+                            <img className={styles.mcafee} src={mcafee} alt='' />
+                            <img className={styles.securePayments} src={securePayments} alt='' />
                             <img className={styles.guaranteed} src={guaranteed} alt='' />
                         </div>
                     </div>
