@@ -137,9 +137,9 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
 
     const setPrice = () => {
         switch (plan) {
-            case 'Plus':
+            case 'Financials':
                 return '799';
-            case 'Premium':
+            case 'Technical Q&A':
                 return '999';
             default:
                 return '499'
@@ -148,12 +148,12 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
 
     const setDescription = () => {
         switch (plan) {
-            case 'Plus':
-                return 'Our plus plan is best suited for startups engaging in preliminary due diligence with investors.';
-            case 'Premium':
-                return 'Our premium plan is best suited for startups in deep dive due diligence discussions with investors';
+            case 'Financials':
+                return 'Our Financials plan is best suited for startups engaging in preliminary due diligence with investors.';
+            case 'Technical Q&A':
+                return 'Our Technical Q&A plan is best suited for startups in deep dive due diligence discussions with investors';
             default:
-                return 'Our basic plan is best suited for startups just starting the fundraising process.'
+                return 'Our General plan is best suited for startups just starting the fundraising process.'
         }
     };
 
@@ -220,7 +220,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                                 }
                             </label>
                             <button disabled={validate || disabled} id="submit" type='submit'
-                                    className='btn-primary'>Pay {setPrice()}.00 $US
+                                    className='btn-primary'>Pay USD {setPrice()}.00
                             </button>
                         </form>
                         <div className={styles.secure}>

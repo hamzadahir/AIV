@@ -13,7 +13,7 @@ import styles from './Plan.module.scss';
 
 const duration = 2;
 export const Plan = () => {
-    const [price, setPrice] = useState('Basic');
+    const [price, setPrice] = useState('General');
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
     const t6 = new TimelineLite();
@@ -40,7 +40,7 @@ export const Plan = () => {
     };
 
     return (<>
-            {isShow && <StripeForm plan={price} close={() => setIsShow(false)}/>}
+            {isShow && <StripeForm plan={price} close={() => setIsShow(false)} />}
             {(isError) &&
             <div className='popupContainer'>
                 <div className={'errorPopup'}>
@@ -54,101 +54,85 @@ export const Plan = () => {
 
             <div className={styles.pricingButtons}>
                 <button type='button'
-                        className={`btn-primary  ${price === 'Basic' && styles.active}`}
-                        onClick={() => setPrice('Basic')}>Basic
+                        className={`btn-primary  ${price === 'General' && styles.active}`}
+                        onClick={() => setPrice('General')}>General
                 </button>
                 <button type='button'
-                        className={`btn-primary  ${price === 'Plus' && styles.active}`}
-                        onClick={() => setPrice('Plus')}>Plus
+                        className={`btn-primary  ${price === 'Financials' && styles.active}`}
+                        onClick={() => setPrice('Financials')}>Financials
                 </button>
                 <button type='button'
-                        className={`btn-primary  ${price === 'Premium' && styles.active}`}
-                        onClick={() => setPrice('Premium')}>Premium
+                        className={`btn-primary  ${price === 'Technical Q&A' && styles.active}`}
+                        onClick={() => setPrice('Technical Q&A')}>Technical Q&A
                 </button>
             </div>
             <div className={styles.pricingItemWrapper}>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'Basic' && 'd-block')]}>
+                    className={[styles.pricingItem + ' ' + (price === 'General' && 'd-block')]}>
                     <div className={styles.price}><span>$</span>499</div>
-                    <h4>Basic</h4>
+                    <h4>General</h4>
                     <p>
-                        Our basic plan is best suited for startups just starting the fundraising process.
+                        Our General plan is best suited for startups just starting the fundraising process.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
                         <li className={styles.done}>Pitch Deck</li>
                         <li className={styles.done}>Data Room Checklist</li>
-                        <li className={styles.done}>Convertible Notes</li>
                         <li className={styles.done}>Investor Updates</li>
-                        <li className={styles.done}>Investor CRM</li>
-                        <li>Customer Accounts</li>
-                        <li>Market Size and GTM</li>
-                        <li>Cap Table Scenarios</li>
-                        <li>Tech Due Diligence Q&A</li>
-                        <li>Organizational Chart</li>
-                        <li>Historical Financials</li>
-                        <li>Financial KPIs</li>
-                        <li>Financial Forecast</li>
-                        <li>Sales Pipeline Forecast</li>
-                        <li>Fund Usage</li>
+                        <li className={styles.done}>Investor CRM Series X</li>
+                        <li className={styles.done}>Investor CRM Convertible Notes</li>
+                        <li className={styles.done}>Market Size and GTM</li>
+                        <li className={styles.done}>Organizational Chart</li>
+                        <li className={styles.done}>Convertible Notes</li>
+                        <li className={styles.done}>Cap Table Scenarios</li>
                     </ul>
-                    <button type='button' onClick={() => handleClick('Basic')} className='btn-primary'>Get Basic
+                    <button type='button' onClick={() => handleClick('General')} className='btn-primary'>Get Package
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'Plus' && 'd-block')]}>
+                    className={[styles.pricingItem + ' ' + (price === 'Financials' && 'd-block')]}>
                     <div className={styles.price}><span>$</span>799</div>
-                    <h4>Plus</h4>
+                    <h4>Financials</h4>
                     <p>
-                        Our plus plan is best suited for startups engaging in preliminary due diligence with investors.
-                    </p>
-                    <hr />
-                    <ul className={styles.checked}>
-                        <li className={styles.done}>Pitch Deck</li>
-                        <li className={styles.done}>Data Room Checklist</li>
-                        <li className={styles.done}>Convertible Notes</li>
-                        <li className={styles.done}>Investor Updates</li>
-                        <li className={styles.done}>Investor CRM</li>
-                        <li className={styles.done}>Customer Accounts</li>
-                        <li className={styles.done}>Market Size and GTM</li>
-                        <li className={styles.done}>Cap Table Scenarios</li>
-                        <li className={styles.done}>Tech Due Diligence Q&A</li>
-                        <li className={styles.done}>Organizational Chart</li>
-                        <li>Historical Financials</li>
-                        <li>Financial KPIs</li>
-                        <li>Financial Forecast</li>
-                        <li>Sales Pipeline Forecast</li>
-                        <li>Fund Usage</li>
-                    </ul>
-                    <button type='button' onClick={() => handleClick('Plus')} className='btn-primary'>Get Plus</button>
-                </div>
-                <div
-                    className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Premium' && 'd-block')]}>
-                    <div className={styles.price}><span>$</span>999</div>
-                    <h4>Premium</h4>
-                    <p>
-                        Our premium plan is best suited for startups in deep dive due diligence discussions with
+                        Our Financials plan is best suited for startups engaging in preliminary due diligence with
                         investors.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
-                        <li className={styles.done}>Pitch Deck</li>
-                        <li className={styles.done}>Data Room Checklist</li>
-                        <li className={styles.done}>Convertible Notes</li>
-                        <li className={styles.done}>Investor Updates</li>
-                        <li className={styles.done}>Investor CRM</li>
                         <li className={styles.done}>Customer Accounts</li>
-                        <li className={styles.done}>Market Size and GTM</li>
-                        <li className={styles.done}>Cap Table Scenarios</li>
-                        <li className={styles.done}>Tech Due Diligence Q&A</li>
-                        <li className={styles.done}>Organizational Chart</li>
-                        <li className={styles.done}>Historical Financials</li>
-                        <li className={styles.done}>Financial KPIs</li>
+                        <li className={styles.done}>Monthly Historical Financials</li>
+                        <li className={styles.done}>Quarterly Historical Financials</li>
+                        <li className={styles.done}>Yearly Historical Financials</li>
+                        <li className={styles.done}>Financial KPI Dashboard</li>
                         <li className={styles.done}>Financial Forecast</li>
                         <li className={styles.done}>Sales Pipeline Forecast</li>
                         <li className={styles.done}>Fund Usage</li>
                     </ul>
-                    <button type='button' onClick={() => handleClick('Premium')} className='btn-primary'>Get Premium
+                    <button type='button' onClick={() => handleClick('Financials')} className='btn-primary'>Get
+                        Package
+                    </button>
+                </div>
+                <div
+                    className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Technical Q&A' && 'd-block')]}>
+                    <div className={styles.price}><span>$</span>999</div>
+                    <h4>Technical Q&A</h4>
+                    <p>
+                        Our Technical Q&A plan is best suited for startups in deep dive due diligence discussions with
+                        investors.
+                    </p>
+                    <hr />
+                    <ul className={styles.checked}>
+                        <li className={styles.done}>Product</li>
+                        <li className={styles.done}>AI/ML Components</li>
+                        <li className={styles.done}>Competitive Advantage</li>
+                        <li className={styles.done}>Infrastructure</li>
+                        <li className={styles.done}>IT Security & Compliance</li>
+                        <li className={styles.done}>Team</li>
+                        <li className={styles.done}>12-Month Roadmap</li>
+                        <li className={styles.done}>Testimonials</li>
+                    </ul>
+                    <button type='button' onClick={() => handleClick('Technical Q&A')} className='btn-primary'>Get
+                        Package
                     </button>
                 </div>
             </div>
