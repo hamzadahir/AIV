@@ -8,6 +8,11 @@ import {
     useElements
 } from "@stripe/react-stripe-js";
 
+//component
+import { Canceled } from './Canceled';
+import { Success } from './Success';
+import { country } from '../../../utils/constans';
+
 // assets
 import styles from './Stripe.module.scss';
 import logo from '../../../assets/images/logo-white.svg';
@@ -19,11 +24,6 @@ import guaranteed from '../../../assets/images/stripe/guaranteed.svg';
 import mcafee from '../../../assets/images/stripe/mcafee.png';
 import securePayments from '../../../assets/images/stripe/secure-payments.png';
 
-import { country } from '../../../utils/constans';
-
-//component
-import { Canceled } from './Canceled';
-import { Success } from './Success';
 
 export const StripePay = ({send, createPaymentIntent, downloadFile, secretKey, plan, close}) => {
     const [show, setShow] = useState(true);

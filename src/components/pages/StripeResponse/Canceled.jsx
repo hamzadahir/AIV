@@ -1,23 +1,33 @@
 // core
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+
+// components
+import { useOutsideClick } from "../../../hooks";
 
 // assets
 import styles from './Stripe.module.scss';
 import closeImg from "../../../assets/images/stripe/close.svg";
 import error from "../../../assets/images/stripe/error.svg";
 
-export const Canceled = ({ close }) => {
+export const Canceled = ({close}) => {
     const [show, setShow] = useState(true);
 
     const handleCloseModal = () => {
         setShow(!show);
         close(false);
+        window.location.reload();
     };
+
+    const stripePopupRef = useRef(null);
+    useOutsideClick(stripePopupRef, () => {
+        handleCloseModal();
+    });
+
 
     return (
         <main>
             {show && <section className={`${styles.stripe} ${styles.payment} ${styles.paymentCanceled}`}>
-                <div className={styles.paymentInner}>
+                <div ref={stripePopupRef} className={styles.paymentInner}>
                     <button className={styles.close} onClick={() => handleCloseModal()}>
                         <img src={closeImg} alt='' />
                     </button>
@@ -30,7 +40,8 @@ export const Canceled = ({ close }) => {
                             Sorry, we couldn’t proceed with your payment,
                             please use another card or get in Touch with your bank.
                         </p>
-                        <button type='button' className='btn-primary' onClick={() => handleCloseModal()}>Try again?</button>
+                        <button type='button' className='btn-primary' onClick={() => handleCloseModal()}>Try again?
+                        </button>
                         <p className={styles.notice}>Need any help? Please contact us on:</p>
                         <a href='mailto:help@quickraise.com'>Help@quickraise.com</a>
                     </div>
