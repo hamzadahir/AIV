@@ -208,13 +208,22 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                                        onChange={handleChangeInput} />
                             </label>
                             <label className={styles.autocompleteWrapper}>
-                                <input placeholder='Country' name='region' type='text' value={region} onChange={autoCompleteRegion} />
+                                <input placeholder='Country' name='region' type='text' value={region}
+                                       onChange={autoCompleteRegion} />
                                 <img src={selectIcon} alt="" />
-                                {suggestions.length === 0 ? null :
+                                {suggestions.length === 0 && region.length === 0 ?
+                                    <ul className={styles.autocomplete}>
+                                        {country.map((suggestion, index) =>
+                                            <li key={index}
+                                                onClick={() => handleSelectedRegion(suggestion.label)}>{suggestion.label}
+                                            </li>
+                                        )}
+                                    </ul> :
                                     <ul className={styles.autocomplete}>
                                         {suggestions.map((suggestion, index) =>
                                             <li key={index}
-                                                onClick={() => handleSelectedRegion(suggestion)}>{suggestion}</li>
+                                                onClick={() => handleSelectedRegion(suggestion)}>{suggestion}
+                                            </li>
                                         )}
                                     </ul>
                                 }
