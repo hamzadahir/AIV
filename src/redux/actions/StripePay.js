@@ -1,4 +1,3 @@
-import FileSaver from 'file-saver';
 import { SET_CLIENT_SECRET_KEY, SEND_NOTIFICATION_ERROR, SEND_NOTIFICATION_SUCCESS } from './types'
 import { postData } from '../../utils/common'
 
