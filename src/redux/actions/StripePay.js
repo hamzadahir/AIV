@@ -14,21 +14,6 @@ export const createPaymentIntent = (payload) => {
 }
 
 export const downloadFile = (payload) => {
-    if (payload.plan === 'General') {
-        fetch(`${API_KEY}/download?id=${payload.payload.paymentIntent.id}&method=${payload.payload.paymentIntent.payment_method}&plan=General1`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/zip'
-            },
-        })
-        .then(response => response.blob().then(blob => {
-            let url = window.URL.createObjectURL(blob);
-            let a = document.createElement('a');
-            a.href = url;
-            a.download = `Legal.zip`;
-            a.click();
-        }))
-    }
     return async function action(dispatch) {
         await fetch(`${API_KEY}/download?id=${payload.payload.paymentIntent.id}&method=${payload.payload.paymentIntent.payment_method}&plan=${payload.plan}`, {
             method: 'GET',
