@@ -121,8 +121,8 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                 <div className='container'>
                     <div className={styles.helpInner}>
                         <div className={styles.formWrapper}>
-                            <h2>Need help? <br />
-                                Get in touch</h2>
+                            <h2>Need Help? <br />
+                                Get in Touch</h2>
                             <form ref={form}>
                                 <label>
                                     <input name='fullName' required type='text' value={fullName}
@@ -136,7 +136,7 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                                 </label>
                                 <label>
                                     <input name='email' required type='email' value={email} onChange={handleChange} />
-                                    <span>Email address</span>
+                                    <span>Email Address</span>
                                 </label>
                                 <label>
                                     {!validation &&
@@ -145,11 +145,11 @@ export const Contact = ({closePopup, isSending, isError, responseMessage, sendMe
                                            maxLength='18' required type='tel' value={phone} onChange={handleChange} />
                                     <span>Phone Number</span>
                                 </label>
-                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your message…'
+                                <textarea name='message' id='' cols='30' rows='2' placeholder='Your Message…'
                                           value={message} onChange={handleChange} />
                             </form>
                             <button disabled={!send} onClick={handleSendMessage} className='accelerateButton'>
-                                <span className="btn-primary">Submit message</span>
+                                <span className="btn-primary">Submit Message</span>
                                 <span className='btn-primary--next' />
                             </button>
                         </div>

@@ -72,7 +72,7 @@ export const Plan = () => {
                     <div className={styles.price}><span>$</span>499</div>
                     <h4>General</h4>
                     <p>
-                        Our General plan is best suited for startups just starting the fundraising process.
+                        Our General plan is best suited for startups just beginning their fundraising.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
@@ -117,7 +117,7 @@ export const Plan = () => {
                     <div className={styles.price}><span>$</span>999</div>
                     <h4>Technical Q&A</h4>
                     <p>
-                        Our Technical Q&A plan is best suited for startups in deep dive due diligence discussions with
+                        Our Technical Q&A plan is best suited for startups in due diligence due diligence discussions with
                         investors.
                     </p>
                     <hr />

@@ -19,20 +19,20 @@ export const Footer = () => {
                     <div>
                         <h2>Ready? Get Started</h2>
                         <p>
-                            QuickRaise is ready to help you accelerate your fundraising journey. Explore our products
+                            QuickRaise is ready to help you accelerate your fundraising journey. Explore our products,
                             and come partner with us.
                         </p>
                     </div>
                     <div className={styles.topSectionButtons}>
                         <a href={routes.pricing} className='btn-primary'>Explore Pricing Plans</a>
-                        <a href={routes.contact} className='btn-second'>Need help?</a>
+                        <a href={routes.contact} className='btn-second'>Need Help?</a>
                     </div>
                 </div>
                 <hr />
                 <div className={styles.bottomSection}>
                     <ul className={styles.contactInfo}>
                         <li className={styles.logo}><img src={logo} alt='logo' /></li>
-                        <li><a href='/'>99 Wall Street, New York <br /> NY 10005</a></li>
+                        <li><a href='/'>99 Wall Street<br /> New York, NY 10005</a></li>
                         <li><a href="mailto:info@quickraise.com">Info@quickraise.com</a></li>
                     </ul>
                     <ul>

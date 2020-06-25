@@ -43,7 +43,7 @@ const overviewItems = [
     {id: 0, title: 'Pre-Built Financing Templates', image: templates},
     {id: 1, title: 'Extended Investor Network', image: network},
     {id: 2, title: 'Save Thousands of Hours of Work', image: work},
-    {id: 3, title: 'Accelerate Funding By Months', image: month},
+    {id: 3, title: 'Accelerate Funding by Months', image: month},
 ];
 
 const productsItems = [
@@ -164,8 +164,8 @@ export const Home = () => {
                         <div className={styles.overviewTitle} ref={el => overviewTitle = el}>
                             <h2>Overview</h2>
                             <p>
-                                QuickRaise help accelerate venture financing for startups by providing them with the
-                                necessary financing templates to get ahead start in the fundraising process.
+                                QuickRaise helps accelerate venture financing for startups by providing them with the
+                                necessary financing templates to get a head start in fundraising.
                             </p>
                         </div>
                         <div className={styles.overviewItemWrapper} ref={el => overviewItem = el}>
@@ -185,10 +185,8 @@ export const Home = () => {
                         <div className={styles.productsTitle} ref={el => productsTitle = el}>
                             <h2>Fundraising Products</h2>
                             <p>
-                                QuickRaise provides you with pre-built investor-ready templates which
-                                you can utilize to build out your data room. No need to spend time creating materials
-                                from
-                                scratch.
+                                QuickRaise provides you with pre-built investor-ready templates that you can use to
+                                build out your data room. No need to spend time creating materials from scratch.
                             </p>
                         </div>
                         <div className={styles.productsItemWrapper} ref={el => productsItem = el}>
@@ -219,7 +217,7 @@ export const Home = () => {
                             <h2>Pricing Plans</h2>
                             <p>
                                 Choose from our flexible product pricing plans and services
-                                to get started with your fundraising journey
+                                to get started with your fundraising journey.
                             </p>
                         </div>
                         <Plan />

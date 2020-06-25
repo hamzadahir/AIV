@@ -151,9 +151,9 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
             case 'Financials':
                 return 'Our Financials plan is best suited for startups engaging in preliminary due diligence with investors.';
             case 'Technical Q&A':
-                return 'Our Technical Q&A plan is best suited for startups in deep dive due diligence discussions with investors';
+                return 'Our Technical Q&A plan is best suited for startups in due diligence due diligence discussions with investors';
             default:
-                return 'Our General plan is best suited for startups just starting the fundraising process.'
+                return 'Our General plan is best suited for startups just beginning their fundraising.'
         }
     };
 
@@ -204,7 +204,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                                 </div>
                             </label>
                             <label>
-                                <input value={email} required name='email' type='email' placeholder='Email address'
+                                <input value={email} required name='email' type='email' placeholder='Email Address'
                                        onChange={handleChangeInput} />
                             </label>
                             <label className={styles.autocompleteWrapper}>

@@ -101,11 +101,11 @@ const data = [
         items: [
             {
                 title: 'Title',
-                description: 'Use the title slide to gain investors attention and get a kick start into your pitch!',
+                description: 'Use the title slide to gain investors attention and kick start your pitch!',
             },
             {
                 title: 'Problem',
-                description: 'What is the problem your are trying to solve and is it really a problem worth solving?',
+                description: 'What is the problem you are trying to solve, and is it really a problem worth solving?',
             },
             {
                 title: 'Solution',
@@ -129,28 +129,28 @@ const data = [
             },
             {
                 title: 'Business Model',
-                description: 'What\'s the business model that drives your startup? We show ways to show it the right way!',
+                description: 'What\'s the business model that drives your startup? We show you the right way to present it.',
             },
             {
                 title: 'Team',
-                description: 'Investors invest in people. Impress them with your kick-ass team full of experience.',
+                description: 'Investors invest in people. Impress them with your kick-ass team\'s experience.',
             },
             {
                 title: 'Milestones',
-                description: 'Learn how to display all information regarding your next steps and developments.',
+                description: 'Learn how to display information about your next steps and goals.',
             },
             {
                 url: '/',
                 title: 'Financials',
-                description: 'Learn how to design a compelling Financials Slide that leaves no questions open.',
+                description: 'Design a compelling Financials slide that leaves no questions open.',
             },
             {
                 title: 'Ask',
-                description: 'How much money do you need for the next growth step and what are you going to do with it?',
+                description: 'How much money do you need for the next growth step, and what are you going to do with it?',
             },
             {
                 title: 'Contact',
-                description: 'The contact slide is the last thing the investor will see. Don\'t forget the CTA!',
+                description: 'The contact slide is the last thing the investor will see. Don\'t forget the call to action!',
             }
         ],
         info: {
@@ -205,7 +205,7 @@ const data = [
                 image: risk,
             },
             {
-                title: 'Month-on-Month Growth (MoM)',
+                title: 'Month-over-Month Growth (MoM)',
                 image: growth,
             },
             {
@@ -214,7 +214,7 @@ const data = [
                 image: rate,
             },
             {
-                title: 'Gross and Net Churn Rate',
+                title: 'Gross and Net Churn Rates',
                 image: dollar,
             },
             {
@@ -242,7 +242,7 @@ const data = [
         itemType: 1,
         items: [
             {
-                title: '5 Year Financial Forecast',
+                title: '5-Year Financial Forecast',
                 image: five
             },
             {
@@ -273,7 +273,7 @@ const data = [
         info: {
             url: '/',
             image: exel,
-            title: 'Start building your Financials Forecast today!',
+            title: 'Start building your Financial Forecast today!',
             link: '/'
         },
     },
@@ -281,7 +281,7 @@ const data = [
         header: {
             image: sales,
             title: 'Sales Pipeline Forecast',
-            description: 'QuickRaise provides pre-built investor-ready sales pipeline forecast for investors to understand how your revenues will grow in the upcoming months.'
+            description: 'QuickRaise provides pre-built investor-ready sales pipeline forecast for investors to understand how your revenues will grow in the coming months.'
         },
         itemType: 1,
         items: [
@@ -321,7 +321,7 @@ const data = [
         header: {
             image: accountsGreen,
             title: 'Customer Accounts',
-            description: 'QuickRaise provides pre-built investor-ready customer accounts templates to explain your existing customer accounts and growth.'
+            description: 'QuickRaise provides pre-built investor-ready templates to explain your existing customer accounts and growth.'
         },
         itemType: 1,
         items: [
@@ -354,7 +354,7 @@ const data = [
                 image: calendarFill
             },
             {
-                title: 'Account Segmented by Calendar YeaChurn Customers',
+                title: 'Account Segmented by Calendar Churn Customers',
                 image: dollar
             },
             {
@@ -421,7 +421,7 @@ const data = [
         header: {
             image: scenarios,
             title: 'Cap Table Scenarios',
-            description: 'QuickRaise provides pre-built investor-ready cap table and scenarios built-in to forecast dilution for you and your shareholders.'
+            description: 'QuickRaise provides pre-built investor-ready cap table and scenarios built in to forecast dilution for you and your shareholders.'
         },
         itemType: 1,
         items: [
@@ -469,7 +469,7 @@ const data = [
         header: {
             image: notes,
             title: 'Convertible Notes',
-            description: 'QuickRaise provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.'
+            description: 'QuickRaise provides pre-built investor-ready convertible notes templates that you can customize to get a head start with your fundraising.'
         },
         itemType: 1,
         items: [
@@ -498,7 +498,6 @@ const data = [
             url: '/',
             image: word,
             title: 'Start building your Convertible Notes today!',
-            description: 'QuickRaise provides pre-built investor-ready convertible notes templates which you can customize and get a head start with your fundraising.',
             link: '/'
         },
     },
@@ -506,7 +505,7 @@ const data = [
         header: {
             image: updates,
             title: 'Investor Updates',
-            description: 'QuickRaise provides pre-built investor-ready e-mail and report updates for you to keep your investors in the loop of your progress.'
+            description: 'QuickRaise provides pre-built investor-ready reports and updates so you can keep your investors in the loop.'
         },
         itemType: 1,
         items: [
@@ -558,7 +557,7 @@ const data = [
         header: {
             image: crm,
             title: 'Investor CRM',
-            description: 'QuickRaise provides pre-built investor-ready CRM for you to keep track of your fundraising progress.'
+            description: 'QuickRaise provides pre-built investor-ready Customer Management Software (CRM) for you to keep track of your fundraising progress.'
         },
         itemType: 1,
         items: [
@@ -792,7 +791,7 @@ export const Products = () => {
                 banner={false}
                 title={['Fundraising', 'Products']}
                 subTitle={false}
-                description='QuickRaise provides you with pre-built investor-ready templates which you can utilize to build out your  data room. No need to spend time creating materials from scratch.'
+                description='QuickRaise provides you with pre-built investor-ready templates that you can use to build out your  data room. No need to spend time creating materials from scratch.'
                 link={{url: '/', label: 'Purchase Now'}} />
 
             <section className={styles.fundraising}>
