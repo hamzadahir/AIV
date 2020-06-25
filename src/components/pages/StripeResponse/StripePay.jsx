@@ -56,7 +56,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
             {...prevState, validate: !(region && email)}
         ))
     }, [region, email]);
-    console.log(process.env);
+
     useEffect(() => {
         setClientSecret(secretKey);
         !secretKey && createPaymentIntent({planForBuy: plan, currency: process.env.REACT_APP_CURRENCY});
@@ -95,7 +95,9 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                 region: region,
                 email: email,
                 id: payload.paymentIntent.id,
-                status: `Payment success.`
+                status: `Payment success.`,
+                payload: payload,
+                plan: plan
             });
             clearState();
             setShow(!show);
