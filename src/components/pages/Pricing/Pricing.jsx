@@ -13,11 +13,11 @@ export const Pricing = () => {
             <section className={styles.choose}>
                 <div className='container'>
                     <h1>
-                        Choose a <span className='normalTitle'>plan</span> <br />
+                        Choose a <span className='normalTitle'>pack</span> <br />
                         that’s right for <span className='greenTitle'>you.</span>
                     </h1>
                     <p>
-                        Choose from our flexible product pricing plans to get started with your fundraising journey.
+                        Choose from our flexible product pricing packs to get started with your fundraising journey.
                     </p>
                 </div>
             </section>

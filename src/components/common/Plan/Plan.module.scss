@@ -74,35 +74,8 @@ ul.checked {
   }
   hr {
     margin-right: -2.5rem;
-  }
-  &:nth-child(1), &:nth-child(2) {
-    hr {
-      opacity:          1;
-      background-color: #d8dde2;
-    }
-  }
-  &.highLighted {
-    background-color: $secondColor;
-    color:            $white;
-    .price {
-      color: $white;
-    }
-    ul {
-      li {
-        color:   $white;
-        opacity: .5;
-        &.done {
-          color:   $white;
-          opacity: 1;
-          &:before {
-            background-color: $mainColor;
-          }
-          &:after {
-            filter: brightness(100);
-          }
-        }
-      }
-    }
+    opacity:          1;
+    background-color: #d8dde2;
   }
   .price {
     font-size:     2.25rem;

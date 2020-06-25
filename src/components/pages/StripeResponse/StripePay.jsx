@@ -145,22 +145,22 @@ export const StripePay = ({send, createPaymentIntent, downloadFile, secretKey, p
     const setPrice = () => {
         switch (plan) {
             case 'Financials':
-                return '799';
+                return '499';
             case 'Technical Q&A':
-                return '999';
+                return '399';
             default:
-                return '499'
+                return '399'
         }
     };
 
     const setDescription = () => {
         switch (plan) {
             case 'Financials':
-                return 'Our Financials plan is best suited for startups engaging in preliminary due diligence with investors.';
+                return 'Our Financials pack is best suited for startups engaging in business due diligence with investors.';
             case 'Technical Q&A':
-                return 'Our Technical Q&A plan is best suited for startups in due diligence due diligence discussions with investors';
+                return 'Our Technical Q&A pack is best suited for startups engaging in technical due diligence with investors.';
             default:
-                return 'Our General plan is best suited for startups just beginning their fundraising.'
+                return 'Our General pack is best suited for startups just beginning their fundraising.'
         }
     };
 
@@ -184,7 +184,7 @@ export const StripePay = ({send, createPaymentIntent, downloadFile, secretKey, p
                         </div>
                         <div className={styles.divPlan}>
                             <h2 className={styles.price}><span>$ </span> {setPrice()} </h2>
-                            <h3 className={styles.title}>{plan} Plan</h3>
+                            <h3 className={styles.title}>{plan} Pack</h3>
                             <p>
                                 {setDescription()}
                             </p>

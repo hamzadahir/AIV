@@ -605,21 +605,42 @@ const data = [
         itemType: 1,
         items: [
             {
-                title: 'Tech Stack Analysis',
+                title: 'Product',
+                image: box
+            },
+            {
+                title: 'AI/ML Components',
                 image: development
             },
             {
-                title: 'AI/ML Analysis',
+                title: 'Competitive Advantage',
                 image: gross
             },
             {
-                title: 'Product Roadmap',
-                image: box
+                title: 'Infrastructure',
+                image: server
             },
+            {
+                title: 'IT Security & Compliance',
+                image: lock
+            },
+            {
+                title: 'Team',
+                image: users
+            },
+            {
+                title: '12-Month Roadmap',
+                image: calendar
+            },
+            {
+                title: 'Testimonials',
+                image: minimize
+            },
+
         ],
         info: {
             url: '/',
-            image: word,
+            image: exel,
             title: 'Start building your Tech Due Diligence Q&A today!',
             link: '/'
         },
@@ -661,12 +682,20 @@ const data = [
         itemType: 1,
         items: [
             {
-                title: '3-Year Profit and Loss Statements',
+                title: '5-Year Income Statement',
                 image: trending
             },
             {
-                title: '3-Year Balance Sheet',
+                title: '5-Year Balance Sheet',
                 image: law
+            },
+            {
+                title: '5-Year Cash Flow Statement',
+                image: cost
+            },
+            {
+                title: 'Monthly, Quarterly, and Annually',
+                image: calendarFill
             },
         ],
         info: {

@@ -69,55 +69,55 @@ export const Plan = () => {
             <div className={styles.pricingItemWrapper}>
                 <div
                     className={[styles.pricingItem + ' ' + (price === 'General' && 'd-flex')]}>
-                    <div className={styles.price}><span>$</span>499</div>
+                    <div className={styles.price}><span>$</span>399</div>
                     <h4>General</h4>
                     <p>
-                        Our General plan is best suited for startups just beginning their fundraising.
+                        Our General pack is best suited for startups just beginning their fundraising.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
                         <li className={styles.done}>Pitch Deck</li>
                         <li className={styles.done}>Data Room Checklist</li>
                         <li className={styles.done}>Investor Updates</li>
-                        <li className={styles.done}>Investor CRM Series X</li>
-                        <li className={styles.done}>Investor CRM Convertible Notes</li>
+                        <li className={styles.done}>Investor CRM</li>
                         <li className={styles.done}>Market Size and GTM</li>
                         <li className={styles.done}>Organizational Chart</li>
                         <li className={styles.done}>Convertible Notes</li>
                         <li className={styles.done}>Cap Table Scenarios</li>
                     </ul>
-                    <button type='button' onClick={() => handleClick('General')} className='btn-primary'>Get Package
+                    <button type='button' onClick={() => handleClick('General')} className='btn-primary'>
+                        Get Pack
                     </button>
                 </div>
                 <div
                     className={[styles.pricingItem + ' ' + (price === 'Financials' && 'd-flex')]}>
-                    <div className={styles.price}><span>$</span>799</div>
+                    <div className={styles.price}><span>$</span>499</div>
                     <h4>Financials</h4>
                     <p>
-                        Our Financials plan is best suited for startups engaging in preliminary due diligence with
+                        Our Financials pack is best suited for startups engaging in business due diligence with
                         investors.
                     </p>
                     <hr />
                     <ul className={styles.checked}>
                         <li className={styles.done}>Customer Accounts</li>
-                        <li className={styles.done}>Monthly Historical Financials</li>
-                        <li className={styles.done}>Quarterly Historical Financials</li>
-                        <li className={styles.done}>Yearly Historical Financials</li>
+                        <li className={styles.done}>Monthly Financials</li>
+                        <li className={styles.done}>Quarterly Financials</li>
+                        <li className={styles.done}>Yearly Financials</li>
                         <li className={styles.done}>Financial KPI Dashboard</li>
                         <li className={styles.done}>Financial Forecast</li>
                         <li className={styles.done}>Sales Pipeline Forecast</li>
                         <li className={styles.done}>Fund Usage</li>
                     </ul>
-                    <button type='button' onClick={() => handleClick('Financials')} className='btn-primary'>Get
-                        Package
+                    <button type='button' onClick={() => handleClick('Financials')} className='btn-primary'>
+                        Get Pack
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Technical Q&A' && 'd-flex')]}>
-                    <div className={styles.price}><span>$</span>999</div>
+                    className={[styles.pricingItem + ' ' + (price === 'Technical Q&A' && 'd-flex')]}>
+                    <div className={styles.price}><span>$</span>399</div>
                     <h4>Technical Q&A</h4>
                     <p>
-                        Our Technical Q&A plan is best suited for startups in due diligence due diligence discussions with
+                        Our Technical Q&A pack is best suited for startups engaging in technical due diligence with
                         investors.
                     </p>
                     <hr />
@@ -131,8 +131,8 @@ export const Plan = () => {
                         <li className={styles.done}>12-Month Roadmap</li>
                         <li className={styles.done}>Testimonials</li>
                     </ul>
-                    <button type='button' onClick={() => handleClick('Technical Q&A')} className='btn-primary'>Get
-                        Package
+                    <button type='button' onClick={() => handleClick('Technical Q&A')} className='btn-primary'>
+                        Get Pack
                     </button>
                 </div>
             </div>

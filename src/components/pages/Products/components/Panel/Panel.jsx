@@ -36,7 +36,7 @@ export const Panel = ({data}) => {
                     <div>
                         <h4>{data.info.title}</h4>
                         <p>
-                            Select a pricing plan to get started with, and we'll email you a downloadable link.
+                            Select a pricing pack to get started with, and we'll email you a downloadable link.
                         </p>
                     </div>
                     <a href={data.info.url} className={`${styles.link} darkButton`}>

@@ -93,10 +93,8 @@ export const Home = () => {
 
     useEffect(() => {
         if (width > 767) {
-            if (scroll > (sectionTwo.offsetTop - 300)) {
-                t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                    .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-            }
+            t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`);
             if (scroll > (sectionThree.offsetTop - 300)) {
                 t3.to(productsTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
                     .to(productsItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
@@ -214,14 +212,14 @@ export const Home = () => {
                 <div className='container'>
                     <div className={styles.pricingInner}>
                         <div className={styles.pricingTitle} ref={el => pricingTitle = el}>
-                            <h2>Pricing Plans</h2>
+                            <h2>Pricing Packs</h2>
                             <p>
-                                Choose from our flexible product pricing plans and services
+                                Choose from our flexible product pricing packs and services
                                 to get started with your fundraising journey.
                             </p>
                         </div>
                         <Plan />
-                        <a href={routes.pricing} className={styles.link}>Explore Pricing Plans
+                        <a href={routes.pricing} className={styles.link}>Explore Pricing Packs
                             <img src={arrow} alt='' />
                         </a>
                     </div>

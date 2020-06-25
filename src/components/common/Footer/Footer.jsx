@@ -24,7 +24,7 @@ export const Footer = () => {
                         </p>
                     </div>
                     <div className={styles.topSectionButtons}>
-                        <a href={routes.pricing} className='btn-primary'>Explore Pricing Plans</a>
+                        <a href={routes.pricing} className='btn-primary'>Explore  Pricing Packs</a>
                         <a href={routes.contact} className='btn-second'>Need Help?</a>
                     </div>
                 </div>
