@@ -25,7 +25,7 @@ import { country } from '../../../utils/constans';
 import { Canceled } from './Canceled';
 import { Success } from './Success';
 
-export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) => {
+export const StripePay = ({send, createPaymentIntent, downloadFile, secretKey, plan, close}) => {
     const [show, setShow] = useState(true);
     const [error, setError] = useState(null);
     const [errorPopup, setErrorPopup] = useState(false);
@@ -36,6 +36,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
     const elements = useElements();
     const [id, setId] = useState('');
     const [suggestions, setSuggestions] = useState([]);
+    const [dowloadItems, setDownloadsItems] = useState();
 
     const initialState = {
         email: "",
@@ -56,7 +57,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
             {...prevState, validate: !(region && email)}
         ))
     }, [region, email]);
-    console.log(process.env);
+
     useEffect(() => {
         setClientSecret(secretKey);
         !secretKey && createPaymentIntent({planForBuy: plan, currency: process.env.REACT_APP_CURRENCY});
@@ -95,7 +96,13 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
                 region: region,
                 email: email,
                 id: payload.paymentIntent.id,
-                status: `Payment success.`
+                status: `Payment success.`,
+                payload: payload,
+                plan: plan
+            });
+            setDownloadsItems({
+                payload: payload,
+                plan: plan
             });
             clearState();
             setShow(!show);
@@ -164,7 +171,7 @@ export const StripePay = ({send, createPaymentIntent, secretKey, plan, close}) =
 
     return (
         <>
-            {successPopup && <Success close={close} id={id} />}
+            {successPopup && <Success close={close} downloadFile={downloadFile} items={dowloadItems || {}} id={id} />}
             {errorPopup && <Canceled close={close} />}
             {show && <section className={styles.stripe}>
                 <div className={styles.stripePayInner}>
