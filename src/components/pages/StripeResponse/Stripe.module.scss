@@ -167,7 +167,9 @@
         border-left:      0.0625rem solid #30b179;
         border-bottom:    0.0625rem solid #30b179;
         display:          none;
-        li {
+        &:hover, &:active {
+          display: block;
+        }  li {
           padding: 1rem;
           cursor:  pointer;
           &:hover, &:active {
