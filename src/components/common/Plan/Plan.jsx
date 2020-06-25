@@ -68,7 +68,7 @@ export const Plan = () => {
             </div>
             <div className={styles.pricingItemWrapper}>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'General' && 'd-block')]}>
+                    className={[styles.pricingItem + ' ' + (price === 'General' && 'd-flex')]}>
                     <div className={styles.price}><span>$</span>499</div>
                     <h4>General</h4>
                     <p>
@@ -90,7 +90,7 @@ export const Plan = () => {
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'Financials' && 'd-block')]}>
+                    className={[styles.pricingItem + ' ' + (price === 'Financials' && 'd-flex')]}>
                     <div className={styles.price}><span>$</span>799</div>
                     <h4>Financials</h4>
                     <p>
@@ -113,7 +113,7 @@ export const Plan = () => {
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Technical Q&A' && 'd-block')]}>
+                    className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Technical Q&A' && 'd-flex')]}>
                     <div className={styles.price}><span>$</span>999</div>
                     <h4>Technical Q&A</h4>
                     <p>
