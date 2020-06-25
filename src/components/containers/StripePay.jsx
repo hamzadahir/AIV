@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { StripePay } from "../pages/StripeResponse/StripePay";
-import { createPaymentIntent, sendNotification } from '../../redux/actions';
+import { createPaymentIntent, sendNotification, downloadFile} from '../../redux/actions';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     sendNotification: (value) => dispatch(sendNotification(value)),
     createPaymentIntent: (value) => dispatch(createPaymentIntent(value)),
+    downloadFile: (value) => dispatch(downloadFile(value)),
   };
 };
 
@@ -33,6 +34,7 @@ class StripeForm extends Component {
             isError={this.props.isError}
             isSending={this.props.isSending}
             createPaymentIntent={this.props.createPaymentIntent}
+            downloadFile={this.props.downloadFile}
             plan={this.props.plan}
             secretKey={this.props.secretKey}
             close={this.props.close}

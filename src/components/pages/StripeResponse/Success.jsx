@@ -6,7 +6,7 @@ import styles from './Stripe.module.scss';
 import closeImg from "../../../assets/images/stripe/close.svg";
 import checked from "../../../assets/images/stripe/checked.svg";
 
-export const Success = ({ close, id }) => {
+export const Success = ({ close, id, downloadFile, items }) => {
     const [show, setShow] = useState(true);
 
     const handleCloseModal = () => {
@@ -30,7 +30,7 @@ export const Success = ({ close, id }) => {
                         We just emailed you your templates, your order
                         number is <span className='colorBlack'>{id}</span>
                         </p>
-                        <button type='button' className='btn-primary'>Download Templates</button>
+                        <button type='button' className='btn-primary' onClick={() => downloadFile(items)}>Download Templates</button>
                         <p className={styles.notice}>If you didn’t receive any email, please contact us on:</p>
                         <a href='mailto:help@quickraise.com'>Help@quickraise.com</a>
                     </div>
