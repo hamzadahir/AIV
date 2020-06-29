@@ -97,7 +97,7 @@ export const Header = () => {
                             <ul>
                                 {menus.map(item =>
                                     <li key={item.label}
-                                        className={(!toggleProducts && item.label === 'Products') ? styles.show : ''}>
+                                        className={(toggleProducts && item.label === 'Products') ? styles.show : ''}>
                                         <a href={item.url}
                                            onClick={(e) => showProducts(e, item.label)}
                                            className={`${styles.link} ${window.location.pathname === item.url ? styles.active : ''}`}>

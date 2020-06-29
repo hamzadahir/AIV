@@ -3,7 +3,7 @@ import React from 'react';
 
 // components
 import { Item } from "../../../../common";
-
+import { routes } from "../../../../App/routes";
 
 // assets
 import styles from "./Panel.module.scss";
@@ -29,9 +29,9 @@ export const Panel = ({data}) => {
             </div>
             <div className={styles.fundraisingInfo}>
                 <p>Available in:</p>
-                <a href={data.info.url} className={styles.fundraisingAvailable}>
+                <div className={styles.fundraisingAvailable}>
                     <img src={data.info.image} alt='' />
-                </a>
+                </div>
                 <div className={styles.fundraisingLink}>
                     <div>
                         <h4>{data.info.title}</h4>
@@ -39,7 +39,7 @@ export const Panel = ({data}) => {
                             Select a pricing pack to get started with, and we'll email you a downloadable link.
                         </p>
                     </div>
-                    <a href={data.info.url} className={`${styles.link} darkButton`}>
+                    <a href={routes.pricing} className={`${styles.link} darkButton`}>
                         <button type="button" className="btn-dark">Purchase Now</button>
                         <button className='btn-primary--nextDark' />
                     </a>

@@ -55,7 +55,8 @@
         height: 2.8125rem;
       }
       img {
-        height: 100%;
+        height:    100%;
+        max-width: 1.875rem;
       }
     }
     > div {
@@ -90,10 +91,6 @@
     }
     > div {
       max-width: 100%;
-    }
-    p {
-      font-size:   0.875rem;
-      line-height: 1.57;
     }
     &.panelItemMod {
       padding:     1.875rem 3.5rem 2.5rem 1.875rem;

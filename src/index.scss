@@ -122,9 +122,12 @@ input, textarea, select {
   padding:          1rem;
   font-size:        0.875rem;
   line-height:      1.36;
-  color:            #728387;
+  color:            $black;
   box-shadow:       none;
   background-color: transparent;
+  &::placeholder {
+    color: #728387;
+  }
   &:hover, &:focus {
     border: 0.0625rem solid $mainColor;
   }
@@ -322,7 +325,7 @@ button {
 }
 
 .colorBlack {
-  color: $black;
+  color:       $black;
   font-weight: 500;
 }
 
@@ -402,18 +405,18 @@ button {
 }
 
 .card-error {
-  color: rgb(105, 115, 134);
-  font-size: 1rem;
+  color:       rgb(105, 115, 134);
+  font-size:   1rem;
   line-height: 1.5rem;
-  margin-top: 0.875rem;
-  text-align: center;
+  margin-top:  0.875rem;
+  text-align:  center;
 }
 
 .card-element {
-  padding: 0 0.875rem;
-  max-height: 3rem;
-  width: 100%;
-  background: white;
+  padding:     0 0.875rem;
+  max-height:  3rem;
+  width:       100%;
+  background:  white;
   padding-top: 1rem;
 }
 
@@ -451,7 +454,7 @@ button {
     font-size: 1.25rem;
   }
   p {
-    font-size:   0.75rem;
+    font-size:   0.875rem;
     line-height: 1.83;
   }
   .container {

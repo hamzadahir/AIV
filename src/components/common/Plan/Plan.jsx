@@ -49,26 +49,10 @@ export const Plan = () => {
                         <span>✘</span>
                     </button>
                 </div>
-            </div>
-            }
-
-            <div className={styles.pricingButtons}>
-                <button type='button'
-                        className={`btn-primary  ${price === 'General' && styles.active}`}
-                        onClick={() => setPrice('General')}>General
-                </button>
-                <button type='button'
-                        className={`btn-primary  ${price === 'Financials' && styles.active}`}
-                        onClick={() => setPrice('Financials')}>Financials
-                </button>
-                <button type='button'
-                        className={`btn-primary  ${price === 'Technical Q&A' && styles.active}`}
-                        onClick={() => setPrice('Technical Q&A')}>Technical Q&A
-                </button>
-            </div>
+            </div>}
             <div className={styles.pricingItemWrapper}>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'General' && 'd-flex')]}>
+                    className={styles.pricingItem}>
                     <div className={styles.price}><span>$</span>399</div>
                     <h4>General</h4>
                     <p>
@@ -90,7 +74,7 @@ export const Plan = () => {
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'Financials' && 'd-flex')]}>
+                    className={styles.pricingItem}>
                     <div className={styles.price}><span>$</span>499</div>
                     <h4>Financials</h4>
                     <p>
@@ -113,7 +97,7 @@ export const Plan = () => {
                     </button>
                 </div>
                 <div
-                    className={[styles.pricingItem + ' ' + (price === 'Technical Q&A' && 'd-flex')]}>
+                    className={styles.pricingItem}>
                     <div className={styles.price}><span>$</span>399</div>
                     <h4>Technical Q&A</h4>
                     <p>

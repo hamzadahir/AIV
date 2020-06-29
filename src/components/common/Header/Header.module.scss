@@ -319,7 +319,7 @@
               > a {
                 color: $mainColor;
                 &:before {
-                  transform:  rotate(-135deg) !important;
+                  transform: rotate(-135deg) !important;
                 }
               }
               .subMenuWrapper {
@@ -328,15 +328,16 @@
             }
           }
           .subMenuWrapper {
-            position:  relative;
-            top:       0;
-            left:      0;
-            transform: translate(0, 0);
-            width:     100%;
+            position:    relative;
+            top:         0;
+            left:        0;
+            transform:   translate(0, 0);
+            margin-left: -2rem;
+            width:       calc(100% + 2rem);
             .subMenu {
               box-shadow:       none;
               background-color: $lightGreen;
-              padding:          1.875rem 0 0 0;
+              padding:          1.875rem 0 0 2rem;
               flex-direction:   row;
               .subMenuTitle {
                 display: none;

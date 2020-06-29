@@ -156,8 +156,7 @@ const data = [
         info: {
             url: '/',
             image: powerPoint,
-            title: 'Start building your Pitch Deck today!',
-            link: '/'
+            title: `Start building your \n` + ' Pitch Deck today!',
         },
     },
     {
@@ -227,10 +226,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Financials KPIs today!',
-            link: '/'
+            title: `Start building your \n` + ' Financials KPIs today!',
         },
     },
     {
@@ -271,10 +268,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Financial Forecast today!',
-            link: '/'
+            title: `Start building your \n` + ' Financial Forecast today!',
         },
     },
     {
@@ -311,10 +306,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Sales Pipeline Forecast today!',
-            link: '/'
+            title: `Start building your \n` + ' Sales Pipeline Forecast today!',
         },
     },
     {
@@ -363,10 +356,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Customer Accounts today!',
-            link: '/'
+            title: `Start building your \n` + ' Customer Accounts today!',
         },
     },
     {
@@ -411,10 +402,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Market Size and GTM today!',
-            link: '/'
+            title: `Start building your \n` + ' Market Size and GTM today!',
         },
     },
     {
@@ -459,10 +448,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Cap Table Scenarios today!',
-            link: '/'
+            title: `Start building your \n` + ' Cap Table Scenarios today!',
         },
     },
     {
@@ -495,10 +482,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: word,
-            title: 'Start building your Convertible Notes today!',
-            link: '/'
+            title: `Start building your \n` + ' Convertible Notes today!',
         },
     },
     {
@@ -547,10 +532,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: word,
-            title: 'Start building your Investor Updates today!',
-            link: '/'
+            title: `Start building your \n` + ' Investor Updates today!',
         },
     },
     {
@@ -592,8 +575,7 @@ const data = [
         ],
         info: {
             image: exel,
-            title: 'Start building your Investor CRM today!',
-            link: '/'
+            title: `Start building your \n` + ' Investor CRM today!',
         },
     },
     {
@@ -639,10 +621,8 @@ const data = [
 
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Tech Due Diligence Q&A today!',
-            link: '/'
+            title: `Start building your \n` + ' Tech Due Diligence Q&A today!',
         },
     },
     {
@@ -667,10 +647,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Organizational Chart today!',
-            link: '/'
+            title: `Start building your \n` + ' Organizational Chart today!',
         },
     },
     {
@@ -699,10 +677,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Historical Financials today!',
-            link: '/'
+            title: `Start building your \n` + ' Historical Financials today!',
         },
     },
     {
@@ -731,10 +707,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: word,
-            title: 'Start building your Data Room Checklist today!',
-            link: '/'
+            title: `Start building your \n` + ' Data Room Checklist today!',
         },
     },
     {
@@ -771,10 +745,8 @@ const data = [
             },
         ],
         info: {
-            url: '/',
             image: exel,
-            title: 'Start building your Fund Usage today!',
-            link: '/'
+            title: `Start building your \n` + ' Fund Usage today!',
         },
     },
 ];
@@ -782,7 +754,7 @@ const data = [
 const duration = 2;
 export const Products = () => {
     const [toggleSelect, setToggleSelect] = useState(false);
-    const [currentSelect, setCurrentSelect] = useState('Pitch Deck');
+    const [currentSelect, setCurrentSelect] = useState({image: deck, title: 'Pitch Deck'});
     const [width] = useWindowSize();
     const [scroll] = useScrollPosition();
 
@@ -809,10 +781,10 @@ export const Products = () => {
     }, [width, scroll, t1]);
 
 
-    const handleSelect = (title) => {
+    const handleSelect = (item) => {
         setToggleSelect(!toggleSelect);
-        setCurrentSelect(title);
-        window.location = `${routes.products}#${title.toLowerCase().replace(/ /g, '_')}`
+        setCurrentSelect({image: item.image, title: item.title});
+        window.location = `${routes.products}#${item.title.toLowerCase().replace(/ /g, '_')}`
     };
     return (
         <main className={styles.products}>
@@ -838,21 +810,25 @@ export const Products = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div className={styles.panelSelect}>
+                        <div className={!toggleSelect ? styles.panelSelect : `${styles.panelSelect} ${styles.active}`}>
                             <div
-                                className={!toggleSelect ? styles.panelSelectCurrent : `${styles.panelSelectCurrent} ${styles.active}`}
+                                className={styles.panelSelectCurrent}
                                 onClick={() => setToggleSelect(!toggleSelect)}>
-                                <img src={deck} alt='' />
-                                <h4>{currentSelect}</h4>
+                                <div>
+                                    <img src={currentSelect.image} alt='' />
+                                </div>
+                                <h4>{currentSelect.title}</h4>
                             </div>
                             <div
-                                className={!toggleSelect ? styles.panelSelectItems : `${styles.panelSelectItems} ${styles.active}`}>
+                                className={styles.panelSelectItems}>
                                 {data.map((item, index) => (
                                     <div key={index}
                                          className={styles.panelSelectItem}
-                                         onClick={() => handleSelect(item.header.title)}>
-                                        <img src={item.header.image} alt='' />
-                                        <h4 className={currentSelect === item.header.title ? 'greenTitle' : ''}>{item.header.title}</h4>
+                                         onClick={() => handleSelect(item.header)}>
+                                        <div>
+                                            <img src={item.header.image} alt='' />
+                                        </div>
+                                        <h4 className={currentSelect.title === item.header.title ? 'greenTitle' : ''}>{item.header.title}</h4>
                                     </div>
                                 ))}
                             </div>

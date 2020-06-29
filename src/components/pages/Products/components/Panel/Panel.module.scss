@@ -85,24 +85,35 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 567px) {
-    .panel {
-      .fundraisingLink {
-        flex-direction: column;
-        text-align:     center;
-        padding:        2.625rem 1rem;
-        h4 {
-          max-width: 100%;
-        }
-        p {
-          max-width:   100%;
-          font-size:   0.875rem;
-          line-height: 1.42;
-        }
-        .link {
-          margin-left: 0;
-        }
+@media screen and (max-width: 567px) {
+  .panel {
+    .panelTitle {
+      img {
+        display: none;
+      }
+    }
+    .fundraisingLink {
+      flex-direction: column;
+      text-align:     center;
+      padding:        3.625rem 1rem;
+      > div {
+        width: 100%;
+      }
+      h4 {
+        max-width:     100%;
+        white-space:   pre-line;
+        margin-bottom: 1.25rem;
+      }
+      p {
+        max-width:     100%;
+        font-size:     0.875rem;
+        line-height:   1.42;
+        margin-bottom: 1.25rem;
+      }
+      .link {
+        margin-left: 0;
       }
     }
   }

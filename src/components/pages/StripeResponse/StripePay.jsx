@@ -192,8 +192,8 @@ export const StripePay = ({send, createPaymentIntent, downloadFile, secretKey, p
                         <div className={styles.copyright}>
                             <p>Powered by <span>stripe</span></p>
                             |
-                            <a href=''>Terms</a>
-                            <a href=''> Privacy</a>
+                            <div>Terms</div>
+                            <div> Privacy</div>
                         </div>
                     </div>
                     <div className={styles.stripeRight}>
