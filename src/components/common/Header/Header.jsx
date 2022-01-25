@@ -38,7 +38,6 @@ export const Header = () => {
     }, [width, activeMobile]);
 
     useEffect(() => {
-        console.log(classname);
         classname = scroll < 120;
     }, [scroll]);
 

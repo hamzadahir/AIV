@@ -1,6 +1,12 @@
 // core
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
+
+// library
+import { TimelineLite, Power3 } from 'gsap'
+
+// components
+import { useScrollPosition } from "../../../hooks";
 
 // assets
 import styles from './Home.module.scss';
@@ -63,32 +69,95 @@ const productsItems = [
     {id: 13, title: 'Organizational Chart', icon: chart},
     {id: 14, title: 'Fund Usage', icon: usage},
 ];
+
+const duration = 2;
 export const Home = () => {
+    const [scroll] = useScrollPosition();
+
+    // animations
+    const t1 = new TimelineLite();
+    let sectionOne = useRef(null);
+    let bannerImage = useRef(null);
+    let bannerDescription = useRef(null);
+    const t2 = new TimelineLite();
+    let sectionTwo = useRef(null);
+    let overviewTitle = useRef(null);
+    let overviewItem = useRef(null);
+    const t3 = new TimelineLite();
+    let sectionThree = useRef(null);
+    let productsTitle = useRef(null);
+    let productsItem = useRef(null);
+    const t4 = new TimelineLite();
+    let sectionFour = useRef(null);
+    let servicesTitle = useRef(null);
+    let servicesItem = useRef(null);
+    const t5 = new TimelineLite();
+    let sectionFive = useRef(null);
+    let pricingTitle = useRef(null);
+    let pricingItem1 = useRef(null);
+    let pricingItem2 = useRef(null);
+    let pricingItem3 = useRef(null);
+    const t6 = new TimelineLite();
+    let services = useRef(null);
+
+
+    useEffect(() => {
+        if (scroll > (sectionOne.offsetTop - 300)) {
+            t1.to(bannerImage, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
+                .to(bannerDescription, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`);
+        }
+        if (scroll > (sectionTwo.offsetTop - 300)) {
+            t2.to(overviewTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                .to(overviewItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+        }
+        if (scroll > (sectionThree.offsetTop - 300)) {
+            t3.to(productsTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                .to(productsItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+        }
+        if (scroll > (sectionFour.offsetTop - 300)) {
+            t4.to(servicesTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                .to(servicesItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+        }
+        if (scroll > (sectionFive.offsetTop - 300)) {
+            t5.to(pricingTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
+                .to(pricingItem1, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                .to(pricingItem2, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                .to(pricingItem3, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+        }
+        if (scroll > (services.offsetTop - 600)) {
+            t6.to(services, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
+        }
+    }, [scroll, t1, t2, t3, t4, t5, t6]);
+
     return (
         <main className={styles.home}>
-            <section className={styles.accelerate}>
+            <section className={styles.accelerate} ref={el => sectionOne = el}>
                 <div className='container'>
                     <div className={styles.accelerateInner}>
-                        <div className={styles.accelerateDescription}>
+                        <div className={styles.accelerateDescription} ref={el => bannerDescription = el}>
                             <h1>Accelerate
                                 <span className='green'>Fundraising</span>
                             </h1>
-                            <button type="button" className="btn-primary">Explore Products</button>
+                            <button type="button" className="btn-primary">Explore
+                                Products
+                            </button>
                         </div>
-                        <img src={banner} alt='' />
+                        <img src={banner} alt='' ref={el => bannerImage = el} />
                     </div>
                 </div>
             </section>
-            <section className={styles.overview}>
+            <section className={styles.overview} ref={el => sectionTwo = el}>
                 <div className='container'>
                     <div className={styles.overviewInner}>
-                        <h2>Overview</h2>
-                        <p>
-                            Applied Innovation help accelerate venture financing for startups
-                            by providing them with the necessary financing templates and
-                            services to get ahead start.
-                        </p>
-                        <div className={styles.overviewItemWrapper}>
+                        <div className={styles.overviewTitle} ref={el => overviewTitle = el}>
+                            <h2>Overview</h2>
+                            <p>
+                                Applied Innovation help accelerate venture financing for startups
+                                by providing them with the necessary financing templates and
+                                services to get ahead start.
+                            </p>
+                        </div>
+                        <div className={styles.overviewItemWrapper} ref={el => overviewItem = el}>
                             {overviewItems.map(overview => (
                                 <a href='/' key={overview.id} className={styles.overviewItem}>
                                     <img src={overview.image} alt='' />
@@ -99,16 +168,19 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.products}>
+            <section className={styles.products} ref={el => sectionThree = el}>
                 <div className='container'>
                     <div className={styles.productsInner}>
-                        <h2>Fundraising Products</h2>
-                        <p>
-                            AIV provides you with pre-built investor-ready templates which
-                            you can utilize to build out your data room. No need to spend time creating materials from
-                            scratch.
-                        </p>
-                        <a href='/' className={styles.productsItemWrapper}>
+                        <div className={styles.productsTitle} ref={el => productsTitle = el}>
+                            <h2>Fundraising Products</h2>
+                            <p>
+                                AIV provides you with pre-built investor-ready templates which
+                                you can utilize to build out your data room. No need to spend time creating materials
+                                from
+                                scratch.
+                            </p>
+                        </div>
+                        <a href='/' className={styles.productsItemWrapper} ref={el => productsItem = el}>
                             {productsItems.map(product => (
                                 <div key={product.id} className={styles.productsItem}>
                                     <div><img src={product.icon} alt='' /></div>
@@ -123,15 +195,17 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.overview}>
+            <section className={styles.overview} ref={el => sectionFour = el}>
                 <div className='container'>
                     <div className={styles.overviewInner}>
-                        <h2>Fundraising Services</h2>
-                        <p>
-                            AIV provides you with services you can utilize to accelerate your fundraising so you can
-                            spend more time getting back to business.
-                        </p>
-                        <div className={styles.overviewItemWrapper}>
+                        <div className={styles.overviewTitle} ref={el => servicesTitle = el}>
+                            <h2>Fundraising Services</h2>
+                            <p>
+                                AIV provides you with services you can utilize to accelerate your fundraising so you can
+                                spend more time getting back to business.
+                            </p>
+                        </div>
+                        <div className={styles.overviewItemWrapper} ref={el => servicesItem = el}>
                             {servicesItems.map(service => (
                                 <a href='/' key={service.id} className={styles.overviewItem}>
                                     <img src={service.image} alt='' />
@@ -146,16 +220,18 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.pricing}>
+            <section className={styles.pricing} ref={el => sectionFive = el}>
                 <div className='container'>
                     <div className={styles.pricingInner}>
-                        <h2>Pricing Plans</h2>
-                        <p>
-                            Choose from our flexible product pricing plans and services
-                            to get started with your fundraising journey
-                        </p>
+                        <div className={styles.pricingTitle} ref={el => pricingTitle = el}>
+                            <h2>Pricing Plans</h2>
+                            <p>
+                                Choose from our flexible product pricing plans and services
+                                to get started with your fundraising journey
+                            </p>
+                        </div>
                         <div className={styles.pricingItemWrapper}>
-                            <div className={styles.pricingItem}>
+                            <div className={styles.pricingItem} ref={el => pricingItem1 = el}>
                                 <div className={styles.price}><span>$</span>999</div>
                                 <h4>Basic</h4>
                                 <p>
@@ -182,7 +258,7 @@ export const Home = () => {
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Basic</button>
                             </div>
-                            <a href='/' className={styles.pricingItem}>
+                            <a href='/' className={styles.pricingItem} ref={el => pricingItem2 = el}>
                                 <div className={styles.price}><span>$</span>2,999</div>
                                 <h4>Plus</h4>
                                 <p>
@@ -209,7 +285,7 @@ export const Home = () => {
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Plus</button>
                             </a>
-                            <a href='/' className={styles.pricingItem}>
+                            <a href='/' className={styles.pricingItem} ref={el => pricingItem3 = el}>
                                 <div className={styles.price}><span>$</span>4,999</div>
                                 <h4>Premium</h4>
                                 <p>
@@ -237,7 +313,7 @@ export const Home = () => {
                                 <button type='button' className='btn-primary'>Get Premium</button>
                             </a>
                         </div>
-                        <div className={styles.services}>
+                        <div className={styles.services} ref={el => services = el}>
                             <h3>Services Pricing</h3>
                             <div className={styles.servicesInner}>
                                 <ul className={styles.checked}>
