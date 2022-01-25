@@ -1,5 +1,13 @@
 @import "./assets/scss/variables";
 
+@media (any-hover: hover) {
+  button {
+    &:hover, &:active {
+      top: 3px;
+    }
+  }
+}
+
 *, *:after, *:before {
   margin:     0;
   padding:    0;
@@ -29,8 +37,9 @@ button {
   line-height: 1.375rem;
   font-family: Avenir, sans-serif;
   font-weight: 500;
-  &:hover, &:active {
+  &:active {
     opacity: .7;
+    top:     3px;
   }
 }
 
@@ -111,7 +120,8 @@ hr {
   color:      $white;
   padding:    1rem;
   width:      13.3125rem;
-
+  position:   relative;
+  transition: .3s linear;
 }
 
 .btn-second {
@@ -120,6 +130,8 @@ hr {
   color:      $yellow;
   padding:    1rem;
   width:      13.3125rem;
+  position:   relative;
+  transition: .3s linear;
 }
 
 .no-scroll {

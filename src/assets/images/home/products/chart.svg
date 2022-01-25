@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.516" height="28.083" viewBox="0 0 25.516 28.083">
+  <g id="bar-chart-2" transform="translate(0.451 1.25)">
+    <path id="Path" d="M.8,15.984V0" transform="translate(23.016 9.59)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" opacity="0.3"/>
+    <path id="Path-2" data-name="Path" d="M.8,25.574V0" transform="translate(15.344)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="Path-3" data-name="Path" stroke="#30b179" d="M.373,20.672.213,0" fill="none" transform="translate(8.098 4.902)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" opacity="0.3"/>
+    <path id="Path-4" data-name="Path" d="M.8,9.59V0" transform="translate(0 15.984)" fill="none" stroke="#30b179" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+  </g>
+</svg>

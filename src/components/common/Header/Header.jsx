@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 
 // components
-import { useWindowSize } from "../../../hooks";
+import { useScrollPosition, useWindowSize } from "../../../hooks";
 import { routes } from "../../App/routes";
 
 
 // assets
 import styles from './Header.module.scss';
-import logo from '../../../assets/images/logo.png'
+import logo from '../../../assets/images/logo.svg'
 
 
 const menus = [
@@ -18,24 +18,32 @@ const menus = [
     {url: routes.home, label: 'Pricing'},
     {url: routes.home, label: 'Contact'},
 ];
+
+let classname;
 export const Header = () => {
     const [activeMobile, setActiveMobile] = useState(false);
     const [width] = useWindowSize();
+    const [scroll] = useScrollPosition();
 
     const addClass = () => {
         setActiveMobile(!activeMobile);
     };
 
     useEffect(() => {
-        if (width <= 1640 && activeMobile) {
+        if (width <= 992 && activeMobile) {
             document.body.classList.add('no-scroll');
         } else {
             document.body.classList.remove('no-scroll');
         }
     }, [width, activeMobile]);
 
+    useEffect(() => {
+        console.log(classname);
+        classname = scroll < 120;
+    }, [scroll]);
+
     return (
-        <header className={styles.header}>
+        <header className={classname ? styles.header : [styles.header + ' ' + styles.headerFixed]}>
             <div className='container'>
                 <div className={styles.menuWrapper}>
                     <div className={styles.logo}>

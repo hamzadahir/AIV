@@ -4,7 +4,7 @@ import React from 'react';
 
 // assets
 import styles from './Footer.module.scss';
-import logo from '../../../assets/images/logo-white.png'
+import logo from '../../../assets/images/logo-white.svg'
 
 export const Footer = () => {
     return (

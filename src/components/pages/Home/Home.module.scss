@@ -2,6 +2,11 @@
 
 @media (any-hover: hover) {
   .home {
+    .link:hover {
+      img {
+        margin-left: 1.5rem;
+      }
+    }
     .overview {
       .overviewItem:hover {
         opacity:          1;
@@ -92,9 +97,16 @@ ul.checked {
   color:      $mainColor;
   margin-top: 2rem;
   display:    block;
+  &:active {
+    opacity: .7;
+    img {
+      margin-left: 1.5rem;
+    }
+  }
   img {
     width:       0.875rem;
     margin-left: 0.875rem;
+    transition:  .3s linear;
   }
 }
 
@@ -127,7 +139,7 @@ ul.checked {
         }
         &:before {
           content:         '';
-          background:      url("../../../assets/images/arrow.png") center center no-repeat;
+          background:      url("../../../assets/images/arrow.svg") center center no-repeat;
           background-size: 22%;
           width:           3.375rem;
           height:          100%;
