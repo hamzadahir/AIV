@@ -10,10 +10,15 @@ import { routes } from "../../App/routes";
 import styles from './Header.module.scss';
 import logo from '../../../assets/images/logo.svg'
 
+import introductions from '../../../assets/images/home/introductions.svg'
+import room from '../../../assets/images/home/room.svg'
+import report from '../../../assets/images/home/report.svg'
+import rebranding from '../../../assets/images/home/rebranding.svg'
+
 
 const menus = [
-    {url: routes.home, label: 'Home'},
-    {url: routes.home, label: 'Products'},
+    {url: routes.home, label: 'Home',},
+    {url: routes.home, label: 'Products', subMenu: true},
     {url: routes.home, label: 'Services'},
     {url: routes.home, label: 'Pricing'},
     {url: routes.home, label: 'Contact'},
@@ -50,11 +55,31 @@ export const Header = () => {
                     </div>
                     <menu className={activeMobile ? [styles.menu + ' ' + styles.active] : styles.menu}>
                         <ul>
-                            {menus.map(item => <li key={item.label}>
-                                <a href={item.url} className={styles.active}>
-                                    {item.label}
-                                </a>
-                            </li>)}
+                            {menus.map(item =>
+                                <li key={item.label}>
+                                    <a href={item.url} className={styles.link}>{item.label}</a>
+                                    {item.subMenu &&
+                                    <ul className={styles.subMenu}>
+                                        <li>
+                                            <div>
+                                                <img src={introductions} alt='' />
+                                            </div>
+                                            Investor Introductions
+                                        </li>
+                                        <li>
+                                            <div><img src={room} alt='' /></div>
+                                            Data Room Preparation
+                                        </li>
+                                        <li>
+                                            <div><img src={report} alt='' /></div>
+                                            Technical Due Diligence Report
+                                        </li>
+                                        <li>
+                                            <div><img src={rebranding} alt='' /></div>
+                                            Corporate Rebranding
+                                        </li>
+                                    </ul>}
+                                </li>)}
                         </ul>
                     </menu>
                     <button type='button'
