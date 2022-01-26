@@ -192,7 +192,7 @@ export const Home = () => {
                         <div className={styles.overviewItemWrapper} ref={el => overviewItem = el}>
                             {overviewItems.map(overview => (
                                 <a href='/' key={overview.id} className={styles.overviewItem}>
-                                    <img src={overview.image} alt='' />
+                                    <div className={styles.image}><img src={overview.image} alt='' /></div>
                                     <p>{overview.title}</p>
                                 </a>
                             ))}
@@ -244,7 +244,7 @@ export const Home = () => {
                         <div className={styles.overviewItemWrapper} ref={el => servicesItem = el}>
                             {servicesItems.map(service => (
                                 <a href='/' key={service.id} className={styles.overviewItem}>
-                                    <img src={service.image} alt='' />
+                                    <div className={styles.image}><img src={service.image} alt='' /></div>
                                     <p>{service.title}</p>
                                 </a>
                             ))}
@@ -320,7 +320,8 @@ export const Home = () => {
                                 </ul>
                                 <button type='button' className='btn-primary'>Get Plus</button>
                             </a>
-                            <a href='/' className={styles.pricingItem} ref={el => pricingItem3 = el}>
+                            <a href='/' className={[styles.pricingItem + ' ' + styles.highLighted]}
+                               ref={el => pricingItem3 = el}>
                                 <div className={styles.price}><span>$</span>4,999</div>
                                 <h4>Premium</h4>
                                 <p>
