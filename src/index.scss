@@ -97,7 +97,7 @@ hr {
   background: #D8D8D8;
   height:     1px;
   border:     0;
-  margin:     4rem 0;
+  margin:     2.5rem 0;
 }
 
 #root {
@@ -109,7 +109,7 @@ hr {
   border:     0.0625rem solid $mainColor;
   color:      $white;
   padding:    1rem;
-  width:      13.3125rem;
+  width:      11rem;
   position:   relative;
   transition: .3s linear;
   &:active {
@@ -150,9 +150,9 @@ hr {
 
 .container {
   width:     100%;
-  max-width: 1230px;
+  max-width: 1260px;
   margin:    0 auto;
-  padding:   0 1rem;
+  padding:   0 3rem;
 }
 
 .green {
@@ -162,16 +162,40 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
+  h3 {
+    font-size:   1.5rem;
+    line-height: 1.33;
+  }
+  h4 {
+    font-size:   1.5rem;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  hr {
+    margin: 2.75rem 0;
+  }
   h1 {
-    font-size: 2rem;
+    font-size:   2.5rem;
+    line-height: 1.15;
   }
   h2 {
-    font-size: 1.75rem;
+    font-size:     2.25rem;
+    line-height:   1.33;
+    margin-bottom: 0.5rem;
   }
   h3 {
     font-size: 1.5rem;
   }
   h4 {
     font-size: 1.25rem;
+  }
+  p {
+    font-size:   0.75rem;
+    line-height: 1.83;
+  }
+  .container {
+    padding: 0 1.2rem;
   }
 }

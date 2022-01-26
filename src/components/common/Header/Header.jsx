@@ -61,20 +61,28 @@ export const Header = () => {
                                     {item.subMenu &&
                                     <ul className={styles.subMenu}>
                                         <li>
-                                            <div className={styles.image}><img src={introductions} alt='' /></div>
-                                            Investor Introductions
+                                            <a href=''>
+                                                <div className={styles.image}><img src={introductions} alt='' /></div>
+                                                Investor Introductions
+                                            </a>
                                         </li>
                                         <li>
-                                            <div className={styles.image}><img src={room} alt='' /></div>
-                                            Data Room Preparation
+                                            <a href='/'>
+                                                <div className={styles.image}><img src={room} alt='' /></div>
+                                                Data Room Preparation
+                                            </a>
                                         </li>
                                         <li>
-                                            <div className={styles.image}><img src={report} alt='' /></div>
-                                            Technical Due Diligence Report
+                                            <a href=''>
+                                                <div className={styles.image}><img src={report} alt='' /></div>
+                                                Technical Due Diligence Report
+                                            </a>
                                         </li>
                                         <li>
-                                            <div className={styles.image}><img src={rebranding} alt='' /></div>
-                                            Corporate Rebranding
+                                            <a href=''>
+                                                <div className={styles.image}><img src={rebranding} alt='' /></div>
+                                                Corporate Rebranding
+                                            </a>
                                         </li>
                                     </ul>}
                                 </li>)}
