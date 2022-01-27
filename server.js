@@ -1,10 +1,11 @@
-var express = require('express');
-var path = require('path');
-var serveStatic = require('serve-static');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 5000;
 
-var app = express();
-app.use(serveStatic(path.join(__dirname, 'dist')));
+// console.log that your server is up and running
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
-var port = process.env.PORT || 8000;
-app.listen(port);
-console.log('server started ' + port);
+// create a GET route
+app.get('/express_backend', (req, res) => {
+    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+});
