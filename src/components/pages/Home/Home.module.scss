@@ -74,7 +74,7 @@ ul.checked {
         content:          '';
         position:         absolute;
         left:             0;
-        top:              50%;
+        top:              1.5rem;
         transform:        translateY(-50%);
         width:            1.6875rem;
         height:           1.6875rem;
@@ -88,7 +88,7 @@ ul.checked {
         background-size: contain;
         position:        absolute;
         left:            0.5rem;
-        top:             50%;
+        top:             1.5rem;
         transform:       translateY(-50%);
         width:           0.8rem;
         height:          0.8rem;
@@ -396,7 +396,7 @@ ul.checked {
     }
   }
   .services {
-    padding:          0.5rem 3.75rem;
+    padding:          0.5rem 2.5rem;
     background-color: $lightGreen;
     margin-bottom:    3rem;
     h3 {
@@ -409,7 +409,7 @@ ul.checked {
       align-items:     flex-start;
       ul {
         padding-top:     1rem;
-        width:           60%;
+        width:           65%;
         display:         flex;
         flex-wrap:       wrap;
         justify-content: flex-start;
@@ -442,10 +442,12 @@ ul.checked {
         &:before {
           width:  1.44rem;
           height: 1.44rem;
+          top:    1.25rem;
         }
         &:after {
           width:  0.5rem;
           height: 0.5rem;
+          top:    1.25rem;
         }
       }
     }
@@ -639,7 +641,7 @@ ul.checked {
     }
     .services {
       width:         100%;
-      padding:       2.5rem 0.5rem 1.5rem 1.25rem;
+      padding:       2.5rem 1.25rem 1.5rem 1.25rem;
       margin-bottom: 0;
       .servicesInner {
         ul {
@@ -647,6 +649,9 @@ ul.checked {
           li {
             width: 100%;
           }
+        }
+        button {
+          width: 100%;
         }
       }
     }
@@ -694,17 +699,9 @@ ul.checked {
       opacity:   0;
       transform: translate(0, 100%);
     }
-    .pricingItem {
+    .pricingItemWrapper {
       opacity: 0;
-    }
-    .pricingItem:nth-child(1) {
-      transform: translate(-100%, 0);
-    }
-    .pricingItem:nth-child(2) {
-      transform: translate(0%, 30%);
-    }
-    .pricingItem:nth-child(3) {
-      transform: translate(100%, 0);
+      transform: translate(0, 100%);
     }
   }
   .services {

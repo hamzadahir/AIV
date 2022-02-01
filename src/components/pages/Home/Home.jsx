@@ -102,9 +102,7 @@ export const Home = () => {
     const t5 = new TimelineLite();
     let sectionFive = useRef(null);
     let pricingTitle = useRef(null);
-    let pricingItem1 = useRef(null);
-    let pricingItem2 = useRef(null);
-    let pricingItem3 = useRef(null);
+    let pricingItem = useRef(null);
     const t6 = new TimelineLite();
     let services = useRef(null);
 
@@ -134,9 +132,7 @@ export const Home = () => {
             }
             if (scroll > (sectionFive.offsetTop - 300)) {
                 t5.to(pricingTitle, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration})
-                    .to(pricingItem1, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-                    .to(pricingItem2, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
-                    .to(pricingItem3, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
+                    .to(pricingItem, {opacity: 1, y: 0, ease: Power3.easeOut, duration: duration}, `-=${duration}`)
             }
             if (scroll > (services.offsetTop - 600)) {
                 t6.to(services, {opacity: 1, x: 0, ease: Power3.easeOut, duration: duration})
@@ -305,10 +301,9 @@ export const Home = () => {
                                     onClick={() => setPrice('Premium')}>Premium
                             </button>
                         </div>
-                        <div className={styles.pricingItemWrapper}>
+                        <div className={styles.pricingItemWrapper} ref={el => pricingItem = el}>
                             <a href='/'
-                               className={[styles.pricingItem + ' ' + (price === 'Basic' && 'd-block')]}
-                               ref={el => pricingItem1 = el}>
+                               className={[styles.pricingItem + ' ' + (price === 'Basic' && 'd-block')]}>
                                 <div className={styles.price}><span>$</span>999</div>
                                 <h4>Basic</h4>
                                 <p>
@@ -336,7 +331,6 @@ export const Home = () => {
                                 <button type='button' className='btn-primary'>Get Basic</button>
                             </a>
                             <a href='/'
-                               ref={el => pricingItem2 = el}
                                className={[styles.pricingItem + ' ' + (price === 'Plus' && 'd-block')]}>
                                 <div className={styles.price}><span>$</span>2,999</div>
                                 <h4>Plus</h4>
@@ -365,7 +359,6 @@ export const Home = () => {
                                 <button type='button' className='btn-primary'>Get Plus</button>
                             </a>
                             <a href='/'
-                               ref={el => pricingItem3 = el}
                                className={[styles.pricingItem + ' ' + styles.highLighted + ' ' + (price === 'Premium' && 'd-block')]}>
                                 <div className={styles.price}><span>$</span>4,999</div>
                                 <h4>Premium</h4>
