@@ -4,10 +4,12 @@
   .footer {
     .bottomSection {
       ul li a:hover {
-        color: $mainColor;
+        opacity: 1;
+        color:   $mainColor;
       }
     }
     .copyright a:hover {
+      opacity: 1;
       color: $mainColor;
     }
   }
@@ -38,7 +40,7 @@
     .topSectionButtons {
       text-align:  right;
       padding-top: 3rem;
-      button:nth-child(2) {
+      a:nth-child(2) {
         margin-left: 1rem;
       }
     }
@@ -48,8 +50,8 @@
     justify-content: space-between;
     align-items:     flex-start;
     ul {
+      width: 21%;
       li {
-        opacity:     .7;
         font-size:   0.875rem;
         line-height: 2.14;
         &.logo {
@@ -61,19 +63,38 @@
           font-size:      0.875rem;
           font-family:    Avenir, sans-serif;
           font-weight:    500;
-          line-height:    2.14;
+          line-height:    1.78;
           margin-bottom:  1rem;
           text-transform: uppercase;
           opacity:        1;
+          height:         1.5rem;
         }
         a {
+          opacity:     .5;
           color:       $white;
           font-size:   0.875rem;
           line-height: 2.14;
           &:active {
-            color: $mainColor;
+            opacity: .7;
+            color:   $mainColor;
           }
         }
+      }
+    }
+    ul:nth-child(2) {
+      width: 21%;
+    }
+    .listWrapper1 {
+      width:         100% !important;
+      margin-bottom: 0;
+    }
+
+    .listWrapper2 {
+      width:           14%;
+      display:         flex;
+      justify-content: space-between;
+      ul {
+        width: 100%;
       }
     }
   }
@@ -83,17 +104,18 @@
     align-items:     center;
     padding:         4rem 0 0 0;
     p, a {
-      opacity:        .7;
-      font-size:      0.875rem;
-      line-height:    1.78;
-      text-transform: uppercase;
-      color:          $white;
+      font-size:   0.875rem;
+      line-height: 1.78;
+      color:       $white;
+    }
+    a {
+      opacity: .5;
     }
     a:active {
       color: $mainColor;
     }
     .line {
-      margin: 0 1rem;
+      margin: 0 0.5rem;
     }
   }
 }
@@ -107,6 +129,9 @@
     }
     .topSection {
       flex-direction: column;
+      p {
+        margin: 0 auto;
+      }
       > div {
         width:      100%;
         text-align: center;
@@ -125,28 +150,37 @@
         width:         33%;
         margin-bottom: 4rem;
       }
-    }
-    .copyright {
-      flex-direction: column;
-      text-align:     center;
+      ul:nth-child(2) {
+        width: 32%;
+      }
+      .listWrapper2 {
+        width:          32%;
+        flex-direction: column;
+        ul {
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 567px) {
   .footer {
     padding: 4rem 0 0.5rem 0;
     hr {
       margin: 3.5rem 0;
     }
     .topSection {
+      p {
+        margin: 0;
+      }
       > div {
         text-align: left;
       }
       .topSectionButtons {
         flex-direction: column;
-        button {
+        a {
           margin: 0 0 1rem 0 !important;
           width:  100%;
         }
@@ -155,14 +189,37 @@
     .bottomSection {
       justify-content: space-between;
       ul {
-        width:         48%;
+        width:         100%;
         margin-bottom: 2.85rem;
+        li {
+          a {
+            font-size:   0.75rem;
+            line-height: 2.5;
+          }
+        }
       }
-      ul:nth-child(1) {
+      ul:nth-child(2) {
         width: 100%;
+      }
+      .listWrapper1 {
+        display:         flex;
+        flex-wrap:       wrap;
+        justify-content: space-between;
+        li {
+          width: 50%;
+        }
+      }
+      .listWrapper2 {
+        width:          100%;
+        flex-direction: row;
+        ul {
+          width: 49%;
+        }
       }
     }
     .copyright {
+      flex-direction: column-reverse;
+      text-align:     center;
       p {
         font-size:   0.75rem;
         line-height: 1.83;

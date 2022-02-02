@@ -1,0 +1,35 @@
+.choose {
+  padding:    8rem 0;
+  text-align: center;
+  p {
+    max-width: 24.75rem;
+    margin:    0 auto;
+  }
+  h1 {
+    margin-bottom: 1.75rem;
+  }
+}
+
+.pricing {
+  padding: 3rem 0 3.5rem 0;
+}
+
+@media screen and (max-width: 992px) {
+  .choose {
+    padding: 12.5rem 0;
+  }
+  .pricing {
+    padding: 7.5rem 0 6.25rem 0;
+  }
+}
+
+
+@media screen and (max-width: 767.98px) {
+  .choose {
+    padding: 10.5rem 0;
+  }
+  .pricing {
+    padding: 3.25rem 0 0.75rem 0;
+  }
+}
+

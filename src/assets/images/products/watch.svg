@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="watch" transform="translate(1 1)">
+    <circle id="Oval" cx="15" cy="15" r="15" stroke-width="2" transform="translate(0 0)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    <path id="Path" d="M0,0V6.429L3.214,9.643" transform="translate(15 8.571)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" opacity="0.4"/>
+  </g>
+</svg>

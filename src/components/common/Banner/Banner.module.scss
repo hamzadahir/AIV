@@ -1,0 +1,104 @@
+@import "../../../assets/scss/variables";
+
+.accelerate {
+  padding: 3rem 0 14rem 0;
+  .accelerateInner {
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    .image {
+      width:    65%;
+      position: relative;
+      .cloud1 {
+        position:  absolute;
+        z-index:   -1;
+        left:      27%;
+        top:       0;
+        width:     11%;
+        animation: cloud1Animation 12s linear 0s alternate infinite;
+      }
+      .cloud2 {
+        position:  absolute;
+        z-index:   -1;
+        right:     15%;
+        top:       8%;
+        width:     19%;
+        animation: cloud2Animation 12s linear 0s alternate infinite;
+      }
+    }
+  }
+  .accelerateDescription {
+    padding-right: 2%;
+    width:         35%;
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .accelerate {
+    padding: 5rem 0 3rem 0;
+    .accelerateInner {
+      flex-direction: column;
+      .image {
+        max-width: 29rem;
+        width:     100%;
+      }
+    }
+    .accelerateDescription {
+      width:         100%;
+      padding-right: 0;
+      margin-bottom: 7rem;
+      text-align:    center;
+      p {
+        max-width: 26rem;
+        margin:    0 auto 2.5rem auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .accelerate {
+    padding: 6rem 0 3rem 0;
+    .accelerateDescription {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+
+// animations
+@media screen and (min-width: 767px) {
+  .accelerate {
+    .image {
+      opacity:   0;
+      transform: translate(100%, 0);
+    }
+    .accelerateDescription {
+      opacity:   0;
+      transform: translate(0, 100%);
+    }
+  }
+}
+
+
+@keyframes cloud1Animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+
+}
+
+@keyframes cloud2Animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

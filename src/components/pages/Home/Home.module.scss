@@ -51,51 +51,9 @@
         }
       }
     }
-    .pricing {
-      .pricingItem:hover {
-        border:     0.0625rem solid transparent;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
-      }
-    }
   }
 }
 
-ul.checked {
-  margin-bottom: 2.75rem;
-  li {
-    font-size:    1.125rem;
-    line-height:  2.78;
-    position:     relative;
-    color:        #8c94a5;
-    padding-left: 2.5rem;
-    &.done {
-      color: $black;
-      &:before {
-        content:          '';
-        position:         absolute;
-        left:             0;
-        top:              1.5rem;
-        transform:        translateY(-50%);
-        width:            1.6875rem;
-        height:           1.6875rem;
-        background-color: $lightGreen;
-        border-radius:    50%;
-
-      }
-      &:after {
-        content:         '';
-        background:      url("../../../assets/images/checked.svg") center center no-repeat;
-        background-size: contain;
-        position:        absolute;
-        left:            0.5rem;
-        top:             1.5rem;
-        transform:       translateY(-50%);
-        width:           0.8rem;
-        height:          0.8rem;
-      }
-    }
-  }
-}
 
 .link {
   color:          $mainColor;
@@ -116,64 +74,6 @@ ul.checked {
 }
 
 .home {
-  .accelerate {
-    padding: 5rem 0 13rem 0;
-    .accelerateInner {
-      display:         flex;
-      align-items:     center;
-      justify-content: space-between;
-      .image {
-        width:    65%;
-        position: relative;
-        .cloud1 {
-          position:  absolute;
-          z-index:   -1;
-          left:      27%;
-          top:       0;
-          width:     11%;
-          animation: cloud1Animation 12s linear 0s alternate infinite;
-        }
-        .cloud2 {
-          position:  absolute;
-          z-index:   -1;
-          right:     15%;
-          top:       8%;
-          width:     19%;
-          animation: cloud2Animation 12s linear 0s alternate infinite;
-        }
-      }
-    }
-    .accelerateDescription {
-      padding-right: 2%;
-      width:         35%;
-      button {
-        position: relative;
-        &:after {
-          content:    '';
-          position:   absolute;
-          z-index:    1;
-          top:        -0.062rem;
-          right:      0;
-          width:      3.375rem;
-          height:     calc(100% + 0.125rem);
-          background: #25885d;
-          transform:  translateX(100%);
-        }
-        &:before {
-          content:         '';
-          background:      url("../../../assets/images/arrow.svg") center center no-repeat;
-          background-size: 22%;
-          width:           3.375rem;
-          height:          100%;
-          position:        absolute;
-          z-index:         2;
-          right:           0;
-          top:             50%;
-          transform:       translate(100%, -50%);
-        }
-      }
-    }
-  }
   .overview {
     background-color: $lightGreen;
     padding:          7.5rem 0;
@@ -182,7 +82,7 @@ ul.checked {
         margin-bottom: 3rem;
         p {
           max-width: 30rem;
-          color:     #8c94a5;
+          color:     #728387;
         }
       }
     }
@@ -197,11 +97,13 @@ ul.checked {
       background-color: $white;
       padding:          2.5rem 1rem 1.5rem 2.5rem;
       width:            23%;
-      cursor:           pointer;
       &:nth-child(odd), &:nth-child(even) {
         > .image {
           background-color: $mainColor;
           position:         relative;
+          display:          flex;
+          align-items:      center;
+          justify-content:  center;
           &:before {
             content:          '';
             position:         absolute;
@@ -230,6 +132,7 @@ ul.checked {
         img {
           object-fit: contain;
           height:     100%;
+          filter:     brightness(100);
         }
       }
       p {
@@ -242,7 +145,6 @@ ul.checked {
 
       &:active {
         background-color: $secondColor;
-        opacity:          .8;
         p {
           color: $white;
         }
@@ -259,7 +161,7 @@ ul.checked {
         margin-bottom: 5rem;
         p {
           max-width: 29rem;
-          color:     #8c94a5;
+          color:     #728387;
         }
       }
     }
@@ -267,8 +169,8 @@ ul.checked {
       display: none;
       button {
         width: 100%;
-        &:hover, &:active {
-          top: 0;
+        &:hover:before, &:active:before {
+          left: 110%;
         }
       }
     }
@@ -295,6 +197,9 @@ ul.checked {
         padding:          1.65rem;
         background-color: $lightGreen;
         position:         relative;
+        display:          flex;
+        align-items:      center;
+        justify-content:  center;
 
         img {
           height:     100%;
@@ -321,157 +226,21 @@ ul.checked {
     }
   }
   .pricing {
-    padding: 8rem 0;
+    padding: 0 0 8rem 0;
     .pricingInner {
       .pricingTitle {
         margin-bottom: 5rem;
         p {
           max-width: 30rem;
-          color:     #8c94a5;
+          color:     #728387;
         }
-      }
-    }
-    .pricingItemWrapper {
-      display:         flex;
-      justify-content: space-between;
-      align-items:     flex-start;
-      flex-wrap:       wrap;
-    }
-    .pricingButtons {
-      display: none;
-    }
-    .pricingItem {
-      width:            32%;
-      background-color: $white;
-      border:           0.0625rem solid #e0e0e0;
-      padding:          3.125rem 2.5rem;
-      margin-bottom:    3.75rem;
-      transition:       .2s linear;
-      &:active {
-        border:     0.0625rem solid transparent;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
-      }
-      &.highLighted {
-        background-color: $secondColor;
-        color:            $white;
-        .price {
-          color: $white;
-        }
-        ul {
-          li {
-            color:   $white;
-            opacity: .5;
-            &.done {
-              color:   $white;
-              opacity: 1;
-              &:before {
-                background-color: $mainColor;
-              }
-              &:after {
-                filter: brightness(100);
-              }
-            }
-          }
-        }
-      }
-      .price {
-        font-size:     2.25rem;
-        line-height:   1.36;
-        color:         $mainColor;
-        display:       flex;
-        align-items:   flex-start;
-        margin-bottom: 2.5rem;
-        span {
-          font-size:    1.25rem;
-          line-height:  1.2;
-          color:        #8c94a5;
-          top:          0.5rem;
-          margin-right: 0.5rem;
-          position:     relative;
-        }
-      }
-      button {
-        width: 100%;
-      }
-    }
-  }
-  .services {
-    padding:          0.5rem 2.5rem;
-    background-color: $lightGreen;
-    margin-bottom:    3rem;
-    h3 {
-      margin-bottom: 0;
-    }
-    .servicesInner {
-      display:         flex;
-      flex-wrap:       wrap;
-      justify-content: space-between;
-      align-items:     flex-start;
-      ul {
-        padding-top:     1rem;
-        width:           65%;
-        display:         flex;
-        flex-wrap:       wrap;
-        justify-content: flex-start;
-        align-items:     flex-start;
-        li {
-          width: 46%;
-          &.done {
-            &:before {
-              background-color: $mainColor;
-            }
-            &:after {
-              filter: brightness(100);
-            }
-          }
-        }
-      }
-      button {
-        width: 16rem;
       }
     }
   }
 }
 
 @media screen and (max-width: 992px) {
-  ul.checked {
-    li {
-      font-size:   1rem;
-      line-height: 2.75;
-      &.done {
-        &:before {
-          width:  1.44rem;
-          height: 1.44rem;
-          top:    1.25rem;
-        }
-        &:after {
-          width:  0.5rem;
-          height: 0.5rem;
-          top:    1.25rem;
-        }
-      }
-    }
-  }
   .home {
-    .accelerate {
-      padding: 5rem 0 2rem 0;
-      .accelerateInner {
-        flex-direction: column;
-        .image {
-          max-width: 29rem;
-          width:     100%;
-        }
-      }
-      .accelerateDescription {
-        width:         100%;
-        padding-right: 0;
-        margin-bottom: 7rem;
-        text-align:    center;
-        button {
-          margin-right: 3.375rem;
-        }
-      }
-    }
     .overview {
       padding: 6rem 0 4rem 0;
       .overviewInner {
@@ -518,39 +287,10 @@ ul.checked {
       }
     }
     .pricing {
-      padding: 7rem 0 4.4rem 0;
+      padding: 0 0 4.4rem 0;
       .pricingInner {
         .pricingTitle {
           margin-bottom: 4rem;
-        }
-      }
-      .pricingItem {
-        width:         48%;
-        padding:       2.25rem 2rem;
-        margin-bottom: 2.75rem;
-        .price {
-          margin-bottom: 2rem;
-        }
-        p {
-          font-size:   0.875rem;
-          line-height: 1.57;
-        }
-        &:nth-child(3) {
-          margin-bottom: 0;
-        }
-      }
-    }
-    .services {
-      padding: 2.5rem 0.5rem 2.5rem 2.25rem;
-      width:   48%;
-      .servicesInner {
-        padding-top: 4rem;
-        ul {
-          width:         100%;
-          margin-bottom: 2rem;
-          li {
-            width: 100%;
-          }
         }
       }
     }
@@ -559,15 +299,7 @@ ul.checked {
 
 
 @media screen and (max-width: 767.98px) {
-  ul.checked {
-    margin-bottom: 1.25rem;
-  }
   .home {
-    .accelerate {
-      .accelerateDescription {
-        margin-bottom: 4rem;
-      }
-    }
     .overview {
       padding: 4.5rem 0 2rem 0;
       .overviewInner {
@@ -609,68 +341,35 @@ ul.checked {
       }
     }
     .pricing {
-      padding: 5rem 0 3.75rem 0;
-      .pricingButtons {
-        display:       flex;
-        width:         100%;
-        margin-bottom: 2.25rem;
-        button {
-          width:            33%;
-          background-color: $lightGreen;
-          border:           0.0625rem solid transparent;
-          color:            #1d343c;
-          &.active {
-            background-color: $mainColor;
-            color:            $white;
-          }
-        }
-      }
+      padding: 0 0 3.75rem 0;
       .pricingInner {
         .pricingTitle {
           margin-bottom: 3rem;
-          h2 {
-            max-width: 12rem;
-          }
-        }
-      }
-      .pricingItem {
-        display: none;
-        width:   100%;
-        padding: 2.5rem 1rem 1.25rem 1rem;
-      }
-    }
-    .services {
-      width:         100%;
-      padding:       2.5rem 1.25rem 1.5rem 1.25rem;
-      margin-bottom: 0;
-      .servicesInner {
-        ul {
-          margin-bottom: 0;
-          li {
-            width: 100%;
-          }
-        }
-        button {
-          width: 100%;
+
         }
       }
     }
   }
 }
 
-// animations
-@media screen and (min-width: 767px) {
-  .accelerate {
-    .image {
-      opacity:   0;
-      transform: translate(100%, 0);
-    }
-    .accelerateDescription {
-      opacity:   0;
-      transform: translate(0, 100%);
+
+@media screen and (max-width: 567px) {
+  .home {
+    .pricing {
+      .pricingInner {
+        .pricingTitle {
+          h2 {
+            max-width: 12rem;
+          }
+        }
+      }
     }
   }
+}
 
+
+// animations
+@media screen and (min-width: 767px) {
   .overview {
     .overviewTitle {
       opacity:   0;
@@ -699,32 +398,5 @@ ul.checked {
       opacity:   0;
       transform: translate(0, 100%);
     }
-    .pricingItemWrapper {
-      opacity: 0;
-      transform: translate(0, 100%);
-    }
-  }
-  .services {
-    opacity:   0;
-    transform: translate(-500px, 0);
-  }
-}
-
-@keyframes cloud1Animation {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(200%);
-  }
-
-}
-
-@keyframes cloud2Animation {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-200%);
   }
 }

@@ -10,6 +10,7 @@ import App from './components/App/App';
 
 // assets
 import './index.scss';
+import './assets/scss/main.scss';
 
 
 ReactDOM.render(

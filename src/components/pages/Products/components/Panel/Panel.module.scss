@@ -1,0 +1,108 @@
+@import "../../../../../assets/scss/variables";
+
+.panel {
+  padding-left: 3.75rem;
+  width:        100%;
+  .panelTitle {
+    display:     flex;
+    align-items: center;
+    img {
+      width:        2.1875rem;
+      margin-right: 1.5625rem;
+    }
+  }
+  .panelDescription {
+    max-width: 29.375rem;
+  }
+  .panelInner {
+    padding-top: 3rem;
+  }
+  .fundraisingInfo {
+    margin-top: 2.5rem;
+    > p {
+      color:         $mainColor;
+      margin-bottom: 2.375rem;
+    }
+    .fundraisingAvailable {
+      padding:          1.4375rem;
+      background-color: $white;
+      display:          inline-block;
+      margin-bottom:    3.75rem;
+      img {
+        width: 3.625rem;
+      }
+    }
+  }
+  .fundraisingLink {
+    padding:          3.125rem 3.75rem;
+    background-color: $mainColor;
+    display:          flex;
+    align-items:      center;
+    justify-content:  space-between;
+    position:         relative;
+    &:before {
+      content:          '';
+      position:         absolute;
+      right:            0;
+      bottom:           0;
+      width:            50%;
+      height:           50%;
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    h4 {
+      font-size:   1.5rem;
+      line-height: 1.5;
+      color:       $white;
+      max-width:   14rem;
+    }
+    p {
+      color:     #ffffff;
+      opacity:   .8;
+      max-width: 20rem;
+    }
+    .link {
+      display:     flex;
+      margin-left: .5rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .panel {
+    padding-left: 0;
+    .fundraisingLink {
+      p {
+        font-size:   0.9375rem;
+        line-height: 1.67;
+      }
+    }
+    .fundraisingInfo {
+      > p {
+        font-size:   1rem;
+        line-height: 1.5625;
+      }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .panel {
+    .fundraisingLink {
+      flex-direction: column;
+      text-align:     center;
+      padding:        2.625rem 1rem;
+      h4 {
+        max-width: 100%;
+      }
+      p {
+        max-width:   100%;
+        font-size:   0.875rem;
+        line-height: 1.42;
+      }
+      .link {
+        margin-left: 0;
+      }
+    }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="alert-circle" transform="translate(1 1)">
+    <circle id="Oval" cx="15" cy="15" r="15" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <g id="dollar-sign" transform="translate(10 5.6)">
+      <path id="Path" d="M9.167,0H2.917A2.733,2.733,0,0,0,0,2.5,2.733,2.733,0,0,0,2.917,5H7.083A2.733,2.733,0,0,1,10,7.5,2.733,2.733,0,0,1,7.083,10H0" transform="translate(0 4.4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.6"/>
+      <path id="Path-2" data-name="Path" stroke="#fff" d="M1,0V18" fill="none" transform="translate(4 0.4)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.6" opacity="0.4"/>
+    </g>
+  </g>
+</svg>

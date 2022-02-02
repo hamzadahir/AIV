@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33.012" height="33.003" viewBox="0 0 33.012 33.003">
+  <g id="pie-chart" transform="translate(1.512 1.5)">
+    <path id="Path" d="M28.816,19.59A15,15,0,1,1,9,0" transform="translate(-0.001 1.245)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" stroke="#fff" d="M15,15A15,15,0,0,0,10.607,4.393,15,15,0,0,0,0,0V15Z" fill="none" transform="translate(15)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" opacity="0.3"/>
+  </g>
+</svg>

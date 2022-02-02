@@ -1,0 +1,191 @@
+@import "../../../assets/scss/variables";
+
+
+.products {
+  .fundraising {
+    background-color: rgba(48, 177, 121, 0.05);
+    .fundraisingInner {
+      padding: 7.5rem 0;
+      display: flex;
+      .tabs {
+        border-right:  0.0625rem solid rgba(48, 177, 121, 0.2);
+        padding-right: 2.5rem;
+        width:         26%;
+        min-width:     15.5rem;
+        ul {
+          li {
+            cursor:       pointer;
+            position:     relative;
+            padding-left: 0.5rem;
+            &:hover, &:active {
+              a {
+                color:      $mainColor;
+                transition: .3s linear;
+              }
+              color:      $mainColor;
+              transition: .3s linear;
+            }
+            &:before {
+              content:          '';
+              position:         absolute;
+              z-index:          1;
+              left:             0;
+              top:              50%;
+              transform:        translateY(-50%);
+              width:            0.125rem;
+              height:           1.625rem;
+              background-color: $mainColor;
+              opacity:          0;
+            }
+            &.active {
+              a {
+                color: $mainColor;
+
+              }
+              &:before {
+                opacity: 1;
+              }
+            }
+            a {
+              font-size:   1.125rem;
+              line-height: 3.67;
+              color:       #91d6b8;
+            }
+          }
+        }
+      }
+      .panelSelect {
+        display:          none;
+        align-items:      center;
+        flex-direction:   column;
+        background-color: $white;
+        margin-bottom:    2rem;
+        .panelSelectItem, .panelSelectCurrent {
+          align-items: center;
+          width:       100%;
+          display:     flex;
+          padding:     1.25rem;
+          cursor:      pointer;
+          position:    relative;
+          img {
+            width:        1.5rem;
+            margin-right: 1.5625rem;
+          }
+        }
+        .panelSelectItems {
+          display:        none;
+          flex-direction: column;
+          width:          100%;
+          &.active {
+            display: flex;
+
+          }
+        }
+        .panelSelectCurrent {
+          h4 {
+            margin-bottom: 0;
+          }
+          &:before {
+            content:          '';
+            position:         absolute;
+            z-index:          1;
+            right:            0;
+            top:              0;
+            width:            5rem;
+            height:           100%;
+            background-color: $mainColor;
+          }
+          &:after {
+            content:          '';
+            position:         absolute;
+            z-index:          2;
+            right:            2rem;
+            top:              1.5rem;
+            transform:        rotate(45deg);
+            width:            1rem;
+            height:           1rem;
+            background-color: transparent;
+            border-bottom:    2px solid $white;
+            border-right:     2px solid $white;
+
+          }
+          &.active {
+            &:before {
+              background-color: $white;
+            }
+            &:after {
+              border-bottom: 2px solid $mainColor;
+              border-right:  2px solid $mainColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .products {
+    .fundraising {
+      .fundraisingInner {
+        flex-direction: column;
+        padding:        4rem 0;
+        .tabs {
+          display: none;
+        }
+        .panelSelect {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .products {
+    .fundraising {
+      .fundraisingInner {
+        .panelSelect {
+          .panelSelectItem, .panelSelectCurrent {
+            padding: 0.9rem;
+            h4 {
+              font-size:   0.875rem;
+              line-height: 1.35;
+            }
+          }
+          .panelSelectCurrent {
+            &:before {
+              width: 3rem;
+            }
+            &:after {
+              right: 1.25rem;
+              top:   1.25rem;
+              width: 0.5rem;
+              height: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes cloud1Animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+
+}
+
+@keyframes cloud2Animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

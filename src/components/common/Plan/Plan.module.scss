@@ -1,0 +1,210 @@
+@import "../../../assets/scss/variables";
+
+
+@media (any-hover: hover) {
+  .pricingItem:hover {
+    border:     0.0625rem solid transparent;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  }
+}
+
+ul.checked {
+  margin-bottom: 2.75rem;
+  li {
+    font-size:    1.125rem;
+    line-height:  2.78;
+    position:     relative;
+    color:        #8c94a5;
+    padding-left: 2.5rem;
+    &.done {
+      color: $black;
+      &:before {
+        content:          '';
+        position:         absolute;
+        left:             0;
+        top:              1.5rem;
+        transform:        translateY(-50%);
+        width:            1.6875rem;
+        height:           1.6875rem;
+        background-color: $lightGreen;
+        border-radius:    50%;
+
+      }
+      &:after {
+        content:         '';
+        background:      url("../../../assets/images/checked.svg") center center no-repeat;
+        background-size: contain;
+        position:        absolute;
+        left:            0.5rem;
+        top:             1.5rem;
+        transform:       translateY(-50%);
+        width:           0.8rem;
+        height:          0.8rem;
+      }
+    }
+  }
+}
+
+.pricingButtons {
+  display: none;
+}
+
+.pricingItemWrapper {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  flex-wrap:       wrap;
+}
+
+.pricingItem {
+  width:            32%;
+  background-color: $white;
+  border:           0.0625rem solid #e0e0e0;
+  padding:          3.125rem 2.5rem;
+  margin-bottom:    3.75rem;
+  transition:       .2s linear;
+  > p {
+    color: #728387;
+  }
+  &:active {
+    border:     0.0625rem solid transparent;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  }
+  hr {
+    margin-right: -2.5rem;
+  }
+  &:nth-child(1), &:nth-child(2) {
+    hr {
+      opacity:          1;
+      background-color: #d8dde2;
+    }
+  }
+  &.highLighted {
+    background-color: $secondColor;
+    color:            $white;
+    .price {
+      color: $white;
+    }
+    ul {
+      li {
+        color:   $white;
+        opacity: .5;
+        &.done {
+          color:   $white;
+          opacity: 1;
+          &:before {
+            background-color: $mainColor;
+          }
+          &:after {
+            filter: brightness(100);
+          }
+        }
+      }
+    }
+  }
+  .price {
+    font-size:     2.25rem;
+    line-height:   1.36;
+    color:         $mainColor;
+    display:       flex;
+    align-items:   flex-start;
+    margin-bottom: 2.5rem;
+    span {
+      font-size:    1.25rem;
+      line-height:  1.2;
+      color:        #8c94a5;
+      top:          0.5rem;
+      margin-right: 0.5rem;
+      position:     relative;
+    }
+  }
+  button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  ul.checked {
+    li {
+      font-size:   1rem;
+      line-height: 2.75;
+      &.done {
+        &:before {
+          width:  1.44rem;
+          height: 1.44rem;
+          top:    1.25rem;
+        }
+        &:after {
+          width:  0.5rem;
+          height: 0.5rem;
+          top:    1.25rem;
+        }
+      }
+    }
+  }
+  .pricingItemWrapper {
+    justify-content: space-around;
+  }
+
+  .pricingItem {
+    width:         48%;
+    padding:       2.25rem 2rem;
+    margin-bottom: 2.75rem;
+    hr {
+      margin-right: -2rem;
+    }
+    .price {
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size:   0.875rem;
+      line-height: 1.57;
+    }
+    &:nth-child(3) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  ul.checked {
+    margin-bottom: 1.25rem;
+  }
+
+  .pricingButtons {
+    display:       flex;
+    width:         100%;
+    margin-bottom: 2.25rem;
+    button {
+      width:            33%;
+      background-color: $lightGreen;
+      border:           0.0625rem solid transparent;
+      color:            #1d343c;
+      &.active, &:hover, &:active {
+        background-color: $mainColor;
+        color:            $white;
+        &:before {
+          left: 110%;
+        }
+      }
+    }
+  }
+
+  .pricingItem {
+    display: none;
+    width:   100%;
+    padding: 2.5rem 1rem 1.25rem 1rem;
+    hr {
+      margin-right: -1rem;
+    }
+  }
+}
+
+
+// animations
+@media screen and (min-width: 767px) {
+  .pricingItemWrapper {
+    //opacity:   0;
+    //transform: translate(0, 100%);
+  }
+}

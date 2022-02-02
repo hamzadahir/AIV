@@ -1,0 +1,114 @@
+@import "../../../assets/scss/variables";
+
+
+.panelItem {
+  background-color: $white;
+  padding:          2.5rem;
+  display:          flex;
+  align-items:      center;
+  margin-bottom:    1.25rem;
+  transition:       .2s linear;
+  cursor:           pointer;
+  h4 {
+    font-size:   1.5rem;
+    line-height: 1.33;
+  }
+  &:hover, &:active {
+    background-color: $secondColor;
+    color:            $white;
+    h5 {
+      color: $white;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .panelItemImage {
+    width:            11.25rem;
+    background-color: $mainColor;
+    height:           6.25rem;
+    margin-right:     2rem;
+    position:         relative;
+    &:before {
+      content:          '';
+      position:         absolute;
+      left:             0;
+      top:              0;
+      width:            4.125rem;
+      height:           4.125rem;
+      background-color: rgba(0, 0, 0, 0.07);
+    }
+  }
+  > div {
+    max-width: 20rem;
+  }
+  &.panelItemMod {
+    padding: 0;
+    .panelItemImage {
+      width:           5rem;
+      height:          5rem;
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+      padding:         1.25rem;
+      &:before {
+        width:  2.8125rem;
+        height: 2.8125rem;
+      }
+      img {
+        height: 100%;
+      }
+    }
+    > div {
+      max-width: 100%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 567px) {
+  .panelItem {
+    p {
+      font-size:   1rem;
+      line-height: 1.5625;
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .panelItem {
+    flex-direction: column;
+    padding:        1.875rem;
+    .panelItemImage {
+      width:         13.75rem;
+      margin-right:  auto;
+      height:        7.625rem;
+      margin-bottom: 1.25rem;
+      &:before {
+        width:  5rem;
+        height: 5rem;
+      }
+    }
+    > div {
+      max-width: 100%;
+    }
+    p {
+      font-size:   0.875rem;
+      line-height: 1.57;
+    }
+    &.panelItemMod {
+      padding:     1.875rem 3.5rem 2.5rem 1.875rem;
+      align-items: flex-start;
+      .panelItemImage {
+        width:         3.75rem;
+        height:        3.75rem;
+        padding:       0.625rem;
+        margin-bottom: 1rem;
+      }
+      h5 {
+        font-size:   0.9375rem;
+        line-height: 1.73;
+      }
+    }
+  }
+}
